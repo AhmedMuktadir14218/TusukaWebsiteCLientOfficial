@@ -77,16 +77,6 @@ const BannerHome: React.FC = () => {
     }
   };
 
-  const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, delay: 0.3 }
-    },
-    hover: { scale: 1.1, transition: { duration: 0.2 } }
-  };
-
   return (
     <div className="relative w-full h-screen max-h-[700px] min-h-[400px] overflow-hidden">
       {/* Banner Slides */}
@@ -104,48 +94,59 @@ const BannerHome: React.FC = () => {
             />
             
             {/* Content Container */}
-            <div className="absolute inset-0 container mx-auto px-6 flex flex-col md:flex-row items-center justify-center md:justify-between">
-              {/* Text on left side */}
+            <div className="absolute inset-0 container mx-auto px-6 flex items-center justify-between">
+              {/* Text on left side - always visible */}
               <motion.div
-                className="w-full md:w-1/2 pr-0 md:pr-4 mb-8 md:mb-0 text-center md:text-left"
+                className="w-full md:w-1/2 pr-4"
                 initial="hidden"
                 animate={index === currentSlide ? "visible" : "hidden"}
                 variants={textVariants}
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-                  We make your Clothes <br /> Since 1990
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#FEF2ED] mb-4 leading-tight">
+                  
+                  We make your   Clothes   <br /> <span className='text-[#0603a6]'> Since 1990 </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-white opacity-90">
+                <p className="text-base sm:text-lg md:text-xl text-[#FEF2ED] opacity-90">
                   Premium quality garments with decades of expertise
                 </p>
               </motion.div>
 
-              {/* Play button on right side */}
-              {asset.video && (
-                <motion.div
-                  className="w-full md:w-auto flex justify-center md:block md:pl-4 md:mr-8 lg:mr-12"
-                  initial="hidden"
-                  animate={index === currentSlide ? "visible" : "hidden"}
+              {/* Play button on right side - always visible */}
+              <div className="hidden md:flex items-center justify-end pl-4">
+                <button
+                  onClick={() => handleVideoOpen(asset.video)}
+                  className="group relative glow-animation"
+                  aria-label="Play video"
                 >
-                  <motion.button
-                    onClick={() => handleVideoOpen(asset.video)}
-                    className="group relative"
-                    aria-label="Play video"
-                    variants={buttonVariants}
-                    whileHover="hover"
-                  >
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-red-600 rounded-full opacity-20 group-hover:opacity-30 animate-[ping_3s_ease-in-out_infinite]"></div>
-                      <div className="bg-red-600 bg-opacity-70 rounded-full p-4 md:p-5 group-hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
-                        <FaPlay className="text-white text-3xl md:text-4xl" />
-                      </div>
+                  <div className="relative">
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-[#0603a6] rounded-full opacity-20 animate-glow"></div>
+                    {/* Main button */}
+                    <div className="bg-[#0603a6] bg-opacity-70 rounded-full p-5 md:p-6 group-hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center relative z-10">
+                      <FaPlay className="text-[#FEF2ED] text-4xl md:text-5xl" />
                     </div>
-                    <span className="hidden md:block absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Watch Video
-                    </span>
-                  </motion.button>
-                </motion.div>
-              )}
+                  </div>
+                  <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-[#FEF2ED] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Watch Video
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* Mobile play button (centered) */}
+            <div className="md:hidden absolute inset-0 flex items-center justify-center">
+              <button
+                onClick={() => handleVideoOpen(asset.video)}
+                className="group relative glow-animation"
+                aria-label="Play video"
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 bg-[#0603a6] rounded-full opacity-20 animate-glow"></div>
+                  <div className="bg-[#0603a6] bg-opacity-70 rounded-full p-5 group-hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center relative z-10">
+                    <FaPlay className="text-[#FEF2ED] text-4xl" />
+                  </div>
+                </div>
+              </button>
             </div>
           </div>
         ))}
@@ -169,7 +170,7 @@ const BannerHome: React.FC = () => {
           <div className="relative w-full max-w-4xl">
             <button
               onClick={handleVideoClose}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+              className="absolute -top-12 right-0 text-[#FEF2ED] hover:text-gray-300 transition-colors"
               aria-label="Close video"
             >
               <IoClose className="text-3xl" />
@@ -188,6 +189,18 @@ const BannerHome: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Glow animation styles */}
+      <style>{`
+        @keyframes glow {
+          0% { transform: scale(0.95); opacity: 0.7; }
+          50% { transform: scale(1.1); opacity: 0.4; }
+          100% { transform: scale(0.95); opacity: 0.7; }
+        }
+        .animate-glow {
+          animation: glow 2s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 };
