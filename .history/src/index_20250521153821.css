@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "BeatriceTRIAL_semibold";
+  src: url("../src/assets/fonts/beatricetrial/BeatriceTRIAL-Semibold.otf"); 
+  /* font-weight: 400;
+  font-style: normal; */
+}
+
+@import "tailwindcss";
+
+@theme{
+    --font-BeatriceTRIAL: 
+}
+
+/* Custom keyframe for the settings icon spin */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
