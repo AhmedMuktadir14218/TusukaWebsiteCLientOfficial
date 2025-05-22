@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
-// import bgImage from '../../assets/bg-header2.jpg';
+import bgImage from '../../assets/bg-header2.jpg';
 import logoimg from '../../assets/Tusuka_Logo_tr.png';
 import { IoMdArrowDropdown } from "react-icons/io";
 
@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       ],
     },
     {
-      label: ( <>Explore Plants <IoMdArrowDropdown className="inline" /> </>),
+      label: 'Explore Plants',
       subItems: [
         { label: 'Manufacturing Units', link: '#manufacturing-units' },
         { label: 'Laundry Unit', link: '#laundry-unit' },
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       ],
     },
     {
-      label: (<>Core Points <IoMdArrowDropdown className="inline" /></>),
+      label: 'Core Points',
       subItems: [
         { label: 'Our Market', link: '#our-market' },
         { label: 'Sourcing', link: '#sourcing' },
@@ -86,14 +86,14 @@ const Navbar: React.FC<NavbarProps> = () => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <img src={logoimg} alt="Company Logo" className="h-10 w-auto" />
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-6">
           {navItems.map((item, index) => (
             <div key={index} className="relative group">
               <a
                 href={item.link || '#'}
+                className="text-black hover:text-blue-400 transition-colors font-medium px-2 py-1 flex items-center"
+              >
+                {item.label}
+              </a>
                 className="text-black hover:text-blue-400 transition-colors font-medium px-2 py-1"
               >
                 {item.label}
@@ -122,7 +122,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <button className="text-black hover:text-blue-400">
             <FaSearch size={18} />
           </button>
-          <button className="bg-[#E32E2E] text-[#fef2ed] py-2 px-6 rounded-full font-bold hover:bg-blue-800 transition-colors">
+          <button className="bg-white text-blue-800 py-2 px-6 rounded-full font-bold hover:bg-blue-100 transition-colors">
             Let's Talk
           </button>
         </div>
@@ -138,14 +138,14 @@ const Navbar: React.FC<NavbarProps> = () => {
       {/* Mobile Menu - (Optional: You can enhance with collapsible submenus if needed) */}
       <div
         className={`lg:hidden bg-white overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? 'max-h-screen py-4' : 'max-h-0'
-        }`}
-      >
-        <div className="container mx-auto px-4 flex flex-col space-y-3">
           {navItems.map((item, index) => (
             <div key={index}>
               <a
                 href={item.link || '#'}
+                className="text-black block py-2 font-medium flex items-center"
+              >
+                {item.label}
+              </a>
                 className="text-black block py-2 font-medium"
               >
                 {item.label}

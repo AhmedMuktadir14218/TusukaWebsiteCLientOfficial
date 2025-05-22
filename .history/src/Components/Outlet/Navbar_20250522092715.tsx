@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
-// import bgImage from '../../assets/bg-header2.jpg';
+import bgImage from '../../assets/bg-header2.jpg';
 import logoimg from '../../assets/Tusuka_Logo_tr.png';
 import { IoMdArrowDropdown } from "react-icons/io";
 
@@ -122,7 +122,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <button className="text-black hover:text-blue-400">
             <FaSearch size={18} />
           </button>
-          <button className="bg-[#E32E2E] text-[#fef2ed] py-2 px-6 rounded-full font-bold hover:bg-blue-800 transition-colors">
+          <button className="bg-[#E32E2E] text-[#fef2ed] py-2 px-6 rounded-full font-bold hover:bg-blue-100 transition-colors">
             Let's Talk
           </button>
         </div>

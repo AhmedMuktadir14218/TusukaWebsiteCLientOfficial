@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
-// import bgImage from '../../assets/bg-header2.jpg';
+import bgImage from '../../assets/bg-header2.jpg';
 import logoimg from '../../assets/Tusuka_Logo_tr.png';
 import { IoMdArrowDropdown } from "react-icons/io";
 

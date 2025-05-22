@@ -82,7 +82,7 @@ const LogoMoving: React.FC = () => {
         <div className="w-1/4 pr-8 hidden md:block"> {/* Left text section */}
           <div className="border-l-4 border-red-600 pl-4">
             <h3 className="text-xl md:text-2xl font-semibold text-gray-800 leading-tight">
-              Worked with world's <br /> famous brands and <br /> Core Customers
+              Worked with world's <br /> famous brands and <br /> partners
             </h3>
           </div>
         </div>
