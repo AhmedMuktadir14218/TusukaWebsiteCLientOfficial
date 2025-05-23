@@ -1,3 +1,4 @@
+import AwardCertification from "../Components/AwardCertification"
 import CorePointComponent from "../Components/CorePointComponent"
 import HeroBanner from "../Components/HeroBanner"
 import HeroBanner2 from "../Components/HeroBanner2"
@@ -15,6 +16,7 @@ function Home() {
           <LogoMoving />
         </div>
         <CorePointComponent></CorePointComponent>
+        <AwardCertification></AwardCertification>
         <div className="px-4  ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
           voluptate neque nesciunt at pariatur alias libero magni sint nam
