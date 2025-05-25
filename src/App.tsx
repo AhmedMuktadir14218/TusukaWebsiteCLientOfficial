@@ -1,14 +1,15 @@
 import "./App.css";
 import Navbar from "./Components/Outlet/Navbar";
-import Footer from "./Components/Outlet/Footer";
+// import Footer from "./Components/Outlet/Footer";
 import HeroBanner from "./Components/HeroBanner";
-import LogoMoving from "./Components/LogoMoving";
+// import LogoMoving from "./Components/LogoMoving";
 // import ContactUs from './Components/ContactUs';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Contact_Us from "./Pages/Contact_Us";
 import Layout from "./Components/Layout";
 import Home from "./Pages/Home";
 import HeroBanner2 from "./Components/HeroBanner2";
+import ACertificationsPage from "./Pages/ACertificationsPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contact-us" element={<Contact_Us />} />
           <Route path="/hrb2" element={<HeroBanner2></HeroBanner2>} />
           <Route path="/hrb1" element={<HeroBanner></HeroBanner>} />
+          <Route path="/acp" element={<ACertificationsPage></ACertificationsPage>} />
         </Route>
         </Routes>
       </BrowserRouter>

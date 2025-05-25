@@ -178,13 +178,13 @@ const ContactUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-6  pl-9 pt-6"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h2 className=" text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Let's<br />
-              contact<br />
+              contact 
               for<br />
-              better<br />
+              better 
               result
             </h2>
             <p className="text-gray-600">

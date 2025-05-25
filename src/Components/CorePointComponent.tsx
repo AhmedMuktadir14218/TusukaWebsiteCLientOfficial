@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { LuArmchair, LuLeaf, LuBuilding2, LuFlaskConical, LuShieldCheck, LuHandshake } from 'react-icons/lu'; // Icons to represent the new points
+import { LuArmchair, LuLeaf, LuBuilding2, LuFlaskConical, LuShieldCheck, LuHandshake } from 'react-icons/lu';
+import Brandlogo3 from '../assets/homeban3.jpg'; 
 
 // Define the points data
 const points = [
@@ -10,29 +11,29 @@ const points = [
     description: 'We analyze market trends and opportunities to position your products effectively and expand your reach globally.',
   },
   {
-    icon: LuLeaf, // Changed to a leaf icon for sourcing/sustainability
+    icon: LuLeaf,
     title: 'Sourcing',
     description: 'Specializing in ethical and efficient sourcing of raw materials to ensure sustainable and high-quality production.',
   },
   {
-    icon: LuHandshake, // Changed to handshake for code of conduct
+    icon: LuHandshake,
     title: 'Code of Conduct',
     description: 'Upholding stringent ethical standards and social responsibility across all our operations and partnerships.',
   },
   {
-    icon: LuFlaskConical, // Changed to flask for R&D
+    icon: LuFlaskConical,
     title: 'Research & Development',
     description: 'Innovating new processes and products through advanced research to stay ahead in a competitive landscape.',
   },
   {
-    icon: LuShieldCheck, // Changed to shield for safety
+    icon: LuShieldCheck,
     title: 'Safety',
     description: 'Prioritizing the safety and well-being of our employees and partners with comprehensive safety protocols.',
   },
   {
-    icon: LuBuilding2, // Changed to building for social benefit (community focus)
+    icon: LuBuilding2,
     title: 'Social Benefit',
-    description: 'Committed to contributing positively to the communities where we operate through various social initiatives.',
+    description: 'Committed to contributing positively to the communities where we operate through various social initiatives. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.', 
   },
 ];
 
@@ -41,7 +42,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Stagger animation for children
+      staggerChildren: 0.1,
     },
   },
 };
@@ -59,48 +60,130 @@ const itemVariants = {
   },
 };
 
-const   CorePointComponent: React.FC = () => {
+const CorePointComponent: React.FC = () => {
+
+    const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
+  const toggleCardDescription = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  const truncateDescription = (description: string, maxWords: number = 15) => {
+    const words = description.split(' ');
+    if (words.length <= maxWords) return description;
+    return words.slice(0, maxWords).join(' ') + '...';
+  };
   return (
-    <section className="py-20 bg-[#040270]">
+    <section className="relative py-20 bg-[#626266] overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
           {/* Left Section: Title and Description */}
           <motion.div
-            className="lg:col-span-1"
+            className="lg:col-span-1 flex flex-col"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={containerVariants}
           >
+            {/* Image Container */}
+            <motion.div 
+              className="mb-8 w-full max-w-md mx-auto lg:mx-0 group"
+              variants={itemVariants}
+            >              
+              <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                <img 
+                  src={Brandlogo3} 
+                  alt="Brand Logo" 
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[#040270] opacity-20 group-hover:opacity-10 transition-opacity duration-500"></div>
+              </div>
+            </motion.div>
+            
+            {/* Section Title and Description */}
             <motion.p
-              className="text-gray-500 font-medium mb-2"
+              className="text-gray-300 font-medium mb-4 uppercase tracking-wider"
               variants={itemVariants}
             >
-              OUR Core Points
+              Our Core Points
             </motion.p>
+            
             <motion.h2
               className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
               variants={itemVariants}
             >
-              How we <br /> are working <br /> with local and <br/> global partners.
+              How we are <br /> working with local <br /> and global partners
             </motion.h2>
+            
             <motion.p
-              className="text-gray-500 text-lg mb-8"
+              className="text-gray-300 text-lg mb-8"
               variants={itemVariants}
             >
-              We are dedicated to guiding you on your financial journey with expertise.
+              Dedicated to excellence, innovation, and sustainable growth in every partnership.
             </motion.p>
+            
             <motion.a
               href="#"
-              className="text-white hover:underline font-semibold text-lg"
+              className="inline-flex items-center text-white font-semibold group"
               variants={itemVariants}
             >
-              All Core Points
+              Explore All Points
+              <span className="ml-2 transform transition-transform group-hover:translate-x-2">
+                →
+              </span>
             </motion.a>
           </motion.div>
 
+          {/* Right Section: Point Cards */}
+          {/* <motion.div
+            className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={containerVariants}
+          >
+            {points.map((point, index) => (
+              <motion.div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl 
+                border border-white/10 space-y-4 
+                transition-all duration-300 
+                hover:bg-white/20 hover:border-white/20 
+                group"
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -10,
+                  scale: 1.05
+                }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="bg-white/20 p-3 rounded-full group-hover:bg-white/30 transition-colors">
+                    <point.icon className="h-7 w-7 text-white" />
+                  </div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-6 w-6 text-white" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-white">
+                  {point.title}
+                </h3>
+                <p className="text-gray-300 text-base">
+                  {point.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div> */}
+
           {/* Right Section: point Cards */}
-          <motion.div
+           <motion.div
             className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -110,26 +193,45 @@ const   CorePointComponent: React.FC = () => {
             {points.map((point, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start"
+                className="bg-[#CDCDE3] p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start relative"
                 variants={itemVariants}
-                whileHover={{ y: -5 }} // Small hover animation
+                whileHover={{ y: -5 }}
               >
                 <div className="text-[#040270] mb-4">
-                  <point.icon className="h-10 w-10" /> {/* Dynamic icon */}
+                  <point.icon className="h-10 w-10" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {point.title}
                 </h3>
-                <p className="text-gray-700 text-base">
-                  {point.description}
+                <p className="text-gray-700 text-base mb-4">
+                  {expandedCard === index 
+                    ? point.description 
+                    : truncateDescription(point.description)
+                  }
                 </p>
+                
+                {/* See More/Less Button */}
+                {point.description.split(' ').length > 10 && (
+                  <button
+                    onClick={() => toggleCardDescription(index)}
+                    className="text-[#040270] font-semibold hover:underline"
+                  >
+                    {expandedCard === index ? 'See Less' : 'See More'}
+                  </button>
+                )}
               </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
+
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#040270]/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-r from-[#040270]/20 to-transparent"></div>
+      </div>
     </section>
   );
 };
 
-export default   CorePointComponent;
+export default CorePointComponent;

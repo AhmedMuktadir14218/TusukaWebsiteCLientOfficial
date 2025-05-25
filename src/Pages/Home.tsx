@@ -1,6 +1,7 @@
 import AwardCertification from "../Components/AwardCertification"
+import ContactUs from "../Components/ContactUs"
 import CorePointComponent from "../Components/CorePointComponent"
-import HeroBanner from "../Components/HeroBanner"
+// import HeroBanner from "../Components/HeroBanner"
 import HeroBanner2 from "../Components/HeroBanner2"
 import LogoMoving from "../Components/LogoMoving"
 
@@ -97,7 +98,7 @@ function Home() {
           dignissimos consequatur? Necessitatibus fugiat veritatis quam enim
           aliquid fugit ipsam in eum minus quasi, quae modi perspiciatis.
         </div>
-
+      <ContactUs></ContactUs>
       </div>
   )
 }
