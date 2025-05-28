@@ -10,6 +10,10 @@ import Layout from "./Components/Layout";
 import Home from "./Pages/Home";
 import HeroBanner2 from "./Components/HeroBanner2";
 import ACertificationsPage from "./Pages/ACertificationsPage";
+import JoinWithUse from "./Pages/JoinWithUse";
+// import CanvasCursor from "./Components/CanvasCursor";
+import SmoothFollower from "./Components/SmoothFollower";
+import AboutPage from "./Pages/About/AboutPage";
 
 function App() {
   return (
@@ -27,13 +31,17 @@ function App() {
               
           <Route path="/" element={<Home />} />
           <Route path="/contact-us" element={<Contact_Us />} />
+          <Route path="/joinwithus/contact-us" element={<Contact_Us />} />
           <Route path="/hrb2" element={<HeroBanner2></HeroBanner2>} />
           <Route path="/hrb1" element={<HeroBanner></HeroBanner>} />
           <Route path="/acp" element={<ACertificationsPage></ACertificationsPage>} />
+          <Route path="/joinwithus" element={<JoinWithUse></JoinWithUse>} />
+          <Route path="/about" element={<AboutPage></AboutPage>} />
         </Route>
         </Routes>
       </BrowserRouter>
-     
+     {/* <CanvasCursor></CanvasCursor> */}
+     <SmoothFollower></SmoothFollower>
     </>
   );
 }

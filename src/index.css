@@ -33,3 +33,20 @@
 .animate-spin-slow {
   animation: spin-slow 10s linear infinite;
 }
+
+/* In your global CSS file (e.g., src/index.css or src/App.css) */
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.modal-no-scrollbar::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Hide scrollbar for Firefox */
+.modal-no-scrollbar {
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* Hide scrollbar for IE and Edge */
+.modal-no-scrollbar {
+    -ms-overflow-style: none; /* For IE and Edge */
+}

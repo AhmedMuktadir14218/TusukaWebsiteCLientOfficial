@@ -1,0 +1,107 @@
+
+
+{
+  "hero": {
+    "title": "About Tusuka Group Limited",
+    "tagline": "Foremost in Garment Manufacturing and Export",
+    "introduction": "TUSUKA GROUP was established in 1995. Tusuka is in garment business since 1997, started as a buying house named \"texel\" focusing only the woven market. With the vision of specialized denim/jeans making, in 2001 Tusuka started its venture as jeans manufacturer with only 2 sewing lines and a small laundry to take the opportunity of globally growing demand of denim garment.",
+    "sliderImages": [
+      {
+        "id": "1",
+        "src": "../src/assets/homeban11.webp",
+        "alt": "Tusuka Group headquarters",
+        "caption": "Our modern facility"
+      },
+      {
+        "id": "2",
+        "src": "../src/assets/homeban22.webp",
+        "alt": "Denim garment production",
+        "caption": "Quality denim manufacturing"
+      },
+      {
+        "id": "3",
+        "src": "../src/assets/homeban33.webp",
+        "alt": "Team collaboration",
+        "caption": "Dedicated to excellence"
+      }
+    ]
+  },
+  "metrics": {
+    "experienceYears": 28,
+    "totalEmployees": "Not specified in text",
+    "sewingCapacity": "45000pcs per day",
+    "yearlyTurnover": "Not specified in text"
+  },
+  "ourStory": {
+    "title": "Our Journey",
+    "foundingVision": "Tusuka Group was established in 1995, and by 1997, it ventured into the garment business as a buying house named 'texel', initially focusing solely on the woven market. Recognizing the global demand for denim, Tusuka shifted its focus in 2001 to specialize in denim/jeans manufacturing.",
+    "growthMilestones": "Starting with just 2 sewing lines and a small laundry in 2001, Tusuka expanded significantly. After a year of management recognizing the need for a large-world class in-house laundry section, the washing capacity and new sewing lines were expanded. Now, Tusuka boasts a washing capacity of 45,000 pieces per day and a total of 34 sewing lines dedicated to denim garment making.",
+    "currentStance": "Today, Tusuka is dedicated to excellence in merchandising, product development, production, and logistics. The company has earned a reputation throughout the global apparel industry as one of the foremost factories in Bangladesh, recognized for its commitment to quality, timely delivery, and total value. Through an extensive sourcing network, Tusuka effectively procures the best materials and delivers high-quality products and superb service to compete in the emerging market. They utilize progressive tools such as CAD-CAM and have a management team with extensive understanding of Western companies' needs and Eastern production capabilities, excelling in overseas sourcing."
+  },
+  "missionValues": {
+    "title": "Our Core Principles",
+    "mission": "To be a leading denim garment manufacturer and exporter, delivering high-quality products and excellent service through commitment, innovation, and ethical practices.",
+    "vision": "To be the most trusted and preferred partner for global apparel brands, known for our commitment to quality, timely delivery, and sustainable practices.",
+    "values": [
+      {
+        "name": "Quality",
+        "description": "We are committed to delivering the highest quality products and services.",
+        "icon": "fa-star"
+      },
+      {
+        "name": "Timely Delivery",
+        "description": "We ensure on-time delivery to meet our clients' demands.",
+        "icon": "fa-clock"
+      },
+      {
+        "name": "Total Value",
+        "description": "We provide comprehensive value to our customers through competitive pricing and superior service.",
+        "icon": "fa-dollar-sign"
+      },
+      {
+        "name": "Innovation",
+        "description": "We leverage progressive tools and expertise to develop breakthrough solutions.",
+        "icon": "fa-lightbulb"
+      },
+      {
+        "name": "Excellence in Sourcing",
+        "description": "We ensure effective procurement of the best raw materials through an extensive network.",
+        "icon": "fa-globe"
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Management Team",
+    "introduction": "Our management team brings together diverse expertise and an extensive understanding of the needs of companies in the West, combined with the production capabilities of firms in the East, making overseas sourcing truly excellent.",
+    "members": [
+      {
+        "id": "1",
+        "name": "Leadership (Details not specified)",
+        "title": "Management Team",
+        "bio": "Extensive understanding of Western company needs and Eastern production capabilities, excelling in overseas sourcing.",
+        "imageSrc": "/images/team/placeholder.jpg",
+        "linkedInUrl": "#"
+      }
+    ]
+  },
+  "commitment": {
+    "title": "Our Commitments",
+    "areas": [
+      {
+        "title": "To Our Clients",
+        "description": "We are committed to quality, timely delivery, and providing total value. Our customers rely on us to deliver the best quality products and superb service, enabling them to successfully compete in the emerging market."
+      },
+      {
+        "title": "To Quality and Innovation",
+        "description": "We utilize progressive tools such as CAD-CAM to meet specific price points and achieve quality, and we continuously invest in product development capabilities."
+      },
+      {
+        "title": "To Global Standards",
+        "description": "We uphold our reputation as one of the foremost factories in Bangladesh within the global apparel industry, ensuring our operations meet international benchmarks."
+      }
+    ],
+    "conclusion": "These commitments are the foundation of our success and our reputation in the global apparel industry."
+  }
+}
+
+ 

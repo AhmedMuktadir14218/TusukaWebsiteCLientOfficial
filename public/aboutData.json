@@ -1,0 +1,123 @@
+  {
+  "hero": {
+    "title": "About Tusuka",
+    "tagline": "Building the Future with Innovative Solutions",
+    "introduction": "TechVision was founded in 2015 with a mission to transform businesses through cutting-edge technology. Our team of experts delivers customized solutions that drive growth and efficiency.",
+    "sliderImages": [
+      {
+        "id": "1",
+        "src": "../src/assets/homeban11.webp",
+        "alt": "TechVision headquarters",
+        "caption": "Our modern workspace"
+      },
+      {
+        "id": "2",
+        "src": "../src/assets/homeban22.webp",
+        "alt": "Team collaboration",
+        "caption": "Collaborating for success"
+      },
+      {
+        "id": "3",
+        "src": "../src/assets/homeban33.webp",
+        "alt": "Product demonstration",
+        "caption": "Innovative solutions in action"
+      }
+    ]
+  },
+
+   "metrics": {
+    "experienceYears": 15,
+    "totalEmployees": 250,
+    "sewingCapacity": 5000,
+    "yearlyTurnover": 25
+  },
+"ourStory": {
+    "title": "Our Journey",
+    "foundingVision": "Tusuka Group was established in 1995, and by 1997, it ventured into the garment business as a buying house named 'texel', initially focusing solely on the woven market. Recognizing the global demand for denim, Tusuka shifted its focus in 2001 to specialize in denim/jeans manufacturing.",
+    "growthMilestones": "Starting with just 2 sewing lines and a small laundry in 2001, Tusuka expanded significantly. After a year of management recognizing the need for a large-world class in-house laundry section, the washing capacity and new sewing lines were expanded. Now, Tusuka boasts a washing capacity of 45,000 pieces per day and a total of 34 sewing lines dedicated to denim garment making.",
+    "currentStance": "Today, Tusuka is dedicated to excellence in merchandising, product development, production, and logistics. The company has earned a reputation throughout the global apparel industry as one of the foremost factories in Bangladesh, recognized for its commitment to quality, timely delivery, and total value. Through an extensive sourcing network, Tusuka effectively procures the best materials and delivers high-quality products and superb service to compete in the emerging market. They utilize progressive tools such as CAD-CAM and have a management team with extensive understanding of Western companies' needs and Eastern production capabilities, excelling in overseas sourcing."},
+  "missionValues": {
+    "title": "Our Core Principles",
+    "mission": "To empower organizations through transformative technology solutions that simplify complexity and drive measurable results.",
+    "vision": "To be the most trusted partner for businesses navigating digital transformation worldwide.",
+    "values": [
+      {
+        "name": "Excellence",
+        "description": "We pursue the highest standards in everything we do.",
+        "icon": "fa-star"
+      },
+      {
+        "name": "Integrity",
+        "description": "We build trust through transparency and ethical practices.",
+        "icon": "fa-shield"
+      },
+      {
+        "name": "Innovation",
+        "description": "We challenge conventions to develop breakthrough solutions.",
+        "icon": "fa-lightbulb"
+      },
+      {
+        "name": "Collaboration",
+        "description": "We believe the best results come from teamwork.",
+        "icon": "fa-users"
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Leadership Team",
+    "introduction": "The TechVision team brings together diverse expertise from technology, business, and creative disciplines, united by a shared passion for solving complex challenges.",
+    "members": [
+      {
+        "id": "1",
+        "name": "Alex Johnson",
+        "title": "CEO & Founder",
+        "bio": "Visionary leader with 15+ years in tech entrepreneurship.",
+        "imageSrc": "/images/team/alex.jpg",
+        "linkedInUrl": "https://linkedin.com/in/alexjohnson"
+      },
+      {
+        "id": "2",
+        "name": "Maria Garcia",
+        "title": "CTO",
+        "bio": "Technology strategist specializing in scalable architectures.",
+        "imageSrc": "/images/team/maria.jpg",
+        "linkedInUrl": "https://linkedin.com/in/mariagarcia"
+      },
+      {
+        "id": "3",
+        "name": "James Wilson",
+        "title": "Head of Product",
+        "bio": "User-focused product developer with a design thinking approach.",
+        "imageSrc": "/images/team/james.jpg",
+        "linkedInUrl": "https://linkedin.com/in/jameswilson"
+      },
+      {
+        "id": "4",
+        "name": "Sarah Chen",
+        "title": "Director of Client Success",
+        "bio": "Customer advocate ensuring exceptional service delivery.",
+        "imageSrc": "/images/team/sarah.jpg",
+        "linkedInUrl": "https://linkedin.com/in/sarahchen"
+      }
+    ]
+  },
+  "commitment": {
+    "title": "Our Commitments",
+    "areas": [
+      {
+        "title": "To Our Clients",
+        "description": "We commit to understanding your unique business needs and delivering solutions that create tangible value. Our partnership doesn't end at implementation - we're invested in your long-term success."
+      },
+      {
+        "title": "To Our Team",
+        "description": "We foster an inclusive environment where every team member can grow, innovate, and thrive. Continuous learning and professional development are at the heart of our culture."
+      },
+      {
+        "title": "To Society",
+        "description": "We dedicate resources to bridge the digital divide through education initiatives and pro bono work for non-profit organizations."
+      }
+    ],
+    "conclusion": "These commitments guide our decisions and define who we are as a company."
+  }
+}
+

@@ -9,7 +9,7 @@ import CF4 from '../assets/Award&Certificate/CF4.gif';
 import CF5 from '../assets/Award&Certificate/CF5.gif';
 import CF6 from '../assets/Award&Certificate/CF6.jpg';
 import CF7 from '../assets/Award&Certificate/CF7.jpg';
-import CF8 from '../assets/Award&Certificate/CF3.png';
+import CF8 from '../assets/Award&Certificate/CF3.png'; 
 
 // Certificate data
 const certificates = [
@@ -147,7 +147,7 @@ function AwardCertificationsPage() {
 
         <div className="mt-16">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-8 relative inline-block pb-2">
-            Explore All Certifications
+            Explore All Certifications 
             <span className="block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-[#040270] rounded-full"></span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">

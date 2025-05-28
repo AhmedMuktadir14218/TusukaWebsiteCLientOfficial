@@ -21,12 +21,12 @@ const Navbar: React.FC<NavbarProps> = () => {
     },
     {
       label: (
-        <>
+        <Link to="/about" className="inline">
           About Us <IoMdArrowDropdown className="inline" />
-        </>
+        </Link>
       ),
       subItems: [
-        { label: 'Company Profile', link: '#company-profile' },
+        { label: <Link to="/about" className="inline">Company Profile</Link> },
         { label: 'Vision', link: '#vision' },
         { label: 'Mission', link: '#mission' },
         { label: 'Commitment', link: '#commitment' },
@@ -56,8 +56,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     },
    
     {
-      label: 'Join With Us',
-      link: '#join-with-us',
+      label: <Link to="/joinwithus" className="inline">Join With Us</Link>,
     },
     {
       label: <Link to="/contact-us" className="inline">Contact Us</Link>,

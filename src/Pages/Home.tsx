@@ -1,4 +1,5 @@
 import AwardCertification from "../Components/AwardCertification"
+// import CanvasCursor from "../Components/CanvasCursor"
 import ContactUs from "../Components/ContactUs"
 import CorePointComponent from "../Components/CorePointComponent"
 // import HeroBanner from "../Components/HeroBanner"
@@ -18,87 +19,10 @@ function Home() {
         </div>
         <CorePointComponent></CorePointComponent>
         <AwardCertification></AwardCertification>
-        <div className="px-4  ">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
-          voluptate neque nesciunt at pariatur alias libero magni sint nam
-          perferendis ducimus quisquam, mollitia asperiores dolorum, quidem
-          tempora? Facere vel, labore omnis tempore sapiente officiis voluptate,
-          fugit voluptates repellendus vitae aspernatur, dignissimos obcaecati
-          itaque accusamus optio incidunt corporis minus! Labore iure natus id,
-          cumque nobis praesentium! Ab laborum aspernatur in eius sapiente sit
-          similique natus consectetur magni quos. Dolorum explicabo corrupti a?
-          Sapiente perferendis nesciunt distinctio, natus impedit repellat!
-          Dolore reiciendis nobis cupiditate optio, dolorum dolorem beatae
-          necessitatibus, dicta cumque minima consequatur alias! Aliquid,
-          veritatis eius? Vel placeat aut quis, nisi eligendi hic praesentium
-          dignissimos consequatur? Necessitatibus fugiat veritatis quam enim
-          aliquid fugit ipsam in eum minus quasi, quae modi perspiciatis.
-        </div>
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
-          voluptate neque nesciunt at pariatur alias libero magni sint nam
-          perferendis ducimus quisquam, mollitia asperiores dolorum, quidem
-          tempora? Facere vel, labore omnis tempore sapiente officiis voluptate,
-          fugit voluptates repellendus vitae aspernatur, dignissimos obcaecati
-          itaque accusamus optio incidunt corporis minus! Labore iure natus id,
-          cumque nobis praesentium! Ab laborum aspernatur in eius sapiente sit
-          similique natus consectetur magni quos. Dolorum explicabo corrupti a?
-          Sapiente perferendis nesciunt distinctio, natus impedit repellat!
-          Dolore reiciendis nobis cupiditate optio, dolorum dolorem beatae
-          necessitatibus, dicta cumque minima consequatur alias! Aliquid,
-          veritatis eius? Vel placeat aut quis, nisi eligendi hic praesentium
-          dignissimos consequatur? Necessitatibus fugiat veritatis quam enim
-          aliquid fugit ipsam in eum minus quasi, quae modi perspiciatis.
-        </div>
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
-          voluptate neque nesciunt at pariatur alias libero magni sint nam
-          perferendis ducimus quisquam, mollitia asperiores dolorum, quidem
-          tempora? Facere vel, labore omnis tempore sapiente officiis voluptate,
-          fugit voluptates repellendus vitae aspernatur, dignissimos obcaecati
-          itaque accusamus optio incidunt corporis minus! Labore iure natus id,
-          cumque nobis praesentium! Ab laborum aspernatur in eius sapiente sit
-          similique natus consectetur magni quos. Dolorum explicabo corrupti a?
-          Sapiente perferendis nesciunt distinctio, natus impedit repellat!
-          Dolore reiciendis nobis cupiditate optio, dolorum dolorem beatae
-          necessitatibus, dicta cumque minima consequatur alias! Aliquid,
-          veritatis eius? Vel placeat aut quis, nisi eligendi hic praesentium
-          dignissimos consequatur? Necessitatibus fugiat veritatis quam enim
-          aliquid fugit ipsam in eum minus quasi, quae modi perspiciatis.
-        </div>
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
-          voluptate neque nesciunt at pariatur alias libero magni sint nam
-          perferendis ducimus quisquam, mollitia asperiores dolorum, quidem
-          tempora? Facere vel, labore omnis tempore sapiente officiis voluptate,
-          fugit voluptates repellendus vitae aspernatur, dignissimos obcaecati
-          itaque accusamus optio incidunt corporis minus! Labore iure natus id,
-          cumque nobis praesentium! Ab laborum aspernatur in eius sapiente sit
-          similique natus consectetur magni quos. Dolorum explicabo corrupti a?
-          Sapiente perferendis nesciunt distinctio, natus impedit repellat!
-          Dolore reiciendis nobis cupiditate optio, dolorum dolorem beatae
-          necessitatibus, dicta cumque minima consequatur alias! Aliquid,
-          veritatis eius? Vel placeat aut quis, nisi eligendi hic praesentium
-          dignissimos consequatur? Necessitatibus fugiat veritatis quam enim
-          aliquid fugit ipsam in eum minus quasi, quae modi perspiciatis.
-        </div>
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
-          voluptate neque nesciunt at pariatur alias libero magni sint nam
-          perferendis ducimus quisquam, mollitia asperiores dolorum, quidem
-          tempora? Facere vel, labore omnis tempore sapiente officiis voluptate,
-          fugit voluptates repellendus vitae aspernatur, dignissimos obcaecati
-          itaque accusamus optio incidunt corporis minus! Labore iure natus id,
-          cumque nobis praesentium! Ab laborum aspernatur in eius sapiente sit
-          similique natus consectetur magni quos. Dolorum explicabo corrupti a?
-          Sapiente perferendis nesciunt distinctio, natus impedit repellat!
-          Dolore reiciendis nobis cupiditate optio, dolorum dolorem beatae
-          necessitatibus, dicta cumque minima consequatur alias! Aliquid,
-          veritatis eius? Vel placeat aut quis, nisi eligendi hic praesentium
-          dignissimos consequatur? Necessitatibus fugiat veritatis quam enim
-          aliquid fugit ipsam in eum minus quasi, quae modi perspiciatis.
-        </div>
+  
       <ContactUs></ContactUs>
+      {/* <CanvasCursor></CanvasCursor> */}
+ 
       </div>
   )
 }

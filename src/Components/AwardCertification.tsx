@@ -10,6 +10,7 @@ import CF5 from '../assets/Award&Certificate/CF5.gif';
 import CF6 from '../assets/Award&Certificate/CF6.jpg';
 import CF7 from '../assets/Award&Certificate/CF2.png';
 import CF8 from '../assets/Award&Certificate/CF3.png';
+import { Link } from 'react-router-dom';
 
 const AwardCertification: React.FC = () => {
   const certificates = [
@@ -74,11 +75,13 @@ const AwardCertification: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 relative inline-block pb-2">
-            Awards & Certifications
+            
+
+             <Link to='/acp' >Awards & Certifications</Link>
             <span className="block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-[#040270] rounded-full"></span>
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Our commitment to excellence has been recognized globally through these prestigious awards and certifications.
+            Our commitment to excellence has been recognized globally through these prestigious awards and certifications. <Link to='/acp' ><span className='text-[#040270]'>[see more..]</span></Link>
           </p>
         </div>
 
