@@ -93,7 +93,7 @@ interface ImageSliderProps {
 const ImageSlider: React.FC<ImageSliderProps> = ({ 
   images, 
   interval = 5000,
-  fullWidth = false 
+//   fullWidth = false 
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 

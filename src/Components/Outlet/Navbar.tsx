@@ -26,11 +26,11 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Link>
       ),
       subItems: [
-        { label: <Link to="/about" className="inline">Company Profile</Link> },
-        { label: 'Vision', link: '#vision' },
-        { label: 'Mission', link: '#mission' },
-        { label: 'Commitment', link: '#commitment' },
-        { label: 'Quality', link: '#quality' },
+        { label: <Link to="/companyprofile" className="inline">Company Profile</Link> },
+        { label: <Link to="/quality" className="inline">Quality</Link> },
+        { label: <Link to="/mvc" className="inline">Vision</Link>   },
+        { label: <Link to="/mvc" className="inline">Mission</Link>   },
+        { label: <Link to="/mvc" className="inline">Commitment</Link>   },   
         { label: 'Laboratory', link: '#laboratory' },
       ],
     },

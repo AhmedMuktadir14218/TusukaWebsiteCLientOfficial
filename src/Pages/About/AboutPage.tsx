@@ -7,6 +7,10 @@ import MissionValues from '../../Components/about/MissionValues';
 import MeetTheTeam from '../../Components/about/MeetTheTeam';
 import OurCommitment from '../../Components/about/OurCommitment';
 import MetricsCounter from '../../Components/about/MetricsCounter';
+import CompanyReport from '../../Components/about/CompanyReport';
+import QualityComponent from '../../Components/about/QualityComponent';
+import MVC_Component from '../../Components/about/MVC_Component';
+import DirectorCard from '../../Components/about/DirectorCard';
 const AboutPage: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { data, loading, error } = useApiData();
@@ -55,7 +59,9 @@ const AboutPage: React.FC = () => {
         //   currentStance={data.ourStory.currentStance}
         />
  
-        
+        <CompanyReport></CompanyReport>
+        <QualityComponent></QualityComponent>
+        <MVC_Component></MVC_Component>
         <MissionValues 
           title={data.missionValues.title}
           mission={data.missionValues.mission}
@@ -74,6 +80,10 @@ const AboutPage: React.FC = () => {
           areas={data.commitment.areas}
           conclusion={data.commitment.conclusion}
         />
+
+        <DirectorCard/>
+    
+ 
       </main>
     </div>
   );

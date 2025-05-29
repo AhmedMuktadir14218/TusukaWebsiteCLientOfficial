@@ -14,6 +14,9 @@ import JoinWithUse from "./Pages/JoinWithUse";
 // import CanvasCursor from "./Components/CanvasCursor";
 import SmoothFollower from "./Components/SmoothFollower";
 import AboutPage from "./Pages/About/AboutPage";
+import CompanyProfile from "./Pages/About/CompanyProfile";
+import Quality from "./Pages/About/Quality";
+import MVC from "./Pages/About/MVC";
 
 function App() {
   return (
@@ -37,6 +40,9 @@ function App() {
           <Route path="/acp" element={<ACertificationsPage></ACertificationsPage>} />
           <Route path="/joinwithus" element={<JoinWithUse></JoinWithUse>} />
           <Route path="/about" element={<AboutPage></AboutPage>} />
+          <Route path="/companyprofile" element={<CompanyProfile></CompanyProfile>} />
+          <Route path="/quality" element={<Quality></Quality>} />
+          <Route path="/mvc" element={<MVC></MVC>} />
         </Route>
         </Routes>
       </BrowserRouter>

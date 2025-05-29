@@ -74,7 +74,7 @@ const CorePointComponent: React.FC = () => {
     return words.slice(0, maxWords).join(' ') + '...';
   };
   return (
-    <section className="relative py-20 bg-[#626266] overflow-hidden">
+    <section className="relative py-20 bg-[#CDCDE3] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
           {/* Left Section: Title and Description */}
@@ -102,21 +102,21 @@ const CorePointComponent: React.FC = () => {
             
             {/* Section Title and Description */}
             <motion.p
-              className="text-gray-300 font-medium mb-4 uppercase tracking-wider"
+              className="text-gray-700 font-medium mb-4 uppercase tracking-wider"
               variants={itemVariants}
             >
               Our Core Points
             </motion.p>
             
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
+              className="text-4xl md:text-5xl font-bold text-black leading-tight mb-6"
               variants={itemVariants}
             >
               How we are <br /> working with local <br /> and global partners
             </motion.h2>
             
             <motion.p
-              className="text-gray-300 text-lg mb-8"
+              className="text-gray-600 text-lg mb-8"
               variants={itemVariants}
             >
               Dedicated to excellence, innovation, and sustainable growth in every partnership.
@@ -124,7 +124,7 @@ const CorePointComponent: React.FC = () => {
             
             <motion.a
               href="#"
-              className="inline-flex items-center text-white font-semibold group"
+              className="inline-flex items-center text-gray-700 font-semibold group"
               variants={itemVariants}
             >
               Explore All Points
@@ -193,7 +193,7 @@ const CorePointComponent: React.FC = () => {
             {points.map((point, index) => (
               <motion.div
                 key={index}
-                className="bg-[#CDCDE3] p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start relative"
+                className="bg-[#ffffff] p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start relative"
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 
 interface Metric {
@@ -18,7 +19,7 @@ const MetricsCounter: React.FC = () => {
   const targetValues = [15, 250, 5000, 25]; // Your actual target values
 
   useEffect(() => {
-    const duration = 2000; // Animation duration in ms
+    const duration = 5000; // Animation duration in ms
     const startTime = Date.now();
 
     const animateCounters = () => {

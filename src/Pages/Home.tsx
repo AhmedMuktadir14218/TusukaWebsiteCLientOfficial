@@ -1,3 +1,4 @@
+import OurStorySection from "../Components/about/OurStory"
 import AwardCertification from "../Components/AwardCertification"
 // import CanvasCursor from "../Components/CanvasCursor"
 import ContactUs from "../Components/ContactUs"
@@ -16,9 +17,14 @@ function Home() {
           {/* <HeroBanner /> */}
           <HeroBanner2 />
           <LogoMoving />
-        </div>
-        <CorePointComponent></CorePointComponent>
+        </div> 
+         <OurStorySection></OurStorySection>
         <AwardCertification></AwardCertification>
+       <CorePointComponent></CorePointComponent>
+        
+       
+
+
   
       <ContactUs></ContactUs>
       {/* <CanvasCursor></CanvasCursor> */}
