@@ -31,7 +31,8 @@ const Navbar: React.FC<NavbarProps> = () => {
         { label: <Link to="/mvc" className="inline">Vision</Link>   },
         { label: <Link to="/mvc" className="inline">Mission</Link>   },
         { label: <Link to="/mvc" className="inline">Commitment</Link>   },   
-        { label: 'Laboratory', link: '#laboratory' },
+        { label: <Link to="/laboratory" className="inline">Laboratory</Link>   },   
+     
       ],
     },
      {

@@ -21,7 +21,7 @@ import {
   FaChartPie
 } from 'react-icons/fa';
 import { GiSewingMachine } from "react-icons/gi";
-
+import Image from '../../assets/homeban11.webp'; // Replace with your actual image path
 // Register ChartJS components
 ChartJS.register(
   ArcElement,
@@ -270,30 +270,43 @@ const CompanyReport = () => {
 
         {/* Financial & Sister Concerns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Financial Institutions */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-white p-6 md:p-8 rounded-2xl shadow-lg"
-          >
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">Banking Partners</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {["Eastern Bank Ltd.", "Uttara Bank Ltd.", "One Bank Ltd.", "The City Bank Ltd."].map((bank, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.03 }}
-                  className="bg-indigo-50 p-4 rounded-xl flex items-center"
-                >
-                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
-                    <span className="text-indigo-600 font-bold">{bank.charAt(0)}</span>
-                  </div>
-                  <span className="text-gray-800 font-medium">{bank}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+  {/* Financial Institutions */}
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="bg-white p-6 md:p-8 rounded-2xl shadow-lg"
+  >
+    <h3 className="text-2xl font-bold text-gray-800 mb-6">Banking Partners</h3>
+
+    {/* Bank List */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      {["Eastern Bank Ltd.", "Uttara Bank Ltd.", "One Bank Ltd.", "The City Bank Ltd."].map((bank, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.03 }}
+          className="bg-indigo-50 p-4 rounded-xl flex items-center"
+        >
+          <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+            <span className="text-indigo-600 font-bold">{bank.charAt(0)}</span>
+          </div>
+          <span className="text-gray-800 font-medium">{bank}</span>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Bank Illustration or Logo Image */}
+    <div className="mt-4">
+      <img
+        src={Image} // Replace this with your actual image path
+        alt="Banking Illustration"
+        className="w-full max-h-64 object-contain rounded-xl shadow-sm"
+      />
+    </div>
+  </motion.div>
+{/* </div> */}
+
 
           {/* Sister Concerns */}
           <motion.div

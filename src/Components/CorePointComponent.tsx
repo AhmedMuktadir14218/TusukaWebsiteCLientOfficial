@@ -74,7 +74,7 @@ const CorePointComponent: React.FC = () => {
     return words.slice(0, maxWords).join(' ') + '...';
   };
   return (
-    <section className="relative py-20 bg-[#CDCDE3] overflow-hidden">
+    <section className="relative py-20 bg-[#EEF5FE] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
           {/* Left Section: Title and Description */}

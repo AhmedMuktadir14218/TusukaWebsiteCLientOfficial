@@ -17,6 +17,7 @@ import AboutPage from "./Pages/About/AboutPage";
 import CompanyProfile from "./Pages/About/CompanyProfile";
 import Quality from "./Pages/About/Quality";
 import MVC from "./Pages/About/MVC";
+import Laboratory from "./Pages/About/Laboratory";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/companyprofile" element={<CompanyProfile></CompanyProfile>} />
           <Route path="/quality" element={<Quality></Quality>} />
           <Route path="/mvc" element={<MVC></MVC>} />
+          <Route path="/laboratory" element={<Laboratory></Laboratory>} />
         </Route>
         </Routes>
       </BrowserRouter>

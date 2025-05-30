@@ -3,14 +3,16 @@ import { useApiData } from '../../hooks/useApiData';
 import SidebarMenu from '../../Components/SidebarMenu';
 import AboutHero from '../../Components/about/AboutHero';
 import OurStory from '../../Components/about/OurStory';
-import MissionValues from '../../Components/about/MissionValues';
-import MeetTheTeam from '../../Components/about/MeetTheTeam';
+// import MissionValues from '../../Components/about/MissionValues';
+// import MeetTheTeam from '../../Components/about/MeetTheTeam';
 import OurCommitment from '../../Components/about/OurCommitment';
 import MetricsCounter from '../../Components/about/MetricsCounter';
 import CompanyReport from '../../Components/about/CompanyReport';
 import QualityComponent from '../../Components/about/QualityComponent';
 import MVC_Component from '../../Components/about/MVC_Component';
-import DirectorCard from '../../Components/about/DirectorCard';
+// import DirectorCard from '../../Components/about/DirectorCard';
+import DirectorSlider from '../../Components/about/DirectorSlider';
+import Laboratory from './Laboratory';
 const AboutPage: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { data, loading, error } = useApiData();
@@ -58,22 +60,12 @@ const AboutPage: React.FC = () => {
         //   growthMilestones={data.ourStory.growthMilestones}
         //   currentStance={data.ourStory.currentStance}
         />
- 
+ <DirectorSlider></DirectorSlider>
         <CompanyReport></CompanyReport>
+         
         <QualityComponent></QualityComponent>
         <MVC_Component></MVC_Component>
-        <MissionValues 
-          title={data.missionValues.title}
-          mission={data.missionValues.mission}
-          vision={data.missionValues.vision}
-          values={data.missionValues.values}
-        />
-        
-        <MeetTheTeam 
-          title={data.team.title}
-          introduction={data.team.introduction}
-          members={data.team.members}
-        />
+   
         
         <OurCommitment 
           title={data.commitment.title}
@@ -81,7 +73,11 @@ const AboutPage: React.FC = () => {
           conclusion={data.commitment.conclusion}
         />
 
-        <DirectorCard/>
+        {/* <DirectorCard/> */}
+
+       <Laboratory>
+        
+       </Laboratory>
     
  
       </main>

@@ -27,7 +27,7 @@ const QualityComponent = () => {
   return (
     <div className="bg-white">
     {/* Header Section */}
-<div className="relative h-[400px]">
+<div className="relative h-[50vh]">
   <img
     src={image1}
     alt="Quality Control"
