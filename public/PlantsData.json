@@ -1,0 +1,188 @@
+{
+  "exploreHeader": {
+    "title": "Explore Our Plants",
+    "description": "Discover the strength of our operations across multiple specialized plants. Each unit is built with excellence and efficiency to serve our clients better.",
+    "ctaText": "Explore Now",
+    "image": "/src/assets/homeban33.webp"
+  },
+  "units": [
+    {
+      "title": "Manufacturing Units",
+      "backgroundImage": "/src/assets/homeban33.webp",
+      "description": "Our core manufacturing units produce high-quality woven garments with cutting-edge technology and experienced teams.",
+      "plants": [
+        {
+          "id": "tusuka-fashions",
+          "name": "Tusuka Fashions Ltd.",
+          "shortDescription": "Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.",
+          "images": ["/src/assets/homeban33.webp", "/src/assets/homeban11.webp", "/src/assets/homeban22.webp"],
+          "details": {
+            "employees": 800,
+            "lines": 4,
+            "capacity": "6,500 pcs/day",
+            "space": "54,376 SFT",
+            "address": "Plot no: 10, Block–B, Tongi Industrial Area, Gazipur, Bangladesh.",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7834238295172!2d90.40111647602379!3d23.790725387225752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70d8e9e0425%3A0x2f8397857b7b31e8!2sTusuka%20Group!5e0!3m2!1sen!2sbd!4v1747904600772!5m2!1sen!2sbd"
+          }
+        },
+        {
+          "id": "tusuka-jeans",
+          "name": "Tusuka Jeans Ltd.",
+          "shortDescription": "Located at Tusuka Complex, Gazipur. 9-storied unit with full production capacity.",
+          "images": ["/src/assets/homeban22.webp"],
+          "details": {
+            "employees": 2900,
+            "lines": 15,
+            "capacity": "21,500 pcs/day (5 pocket jeans)",
+            "space": "195,000 SFT",
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh.",
+            "distanceFromAirport": "40 minutes drive"
+          }
+        },
+        {
+          "id": "tusuka-trousers",
+          "name": "Tusuka Trousers Ltd.",
+          "shortDescription": "Major unit in Gazipur with high production volume and modern setup.",
+          "images": ["/src/assets/homeban11.webp"],
+          "details": {
+            "employees": 2400,
+            "lines": 12,
+            "capacity": "20,000 pcs/day",
+            "space": "163,000 SFT",
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+          }
+        },
+        {
+          "id": "tusuka-denim",
+          "name": "Tusuka Denim Ltd.",
+          "shortDescription": "Specialized in denim manufacturing at Konabari, Gazipur.",
+          "images": ["/src/assets/homeban22.webp"],
+          "details": {
+            "employees": 1900,
+            "lines": 9,
+            "capacity": "15,000 pcs/day (5 pocket jeans)",
+            "space": "87,155 SFT",
+            "address": "490, Konabari, Gazipur, Bangladesh."
+          }
+        },
+        {
+          "id": "tusuka-apparels",
+          "name": "Tusuka Apparels Ltd.",
+          "shortDescription": "Located in Tongi with advanced garment machinery and skilled workforce.",
+          "images": ["/src/assets/homeban11.webp"],
+          "details": {
+            "employees": 950,
+            "lines": 7,
+            "capacity": "9,800 pcs/day (5 pocket jeans)",
+            "space": "60,690 SFT + 43,341 SFT sewing + 13,000 SFT cutting",
+            "address": "Hazrat Shahjalal Road, Rajnagar Shataish, Tongi, Gazipur, Bangladesh.",
+            "distanceFromAirport": "14 KM"
+          }
+        },
+        {
+          "id": "tusuka-stitches",
+          "name": "Tusuka Stitches Ltd.",
+          "shortDescription": "Newest unit focusing on outerwear, activewear, and swimwear.",
+          "images": ["/src/assets/homeban44.webp"],
+          "details": {
+            "employees": 1400,
+            "lines": {
+              "active": 8,
+              "denim": 6,
+              "outerwear": 15,
+              "bottoms": 20
+            },
+            "capacity": {
+              "denim": "9,800 pcs/day",
+              "outerwear": "150K–250K pcs/month",
+              "bottoms": "650K–750K pcs/month"
+            },
+            "space": "439,047 SFT",
+            "address": "Hazrat Shahjalal Road, Rajnagar Shataish, Tongi, Gazipur, Bangladesh.",
+            "distanceFromAirport": "14 KM"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Laundry Units",
+      "backgroundImage": "/src/assets/homeban33.webp",
+      "description": "Equipped with state-of-the-art tools for enzyme, stone washing and dyeing.",
+      "plants": [
+        {
+          "id": "tusuka-processing",
+          "name": "Tusuka Processing Ltd.",
+          "shortDescription": "High-quality stone, enzyme & dyeing services at Konabari.",
+          "images": ["/assets/tusuka-processing.webp"],
+          "details": {
+            "employees": 3650,
+            "wetCapacity": "90,000 pcs/day",
+            "dryCapacity": "80,000 pcs/day",
+            "space": "275,112 SFT",
+            "machines": 1125,
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+          }
+        },
+        {
+          "id": "tusuka-washing",
+          "name": "Tusuka Washing Ltd.",
+          "shortDescription": "Modern equipment with 440 sets of washing capacity.",
+          "images": ["/assets/tusuka-washing.webp"],
+          "details": {
+            "employees": 1300,
+            "wetCapacity": "20,000 pcs/day",
+            "dryCapacity": "25,000 pcs/day",
+            "monthlyCapacity": "300K–350K pcs/month",
+            "space": "92,355 SFT",
+            "machines": 1084,
+            "washMachines": 20,
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Packaging Unit",
+      "backgroundImage": "/assets/packaging-bg.webp",
+      "description": "Efficient packaging solution for all production units.",
+      "plants": [
+        {
+          "id": "tusuka-packaging",
+          "name": "Tusuka Packaging Ltd.",
+          "shortDescription": "Located at the ground floor of Tusuka Complex, Gazipur.",
+          "images": ["/assets/tusuka-packaging.webp"],
+          "details": {
+            "employees": 25,
+            "capacity": "200,500 pcs/day",
+            "space": "25,000 SFT",
+            "machines": "Fully Automatic 72” width",
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Embroidery Unit",
+      "backgroundImage": "/assets/embroidery-bg.webp",
+      "description": "Our embroidery unit ensures premium design stitching quality.",
+      "plants": [
+        {
+          "id": "needle-art",
+          "name": "Needle Art Embroidery Ltd.",
+          "shortDescription": "Located in Tusuka Complex, Gazipur with 90 skilled employees.",
+          "images": ["/assets/needle-art.webp"],
+          "details": {
+            "employees": 90,
+            "machines": 15,
+            "machineDetails": {
+              "9 Color": "13 machines (5 with Sequin Device)",
+              "15 Color": "2 machines (both with Sequin Device)"
+            },
+            "space": "9,900 SFT",
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+          }
+        }
+      ]
+    }
+  ]
+}

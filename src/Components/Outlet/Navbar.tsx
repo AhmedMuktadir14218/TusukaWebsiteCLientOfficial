@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     {
       label: ( <>Explore Plants <IoMdArrowDropdown className="inline" /> </>),
       subItems: [
-        { label: 'Manufacturing Units', link: '#manufacturing-units' },
+        { label: <Link to="/plants" className="inline">Manufacturing Units</Link>   }, 
         { label: 'Laundry Unit', link: '#laundry-unit' },
         { label: 'Packaging Unit', link: '#packaging-unit' },
         { label: 'Embroidery Unit', link: '#embroidery-unit' },
@@ -92,24 +92,24 @@ const Navbar: React.FC<NavbarProps> = () => {
         <div className="hidden lg:flex items-center space-x-6">
           {navItems.map((item, index) => (
             <div key={index} className="relative group">
-              <a
-                href={item.link || '#'}
+              <Link
+                to='#'
                 className="text-black hover:text-blue-400 transition-colors font-medium px-2 py-1"
               >
                 {item.label}
-              </a>
+              </Link>
 
               {/* Submenu if exists */}
               {item.subItems && (
                 <div className="absolute top-full left-0 mt-1 w-48 bg-white shadow-md rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform translate-y-2 transition-all duration-300 z-40">
                   {item.subItems.map((subItem, subIndex) => (
-                    <a
+                    <Link
                       key={subIndex}
-                      href={subItem.link}
+                      to='#'
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 hover:text-blue-500"
                     >
                       {subItem.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -144,22 +144,22 @@ const Navbar: React.FC<NavbarProps> = () => {
         <div className="container mx-auto px-4 flex flex-col space-y-3">
           {navItems.map((item, index) => (
             <div key={index}>
-              <a
-                href={item.link || '#'}
+              <Link
+                to='#'
                 className="text-black block py-2 font-medium"
               >
                 {item.label}
-              </a>
+              </Link>
               {item.subItems && (
                 <div className="ml-4 text-sm space-y-1">
                   {item.subItems.map((subItem, subIndex) => (
-                    <a
+                    <Link
                       key={subIndex}
-                      href={subItem.link}
+                      to='#'
                       className="block text-gray-600 hover:text-blue-600"
                     >
                       ↳ {subItem.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}

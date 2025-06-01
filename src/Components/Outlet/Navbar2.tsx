@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa'; // For mobile menu icon
 import { IoSearchOutline } from 'react-icons/io5'; // For search icon
+import { Link } from 'react-router-dom';
 
 const Navbar2: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,11 +21,11 @@ const Navbar2: React.FC = () => {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-8 items-center text-gray-700 font-medium">
-        <a href="#" className="hover:text-red-600 transition-colors duration-300">Home <span className="text-xs ml-1">⌵</span></a>
-        <a href="#" className="hover:text-red-600 transition-colors duration-300">Service <span className="text-xs ml-1">⌵</span></a>
-        <a href="#" className="hover:text-red-600 transition-colors duration-300">Pages <span className="text-xs ml-1">⌵</span></a>
-        <a href="#" className="hover:text-red-600 transition-colors duration-300">Project <span className="text-xs ml-1">⌵</span></a>
-        <a href="#" className="hover:text-red-600 transition-colors duration-300">Blog <span className="text-xs ml-1">⌵</span></a>
+        <Link to="#" className="hover:text-red-600 transition-colors duration-300">Home <span className="text-xs ml-1">⌵</span></Link>
+        <Link to="#" className="hover:text-red-600 transition-colors duration-300">Service <span className="text-xs ml-1">⌵</span></Link>
+        <Link to="#" className="hover:text-red-600 transition-colors duration-300">Pages <span className="text-xs ml-1">⌵</span></Link>
+        <Link to="#" className="hover:text-red-600 transition-colors duration-300">Project <span className="text-xs ml-1">⌵</span></Link>
+        <Link to="#" className="hover:text-red-600 transition-colors duration-300">Blog <span className="text-xs ml-1">⌵</span></Link>
       </div>
 
       {/* Right side icons and button */}
@@ -56,11 +57,11 @@ const Navbar2: React.FC = () => {
           exit={{ opacity: 0, y: -20 }}
           className="absolute top-full left-0 right-0 bg-white shadow-lg md:hidden flex flex-col items-center py-4 space-y-4 text-gray-700 font-medium"
         >
-          <a href="#" className="hover:text-red-600 transition-colors duration-300">Home</a>
-          <a href="#" className="hover:text-red-600 transition-colors duration-300">Service</a>
-          <a href="#" className="hover:text-red-600 transition-colors duration-300">Pages</a>
-          <a href="#" className="hover:text-red-600 transition-colors duration-300">Project</a>
-          <a href="#" className="hover:text-red-600 transition-colors duration-300">Blog</a>
+          <Link to="#" className="hover:text-red-600 transition-colors duration-300">Home</Link>
+          <Link to="#" className="hover:text-red-600 transition-colors duration-300">Service</Link>
+          <Link to="#" className="hover:text-red-600 transition-colors duration-300">Pages</Link>
+          <Link to="#" className="hover:text-red-600 transition-colors duration-300">Project</Link>
+          <Link to="#" className="hover:text-red-600 transition-colors duration-300">Blog</Link>
           <button className="bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition-colors duration-300 w-fit">
             Let's Talk
           </button>

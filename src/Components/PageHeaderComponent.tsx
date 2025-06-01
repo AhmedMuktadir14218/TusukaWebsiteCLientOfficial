@@ -133,7 +133,7 @@ interface PageHeaderProps {
 }
 
 // components/PageHeader.tsx
-const PageHeader: React.FC<PageHeaderProps> = ({ 
+const PageHeaderComponent: React.FC<PageHeaderProps> = ({ 
   images, 
   title, 
   description,
@@ -222,4 +222,4 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   );
 };
 
-export default PageHeader;
+export default PageHeaderComponent;

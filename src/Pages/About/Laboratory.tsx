@@ -1,12 +1,12 @@
 // pages/Laboratory/Laboratory.tsx
 import React from 'react';
-import PageHeader from '../../Components/PageHeaderComponent'; // Make sure this points to the Swiper version
+import PageHeaderComponent from '../../Components/PageHeaderComponent'; // Make sure this points to the Swiper version
 import {  FaCheckCircle, FaMicroscope, FaVial, FaAtom, FaCertificate } from 'react-icons/fa';
 import {  MdSecurity, MdPrecisionManufacturing } from 'react-icons/md';
 import { GiMicroscope, GiChemicalDrop } from 'react-icons/gi';
 
 // Import images
-import aboutImage1 from '../../assets/homeban33.webp'; // Your existing images
+import aboutImage1 from '../../assets/laboratory/laboratory1.jpg'; // Your existing images
 import aboutImage2 from '../../assets/laboratory/laboratory2.jpg';
 import aboutImage3 from '../../assets/laboratory/laboratory3.jpg';
 import aboutImage4 from '../../assets/laboratory/laboratory4.jpg';
@@ -67,7 +67,7 @@ function Laboratory() {
   return (
     <div className="w-full min-h-screen bg-gray-50 overflow-hidden"> {/* Added overflow-hidden for animations */}
       {/* Header Section (using PageHeader with Swiper) */}
-      <PageHeader
+      <PageHeaderComponent
         images={headerImages}
         title="Our Laboratory"
         description="At Tusuka, we prioritize quality and innovation in our laboratory operations."
