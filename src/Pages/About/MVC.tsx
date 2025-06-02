@@ -1,10 +1,18 @@
+import { useLocation } from "react-router-dom";
 import MVC_Component from "../../Components/about/MVC_Component"
 
  
 function MVC() {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const activeTab = queryParams.get('tab') || 'mission'; // default to mission if no tab param
+  
   return (
-    <div><MVC_Component></MVC_Component></div>
+    <div>
+      <MVC_Component initialTab={activeTab} id={""} title={""} content={""} />
+    </div>
   )
 }
+
 
 export default MVC

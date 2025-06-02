@@ -28,9 +28,15 @@ const Navbar: React.FC<NavbarProps> = () => {
       subItems: [
         { label: <Link to="/companyprofile" className="inline">Company Profile</Link> },
         { label: <Link to="/quality" className="inline">Quality</Link> },
-        { label: <Link to="/mvc" className="inline">Vision</Link>   },
-        { label: <Link to="/mvc" className="inline">Mission</Link>   },
-        { label: <Link to="/mvc" className="inline">Commitment</Link>   },   
+        {
+  label: <Link to="/mvc" className="inline">Mission</Link>,
+},
+{
+  label: <Link to="/mvc?tab=vision" className="inline">Vision</Link>,
+},
+{
+  label: <Link to="/mvc?tab=commitment" className="inline">Commitment</Link>,
+},   
         { label: <Link to="/laboratory" className="inline">Laboratory</Link>   },   
      
       ],

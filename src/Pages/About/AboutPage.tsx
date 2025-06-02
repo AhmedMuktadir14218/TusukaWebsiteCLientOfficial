@@ -60,11 +60,11 @@ const AboutPage: React.FC = () => {
         //   growthMilestones={data.ourStory.growthMilestones}
         //   currentStance={data.ourStory.currentStance}
         />
- <DirectorSlider></DirectorSlider>
+        <DirectorSlider></DirectorSlider>
         <CompanyReport></CompanyReport>
          
         <QualityComponent></QualityComponent>
-        <MVC_Component></MVC_Component>
+        <MVC_Component id={''} title={''} content={''}></MVC_Component>
    
         
         <OurCommitment 

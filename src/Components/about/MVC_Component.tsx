@@ -1,5 +1,5 @@
 // MVC_Component.tsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import image from '../../assets/homeban11.webp'; // Assuming this is a suitable placeholder image
 import image1 from '../../assets/homeban44.webp'; // Assuming this is a suitable placeholder image for the hero section
 import image2 from '../../assets/homeban22.webp'; // Assuming this is a suitable placeholder image for the hero section
@@ -10,11 +10,22 @@ interface TabContent {
   title: string;
   content: string;
   image?: string;
+  initialTab?: string;
 }
 
-const MVC_Component: React.FC = () => {
-  // Set the initial active tab to 'fabric-dyeing' (Mission)
-  const [activeTab, setActiveTab] = useState('fabric-dyeing');
+const MVC_Component: React.FC<TabContent> = ({ initialTab = 'fabric-dyeing' }) => {
+  // Set the initial active tab based on props
+  const [activeTab, setActiveTab] = useState(initialTab === 'vision' ? 'digital-printing' : 
+                                           initialTab === 'commitment' ? 'fabric-treated' : 
+                                           'fabric-dyeing');
+
+  // Update active tab when initialTab prop changes
+  useEffect(() => {
+    setActiveTab(initialTab === 'vision' ? 'digital-printing' : 
+                initialTab === 'commitment' ? 'fabric-treated' : 
+                'fabric-dyeing');
+  }, [initialTab]);
+
 
   const tabContents: TabContent[] = [
     {

@@ -15,21 +15,21 @@
           "id": "tusuka-fashions",
           "name": "Tusuka Fashions Ltd.",
           "shortDescription": "Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.",
-          "images": ["/src/assets/homeban33.webp", "/src/assets/homeban11.webp", "/src/assets/homeban22.webp"],
+          "images": ["/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 01.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd02.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 03.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 04.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 05.jpg"],
           "details": {
             "employees": 800,
             "lines": 4,
             "capacity": "6,500 pcs/day",
             "space": "54,376 SFT",
             "address": "Plot no: 10, Block–B, Tongi Industrial Area, Gazipur, Bangladesh.",
-            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7834238295172!2d90.40111647602379!3d23.790725387225752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70d8e9e0425%3A0x2f8397857b7b31e8!2sTusuka%20Group!5e0!3m2!1sen!2sbd!4v1747904600772!5m2!1sen!2sbd"
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         },
         {
           "id": "tusuka-jeans",
           "name": "Tusuka Jeans Ltd.",
           "shortDescription": "Located at Tusuka Complex, Gazipur. 9-storied unit with full production capacity.",
-          "images": ["/src/assets/homeban22.webp"],
+          "images": ["/src/assets/Tusuka Jeans Ltd/Tusuka Jeans Ltd01.jpg", "/src/assets/Tusuka Jeans Ltd/Tusuka Jeans Ltd 02.jpg", "/src/assets/Tusuka Jeans Ltd/Tusuka Jeans Ltd 03.jpg", "/src/assets/Tusuka Jeans Ltd/Tusuka Jeans Ltd 04.jpg", "/src/assets/Tusuka Jeans Ltd/Tusuka Jeans Ltd 05.jpg"],
           "details": {
             "employees": 2900,
             "lines": 15,
@@ -43,7 +43,7 @@
           "id": "tusuka-trousers",
           "name": "Tusuka Trousers Ltd.",
           "shortDescription": "Major unit in Gazipur with high production volume and modern setup.",
-          "images": ["/src/assets/homeban11.webp"],
+          "images": ["/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 01.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 02.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 03.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 04.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 05.jpg"],
           "details": {
             "employees": 2400,
             "lines": 12,
@@ -56,7 +56,7 @@
           "id": "tusuka-denim",
           "name": "Tusuka Denim Ltd.",
           "shortDescription": "Specialized in denim manufacturing at Konabari, Gazipur.",
-          "images": ["/src/assets/homeban22.webp"],
+          "images": ["/src/assets/Tusuka Denim Ltd/Tusuka Denim Ltd 01.jpg", "/src/assets/Tusuka Denim Ltd/Tusuka Denim Ltd 02.jpg", "/src/assets/Tusuka Denim Ltd/Tusuka Denim Ltd 03.jpg", "/src/assets/Tusuka Denim Ltd/Tusuka Denim Ltd 04.jpg", "/src/assets/Tusuka Denim Ltd/Tusuka Denim Ltd 05.jpg"],
           "details": {
             "employees": 1900,
             "lines": 9,
@@ -69,7 +69,7 @@
           "id": "tusuka-apparels",
           "name": "Tusuka Apparels Ltd.",
           "shortDescription": "Located in Tongi with advanced garment machinery and skilled workforce.",
-          "images": ["/src/assets/homeban11.webp"],
+          "images": ["/src/assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 01.jpg", "/src/assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 02.jpg", "/src/assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 03.jpg", "/src/assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 04.jpg", "/src/assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 05.jpg"],
           "details": {
             "employees": 950,
             "lines": 7,
@@ -83,7 +83,7 @@
           "id": "tusuka-stitches",
           "name": "Tusuka Stitches Ltd.",
           "shortDescription": "Newest unit focusing on outerwear, activewear, and swimwear.",
-          "images": ["/src/assets/homeban44.webp"],
+          "images": ["/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 01.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 02.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 03.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 04.jpg", "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 05.jpg"],
           "details": {
             "employees": 1400,
             "lines": {
@@ -113,7 +113,7 @@
           "id": "tusuka-processing",
           "name": "Tusuka Processing Ltd.",
           "shortDescription": "High-quality stone, enzyme & dyeing services at Konabari.",
-          "images": ["/assets/tusuka-processing.webp"],
+          "images": ["/src/assets/Tusuka Processing Ltd/Tusuka Processing Ltd 01.jpg", "/src/assets/Tusuka Processing Ltd/Tusuka Processing Ltd 02.jpg", "/src/assets/Tusuka Processing Ltd/Tusuka Processing Ltd 03.jpg", "/src/assets/Tusuka Processing Ltd/Tusuka Processing Ltd 04.jpg", "/src/assets/Tusuka Processing Ltd/Tusuka Processing Ltd 05.jpg"],
           "details": {
             "employees": 3650,
             "wetCapacity": "90,000 pcs/day",
@@ -127,7 +127,7 @@
           "id": "tusuka-washing",
           "name": "Tusuka Washing Ltd.",
           "shortDescription": "Modern equipment with 440 sets of washing capacity.",
-          "images": ["/assets/tusuka-washing.webp"],
+          "images": ["/src/assets/Tusuka Washing Ltd/Tusuka Washing Ltd 01.jpg", "/src/assets/Tusuka Washing Ltd/Tusuka Washing Ltd 02.jpg", "/src/assets/Tusuka Washing Ltd/Tusuka Washing Ltd 03.jpg", "/src/assets/Tusuka Washing Ltd/Tusuka Washing Ltd 04.jpg", "/src/assets/Tusuka Washing Ltd/Tusuka Washing Ltd 05.jpg", "/src/assets/Tusuka Washing Ltd/Tusuka Washing Ltd 06.jpg"],
           "details": {
             "employees": 1300,
             "wetCapacity": "20,000 pcs/day",
@@ -150,7 +150,7 @@
           "id": "tusuka-packaging",
           "name": "Tusuka Packaging Ltd.",
           "shortDescription": "Located at the ground floor of Tusuka Complex, Gazipur.",
-          "images": ["/assets/tusuka-packaging.webp"],
+          "images": ["/src/assets/Tusuka Packaging Ltd/Tusuka Packaging Ltd 01.jpg", "/src/assets/Tusuka Packaging Ltd/Tusuka Packaging Ltd 02.jpg", "/src/assets/Tusuka Packaging Ltd/Tusuka Packaging Ltd 03.jpg", "/src/assets/Tusuka Packaging Ltd/Tusuka Packaging Ltd 04.jpg", "/src/assets/Tusuka Packaging Ltd/Tusuka Packaging Ltd 05.jpg"],
           "details": {
             "employees": 25,
             "capacity": "200,500 pcs/day",
@@ -170,7 +170,7 @@
           "id": "needle-art",
           "name": "Needle Art Embroidery Ltd.",
           "shortDescription": "Located in Tusuka Complex, Gazipur with 90 skilled employees.",
-          "images": ["/assets/needle-art.webp"],
+          "images": ["/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 01.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 02.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 03.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 04.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 05.jpg"],
           "details": {
             "employees": 90,
             "machines": 15,
