@@ -60,3 +60,11 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;                 /* Chrome, Safari, and Opera */
 }
+
+.grid {
+  display: grid;
+}
+
+.justify-center {
+  justify-items: center;
+}

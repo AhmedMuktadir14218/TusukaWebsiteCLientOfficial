@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 import PlantDetailsModal from '../../Pages/ExplorePlants/PlantDetailsModal';
+
 interface PlantDetails {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 
@@ -39,36 +40,38 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
         />
       )}
       <div
-        className="group relative overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer"
+        className="group relative flex flex-col h-full rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 cursor-pointer"
         onClick={() => setIsModalOpen(true)}
       >
-        <div className="overflow-hidden w-full" style={{ height: 200 }}>
+        <div className="w-full aspect-[4/3] bg-gray-100">
           <img
             src={plant.images[0]}
             alt={plant.name}
-            className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             loading="lazy"
-            style={{ height: '200px', width: '100%' }}
           />
         </div>
-        <div className="p-6 bg-white">
-          <h3 className="text-2xl font-semibold mb-3 text-gray-800">
-            {plant.name}
-          </h3>
-          <p className="text-gray-600 mb-4 line-clamp-2">
-            {plant.shortDescription.length > 50
-              ? plant.shortDescription.slice(0, 50) + '...'
-              : plant.shortDescription}
-            <span
-              className="text-blue-600 hover:underline text-sm ml-2 cursor-pointer"
-              onClick={e => {
+
+        <div className="flex flex-col justify-between flex-1 p-6 bg-white">
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800 line-clamp-1">
+              {plant.name}
+            </h3>
+            <p className="text-gray-600 mb-3 line-clamp-2">
+              {plant.shortDescription}
+            </p>
+          </div>
+          {!isModalOpen && (
+            <button
+              className="text-[#040270] font-semibold hover:underline mt-auto"
+              onClick={(e) => {
                 e.stopPropagation();
                 setIsModalOpen(true);
               }}
             >
-              See more
-            </span>
-          </p>
+              See More
+            </button>
+          )}
         </div>
       </div>
     </>

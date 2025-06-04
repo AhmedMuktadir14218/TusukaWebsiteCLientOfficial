@@ -1,0 +1,180 @@
+{
+  "ourMarket": {
+    "customerTable": [
+      {
+        "Customer Name": "H&M",
+        "Country": "Sweden"
+      },
+      {
+        "Customer Name": "Marks & Spencer",
+        "Country": "United Kindom"
+      },
+      {
+        "Customer Name": "Zara",
+        "Country": "Spain"
+      },
+      {
+        "Customer Name": "LPP",
+        "Country": "Poland"
+      },
+      {
+        "Customer Name": "Groupe Beaumanoir",
+        "Country": "France"
+      },
+      {
+        "Customer Name": "Carrefour",
+        "Country": "France"
+      },
+      {
+        "Customer Name": "WE",
+        "Country": "Nethereland"
+      },
+      {
+        "Customer Name": "Groupe Dynamite",
+        "Country": "Canada"
+      },
+      {
+        "Customer Name": "New Yorker",
+        "Country": "Germany"
+      },
+      {
+        "Customer Name": "Guess",
+        "Country": "USA"
+      },
+      {
+        "Customer Name": "EL Corte Ingles",
+        "Country": "Spain"
+      },
+      {
+        "Customer Name": "GMS",
+        "Country": "Germany"
+      },
+      {
+        "Customer Name": "Melon",
+        "Country": "Russia"
+      },
+      {
+        "Customer Name": "Gina Tricot",
+        "Country": "Sweden"
+      },
+      {
+        "Customer Name": "SHIMA",
+        "Country": "Poland"
+      },
+      {
+        "Customer Name": "Next",
+        "Country": "UK"
+      },
+      {
+        "Customer Name": "Marubeni",
+        "Country": "Japan"
+      },
+      {
+        "Customer Name": "DK Company",
+        "Country": "Denmark"
+      },
+      {
+        "Customer Name": "GreenPoint",
+        "Country": "Poland"
+      },
+      {
+        "Customer Name": "Swedteam",
+        "Country": "Sweden"
+      }
+    ],
+    "marketDistributionChartDescription": "The 3D pie chart visually represents market share or some other form of distribution among various companies. The segments of the pie chart are labeled with some of the same company names found in the table. Prominent segments include Zara, HnM, Marks_Spencer, and LPP. Other labeled segments are GROUPE DYNAMITE, Gina Tricot, WE, Mango, C4, New Yorker, EL Corte Ingles, and Guess. There is also a segment labeled \"Others,\" indicating representation of multiple smaller entities. The 3D perspective of the pie chart makes it difficult to accurately compare the sizes of the segments."
+  },
+  "sourcing": {
+    "mainSources": {
+      "overseas": [
+        "Raymond",
+        "Arvind",
+        "Soorti",
+        "Azgard-9",
+        "Yangtze River",
+        "Lanyan"
+      ],
+      "local": [
+        "Square Denim",
+        "Mahmud Denim",
+        "Partex",
+        "Shasha Denim"
+      ]
+    },
+    "otherProductionDetails": "We are also doing around 10 % production with heavy twill, Canvas, Corduroy etc. which we are sourcing from China through our Hong Kong office including all type of trims.",
+    "chemicalSuppliers": [
+      "Garmon",
+      "Officiana+29",
+      "TLP",
+      "CHT",
+      "Dystar"
+    ],
+    "supplierPartnerships": "With all our suppliers, we have a very healthy long term partnership and doing business with them since beginning of the company."
+  },
+  "codeOfConduct": {
+    "introduction": "Tusuka and all our business partners will adhere to follow this Code of Conducts as explained below:",
+    "principles": {
+      "rightToChooseEmployment": "All workers have the right to choose their employment. There is no forced, bonded or involuntary, prison labour during or after employment and are free to leave their employer after reasonable notice as per law. We also employ the disable persons at our facilities.",
+      "discrimination": "Discrimination in employment, including recruitment, hiring, training, working conditions, job assignments, pay, benefits, promotions, discipline, termination, or retirement on the basis of gender, race, ethnicity, social origin, religion, age, disability, sexual orientation, national origin, or political opinion is prohibited.",
+      "forcedLabor": "Tusuka will not allow forced labor whether in any form including prison labor, indentured labor, or bonded labor. Overtime hours must be voluntary. Migrant workers should be provided with contracts, treatment, and wages that equal those of local workers.",
+      "childLabor": "No worker shall be employed under the age of 15, or under the age of completion of compulsory education, or under the minimum age for employment in the country of manufacture, whichever is greater. Tusuka hires the workers of 18 years of age.",
+      "workingHours": "Except in extraordinary business circumstances prescribed by law, workers shall not be required to work (inclusive of overtime) more than the legally prescribed limits or 60 hours, whichever is less, and one day off in every seven day period shall be pr Production facilities shall comply with applicable laws that entitle workers to vacation time, leave periods and holidays.",
+      "wages": "Wages are essential for meeting the basic needs of workers. Workers will be compensated by wages, including overtime pay and benefits which satisfy all applicable laws and regulations.",
+      "healthAndSafetyAndFireSafety": "All production and residential facilities must be structurally safe, and factory conditions must be consistent with all applicable laws, regulations, and Tusuka policy. All production and residential facilities must take all possible precautions to reduce the risk of fire, and have adequate plans to protect the lives of the workers in the event of a health & safety and fire.",
+      "environmentalAndChemicalAdherence": "Adherence to all local laws protecting the environment is required. Factories must conduct business so as to minimize the impact on the environment, including reducing waste and maximizing recycling initiatives. Facilities must ensure environmental management practices with respect to water and air quality, water and energy efficiency and waste reduction and also ensure the use of Eco friendly chemicals & machines for washing process.",
+      "harassment": "No worker shall be subject to any physical, sexual, psychological, or verbal harassment or abuse.",
+      "freedomOfAssociationAndCollectiveBargaining": "All workers must have the right to establish and join a legal organization of their own choosing, without being penalized for the non-violent exercise of these rights and to bargain collectively, without prior authorization from facilities.",
+      "grievancesAndSuggestions": "Facilities shall ensure that workers can independently submit their all grievances and suggestions throughout various steps, such as Grievance & suggestion BOX, Top Management Phone Number, must have available in all production floors.",
+      "antiBriberyAndAntiCorruption": "As per Tusuka policy, it will conduct business honorably and without the use of bribery or other corrupt practices. We are committed to achieving the highest standards of business integrity and compliance with our obligations.",
+      "antiGiftAndAntiEntertainment": "Tusuka strictly follows the Anti-gift & Anti-entertainment policy throughout it’s business practices.",
+      "factorySecurityAndCustomsCompliance": "Factories must implement minimum security criteria and best practices to help secure our supply chain from terrorist activity based on a set of recommendations developed as a result of the Customs-Trade Partnership Against Terrorism (C-TPAT) initiative with US importe Facilities must have the policy, procedures to ensure the integrity and security of processes relevant to the transportation, handling and storage of cargo in the supply chain. It should also have IT policy, procedures and standards in place for Security Survilance System."
+    }
+  },
+  "researchAndDevelopment": {
+    "denimFabricAndSustainabilityFocus": "In denim fabric it is very important and in the context of sustainable fabric options are selected from the range of Organic, Recycle and Eco dyeing. Also conventional fabric, from renowned denim mills all over the globe.",
+    "primeFunction": "Prime function of R&D is to develop and propose various wash alternatives or options to meet the brands requirements.",
+    "sustainablePracticesAndTechnologies": "Uses of Sustainable chemicals like stone free low temperature enzymes; Low Liquor ratio machines to reduce water uses; alternatives of corrosive chemicals like bleach and Potassium-per-manganite (PP) have provided us to get low EMI scores in development. Also use of advance machineries such as E-Flow, Magic Box, Lasers, Tonnello O-Free Ozone Machine has enhanced our sustainable approach in Laundry.",
+    "inHouseDesignAndDevelopment": "Based on the current trend, new styling, washes and embellishments are developed by our in-house design team and seasonal mood board is created. Quarterly the team is responsible to create new collections. In-house designers are responsible to suggested new designs following the current trends, and also develop samples to analyze the risk and ensure production feasibility.",
+    "sustainableTrimsFocus": "Our team is also focusing the sustainable Trims such recycle metal item, ecofriendly metal finishing, recycle polyester thread, recycled zipper Tapes to meet the current sustainable needs."
+  },
+  "safety": {
+    "workplaceSafety": {
+      "introduction": "Accident pains, safety doesn’t. Indeed, the workplace safety is of paramount importance to us.",
+      "responseToIncidents": "We acknowledge that in consequence of recent incidents of fire and building failures in Bangladesh, our alertness to workplace fire and building safety issues has sharpened. We have instantly taken few protective as well as ’creative destruction’ steps to attain a higher standard in this respect. We decided to close down our operations in all rented shared premises irrespective of the safety standards. We have re-visited the building, fire and electrical safety standards of all our existing facilities by local, and where necessary, international qualified agencies. As per expert recommendation, we are now upgrading them. We have also made sure that all our new facilities are using latest technology conforming to local and international fire and building safety codes."
+    },
+    "fireSafety": {
+      "electroMechanicalSystem": "The entire electro-mechanical system is designed in compliance with BNBC-2006 as well as relevant BS, IEC and ANSI standards.",
+      "materialSelection": {
+        "wiring": "Electrical wiring is done conforming to BNBC-2006 standards and wiring regulations of BS 7671:2008. Electrical cables used are fire resistant low smoke (FRLS) type which reduces the chances of fire originating from electrical short circuits and rodents. All five cables of a circuit are custom color coded that conforms to international color code standards which minimizes accidental electrocution of maintenance staff. Cables are also drawn through fire resistant, self-extinguishing and non-supportive to combustion, non-corrosive, and resistant to acids conduits to eliminate chances of fire originating from electrical system."
+      },
+      "panelBoards": "Highly efficient electrical panel boards manufactured in the UK conforming to BNBC-2006 and BS safety standards are installed. Earthings of electrical system and protection from lightning are designed conforming to BNBC-2006 and BS 7430:2011.",
+      "mechanicalComponent": "Entire HAVAC, steam and compressed air systems are designed conforming to BNBC-2006, BS, IEC, ASHERA, ANSI and ASTM standards so that chances of fire originating from the production floor is almost ni",
+      "fireAlarm": "High quality heat sensor and smoke detector alarm systems are maintained for early fire detection and warning.",
+      "fireExtinction": "Automatic sprinkler systems are installed to spray water in the fire zone upon sensing fire existence. Fire extinguishers are placed and maintained in recommended easily accessible places. In-built facilities in factory premises like gravity flow water tank, internal roadside fire hydrants for plug-in fire engine’s water hose are designed conforming to BNBC-2006, Part 4 and NFPA.",
+      "fireEscape": "All doorways, stairways, ramps and fire escape stairs are designed as a means of egress, conforming to BNBC-2006, Part 4 codes."
+    },
+    "securitySurveillanceSystem": {
+      "coverage": "Our All Manufacturing unit, Landry unit, Corporate Office all External area are protected with security Camera.",
+      "monitoringTeam": "We have Security Survilance Team for mornitoring security system. They are working for us 24×7."
+    },
+    "buildingSafety": {
+      "designStandards": "Buildings are designed to comply with the relevant BNBS as well as ASTM and ASHRAE standards by a team of highly qualified overseas and local consultants. They are designed to withstand a wind load of 210 km/hour. Buildings are also made using Seismic Coefficient of 0.08 in order to prevent collapse due to earthquakes."
+    },
+    "materialsAndQualityControl": "Key materials used for construction undergo rigorous testing at different stages. During the construction, random sampling is done and further tests are carried out to ensure that concretes are achieving the desired design strength. Post construction, SCHMIDT hammer test, concrete core sampling tests as well as ultra- sound test at key construction points are carried out to ensure that the desired results have been achieved",
+    "jobSafetyEnvironment": {
+      "focus": "Besides fire and building safety, we also stress the importance of health and other accident preventions at the work place. This encompasses creating the job environment in conjunction with the physical and physiological capabilities and limitations of the employees.",
+      "practices": "Varying tasks during the day and giving smaller breaks at certain intervals are some of the specifics. We also do our best to reduce sources of environmental stress – such as heat, glare, or noise."
+    }
+  },
+  "socialBenefit": {
+    "introduction": "Social, ethical and environmental impacts for our customers, employees and the world we’re all living in. We believe that the real business quality cannot be achieved unless considering responsibilities for its The social responsibility that we undertake is not about only compliance with the minimum legal requirements, it is about improving the living and working quality for all concerns by trying to achieve above the standards.",
+    "coreValuesAndCompetitiveAdvantage": "As an essential part of our core values, we naturally undertake the responsibility to help people aiming to improve their living and working quality. Nevertheless, our competitive advantage of corporate reliability also relies on our social and ethical behaviors including followings:",
+    "keyPractices": [
+      "Buyers’ code of conduct is strictly being followed in all areas with strong emphasis to human rights, occupational health and safety issues.",
+      "Adherence to all local and international compliances as regards to work environment, physical environment and welfare of work forces",
+      "In-house doctors provide round the clock medical services",
+      "Child care rooms for the working mothers.",
+      "Worker voices are being heard and considered through Workers Welfare Committee"
+    ]
+  }
+}
