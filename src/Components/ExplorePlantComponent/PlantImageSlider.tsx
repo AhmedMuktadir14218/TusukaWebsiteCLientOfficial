@@ -111,7 +111,7 @@ const PlantImageSlider: React.FC<PlantImageSliderProps> = ({ images, title }) =>
           </h2>
         </div> */}
       </div>
-
+          
       <style>{`
         .swiper-container {
           width: 100%;

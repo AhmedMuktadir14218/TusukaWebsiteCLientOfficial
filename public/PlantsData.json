@@ -14,7 +14,7 @@
         {
           "id": "tusuka-fashions",
           "name": "Tusuka Fashions Ltd.",
-          "shortDescription": "Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.",
+          "shortDescription": "Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.Located in Tongi, 7 km from the airport. Produces 6,500 pcs/day with 800 employees.",
           "images": ["/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 01.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd02.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 03.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 04.jpg", "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 05.jpg"],
           "details": {
             "employees": 800,
@@ -36,7 +36,8 @@
             "capacity": "21,500 pcs/day (5 pocket jeans)",
             "space": "195,000 SFT",
             "address": "Neelnagor, Konabari, Gazipur, Bangladesh.",
-            "distanceFromAirport": "40 minutes drive"
+            "distanceFromAirport": "40 minutes drive",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         },
         {
@@ -49,7 +50,8 @@
             "lines": 12,
             "capacity": "20,000 pcs/day",
             "space": "163,000 SFT",
-            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh.",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         },
         {
@@ -62,7 +64,8 @@
             "lines": 9,
             "capacity": "15,000 pcs/day (5 pocket jeans)",
             "space": "87,155 SFT",
-            "address": "490, Konabari, Gazipur, Bangladesh."
+            "address": "490, Konabari, Gazipur, Bangladesh.",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         },
         {
@@ -76,7 +79,8 @@
             "capacity": "9,800 pcs/day (5 pocket jeans)",
             "space": "60,690 SFT + 43,341 SFT sewing + 13,000 SFT cutting",
             "address": "Hazrat Shahjalal Road, Rajnagar Shataish, Tongi, Gazipur, Bangladesh.",
-            "distanceFromAirport": "14 KM"
+            "distanceFromAirport": "14 KM",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         },
         {
@@ -99,7 +103,8 @@
             },
             "space": "439,047 SFT",
             "address": "Hazrat Shahjalal Road, Rajnagar Shataish, Tongi, Gazipur, Bangladesh.",
-            "distanceFromAirport": "14 KM"
+            "distanceFromAirport": "14 KM",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         }
       ]
@@ -120,7 +125,8 @@
             "dryCapacity": "80,000 pcs/day",
             "space": "275,112 SFT",
             "machines": 1125,
-            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh.",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         },
         {
@@ -136,7 +142,8 @@
             "space": "92,355 SFT",
             "machines": 1084,
             "washMachines": 20,
-            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh.",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         }
       ]
@@ -156,7 +163,8 @@
             "capacity": "200,500 pcs/day",
             "space": "25,000 SFT",
             "machines": "Fully Automatic 72” width",
-            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh.",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         }
       ]
@@ -179,7 +187,8 @@
               "15 Color": "2 machines (both with Sequin Device)"
             },
             "space": "9,900 SFT",
-            "address": "Neelnagor, Konabari, Gazipur, Bangladesh."
+            "address": "Neelnagor, Konabari, Gazipur, Bangladesh.",
+            "locationEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7295.583284912257!2d90.397056!3d23.897006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c45c82024e89%3A0xd967c8106e6790d6!2sTusuka%20Fashions%20Ltd!5e0!3m2!1sen!2sus!4v1748777605908!5m2!1sen!2sus"
           }
         }
       ]
