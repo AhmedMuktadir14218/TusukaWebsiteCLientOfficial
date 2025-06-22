@@ -21,7 +21,7 @@ function Home() {
      <div>
         {/* <Navbar2></Navbar2> */}
         {/* <BannerHome></BannerHome> */}
-        <div className="h-screen flex flex-col">
+        <div className="  flex flex-col">
           {/* <HeroBanner /> */}
           <HeroBanner2 />
           <LogoMoving />

@@ -14,7 +14,7 @@ const OurStorySection: React.FC = () => {
 //   const truncatedText = growthMilestones.slice(0, 200) + "...";
 
   return (
-    <section className="py-8 bg-[#CDCDE3]">
+    <section className=" py-8 bg-[#CDCDE3]  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 

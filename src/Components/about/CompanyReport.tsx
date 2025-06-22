@@ -54,7 +54,7 @@ const CompanyReport = () => {
     { id: 3, label: 'Plant Size', value: '17,27,672 Sqft.', icon: <FaBuilding className="text-indigo-600" /> },
     { id: 4, label: 'Machines', value: '9,331 sets', icon: <FaCogs className="text-indigo-600" /> },
     { id: 5, label: 'Sewing Lines', value: '67 Lines', icon: <FaTshirt className="text-indigo-600" /> },
-    { id: 6, label: 'Daily Sewing Capacity', value: '100,000 PCs', icon: < GiSewingMachine className="text-indigo-600" /> }
+    { id: 6, label: 'Daily Sewing Capacity', value: '200,000 PCs', icon: < GiSewingMachine className="text-indigo-600" /> }
   ];
 
   const secondaryStats = [
@@ -70,7 +70,7 @@ const CompanyReport = () => {
     datasets: [
       {
         label: 'Daily Capacity (PCs)',
-        data: [100000, 90000, 105000],
+        data: [200000, 90000, 105000],
         backgroundColor: [
           'rgba(99, 102, 241, 0.8)',
           'rgba(59, 130, 246, 0.8)',
@@ -117,7 +117,7 @@ const CompanyReport = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-indigo-50">
+    <section className="  py-16 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-indigo-50">
       <div className="max-w-7xl mx-auto">
         {/* Animated Title */}
         <motion.div

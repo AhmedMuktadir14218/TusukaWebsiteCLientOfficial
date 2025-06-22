@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "name": "Md. Abdullah Al Mamun",
+    "title": "Chairman",
+    "image": "/src/assets/BoDirectors/Chairman.jpg",
+    "born": "15 March 1958, Dhaka, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Entrepreneur, Businessman and Investor",
+    "known_for": "Chairman and Managing Director of Delta Group",
+    "marital_status": "Married",
+    "spouse": "Fatema Begum",
+    "children": ["Rashed Mamun", "Sumaiya Mamun"],
+    "address": {
+      "email": "mamun.delta@example.com",
+      "house": "House 12/A, Road 5, Baridhara, Dhaka"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/abdullah-mamun",
+      "twitter": "https://twitter.com/abdullah_mamun",
+      "facebook": "https://facebook.com/abdullah.mamun"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group.Md. Abdullah Al Mamun is a leading figure in Bangladesh’s private sector, known for his strategic vision and transformative leadership at Delta Group."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "Born and raised in Dhaka, he began his career trading textiles in the late 1970s before founding Delta Group in 1985, expanding into manufacturing, energy, and real estate."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Apart from his role at Delta Group, he serves on the boards of several financial institutions and chairs the National Chamber of Commerce’s export committee."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "He established the Mamun Education Foundation in 2002, providing scholarships to underprivileged students in rural Bangladesh."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Recipient of the Lifetime Achievement Award in Industry by the Bangladesh Business Forum (2018) and honored with the National Export Excellence Medal in 2015."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Shahida Rahman",
+    "title": "Vice Chairperson",
+    "image": "/src/assets/BoDirectors/VC.jpg",
+    "born": "22 July 1962, Sylhet, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Industrialist and Philanthropist",
+    "known_for": "Founder & Chairperson of GreenTech Industries",
+    "marital_status": "Married",
+    "spouse": "Kamal Uddin Ahmed",
+    "children": ["Nabila Ahmed", "Aminul Ahmed", "Farhana Ahmed"],
+    "address": {
+      "email": "shahida.greentech@example.com",
+      "house": "Plot 27, Zindabazar, Sylhet"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/shahida-rahman",
+      "twitter": "https://twitter.com/shahida_rahman",
+      "facebook": "https://facebook.com/shahida.rahman"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Shahida Rahman is recognized for pioneering sustainable manufacturing in Bangladesh through GreenTech Industries."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "After completing her MBA in London, she returned home in 1988 to launch a biodegradable packaging line, later diversifying into renewable energy."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "She chairs the Bangladesh Renewable Energy Association and sits on the advisory council of the International Green Forum."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Founder of the Green Future Trust, supporting environmental education programs across the country since 2010."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Awarded the Eco-Innovator Prize by the Global Sustainability Council (2019) and the National Women in Industry Award (2016)."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Arifur Rahman",
+    "title": "Managing Director",
+    "image": "/src/assets/BoDirectors/2.jpg",
+    "born": "05 December 1954, Chittagong, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Businessman and Exporter",
+    "known_for": "Chairman of SeaLink Exports Ltd.",
+    "marital_status": "Married",
+    "spouse": "Sultana Rahman",
+    "children": ["Jannat Rahman", "Riyad Rahman"],
+    "address": {
+      "email": "arifur.sealink@example.com",
+      "house": "Sector 3/A, Halishahar, Chittagong"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/arifur-rahman",
+      "twitter": "https://twitter.com/arifur_rahman",
+      "facebook": "https://facebook.com/arifur.rahman"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Arifur Rahman leads SeaLink Exports, one of Bangladesh’s top seafood exporters, with a focus on quality and international standards."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "He started as a small fish trader in the 1970s, scaling operations to include processing plants and cold-chain logistics by 1995."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Serves as Vice President of the Bangladesh Fisheries Association and advisor to the Port Authority on export regulations."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Donates annually to coastal community development projects and runs vocational training centers for youth in Chittagong."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Honored with the Maritime Excellence Award (2014) and the Export Leadership Medal by the Ministry of Commerce (2011)."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Nusrat Jahan",
+    "title": "Director",
+    "image": "/src/assets/BoDirectors/8.jpg",
+    "born": "09 September 1970, Khulna, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Corporate Director",
+    "known_for": "Board Director at Horizon Textiles",
+    "marital_status": "Married",
+    "spouse": "Habibullah Khan",
+    "children": ["Mahi Khan"],
+    "address": {
+      "email": "nusrat.horizon@example.com",
+      "house": "House 8, Khalishpur Road, Khulna"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/nusrat-jahan",
+      "twitter": "https://twitter.com/nusrat_jahan",
+      "facebook": "https://facebook.com/nusrat.jahan"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Nusrat Jahan is a seasoned strategist on the Horizon Textiles board, driving innovation in fabric technology."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "Graduated in Economics and began her career in finance before shifting to textile manufacturing in 2000."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Also chairs the Audit Committee at Horizon and mentors startups through the Textile Innovation Hub."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Supports the Khulna Women’s Empowerment Fund, focusing on micro-loans and skills training for artisans."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Received the Corporate Governance Award (2017) and featured in ‘Top 50 Women Leaders’ by Industry Today (2019)."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Rezaul Karim",
+    "title": "Director",
+    "image": "/src/assets/BoDirectors/1.jpg",
+    "born": "30 November 1965, Rajshahi, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Investor and Board Member",
+    "known_for": "Director at Bengal Pharma Ltd.",
+    "marital_status": "Married",
+    "spouse": "Majeda Karim",
+    "children": ["Tania Karim", "Zidan Karim"],
+    "address": {
+      "email": "rezaul.bengalpharma@example.com",
+      "house": "Sector 10, Motihar, Rajshahi"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/rezaul-karim",
+      "twitter": "https://twitter.com/rezaul_karim",
+      "facebook": "https://facebook.com/rezaul.karim"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Rezaul Karim brings financial expertise to Bengal Pharma’s board, overseeing expansion into ASEAN markets."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "Trained as a chartered accountant in London, he returned to Bangladesh in 1992 to join a leading audit firm before moving into pharma."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Also sits on the Investment Committee of the Bangladesh Securities Exchange and advises on healthcare finance."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Founded the Karim Health Trust, funding rural clinics and mobile health units since 2013."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Honored with the Finance Leadership Award (2018) and the Healthcare Investor Medal (2020)."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Farid Amin",
+    "title": "Director",
+    "image": "/src/assets/BoDirectors/3.jpg",
+    "born": "18 May 1968, Barisal, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Financial Analyst and Director",
+    "known_for": "Director of Finance at Apex Bank",
+    "marital_status": "Married",
+    "spouse": "Nazrul Islam",
+    "children": ["Shahriar Islam"],
+    "address": {
+      "email": "farida.apexbank@example.com",
+      "house": "House 22, VIP Road, Barisal"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/farida-yasmin",
+      "twitter": "https://twitter.com/farida_yasmin",
+      "facebook": "https://facebook.com/farida.yasmin"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Farida Yasmin is a veteran banker whose insights have strengthened Apex Bank’s financial controls."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "Started as a credit officer in 1990, rising through risk management and treasury to become Finance Director in 2015."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Member of the Central Bank’s Financial Stability Council and advisor to the National Investment Board."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Champion of the Women in Finance Fellowship, mentoring young women in rural Bangladesh since 2016."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Received the Banking Excellence Award (2017) and honored as Finance Leader of the Year (2021)."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Touhid Hossain",
+    "title": "Director",
+    "image": "/src/assets/BoDirectors/4.jpg",
+    "born": "02 February 1972, Rangpur, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Logistics Specialist",
+    "known_for": "Director at CargoLink Ltd.",
+    "marital_status": "Married",
+    "spouse": "Samina Hossain",
+    "children": ["Noor Hossain", "Yasmin Hossain", "Ehsan Hossain"],
+    "address": {
+      "email": "touhid.cargolink@example.com",
+      "house": "House 5, Shyamganj, Rangpur"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/touhid-hossain",
+      "twitter": "https://twitter.com/touhid_hossain",
+      "facebook": "https://facebook.com/touhid.hossain"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Touhid Hossain oversees CargoLink’s nationwide distribution network, ensuring timely and cost-effective delivery."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "Graduated in Industrial Engineering and joined a global courier firm before co-founding CargoLink in 2003."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Vice Chair of the National Shippers Council and member of the Transport Authority’s advisory panel."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Supports the Rangpur Skills Initiative, offering free logistics and warehousing training to unemployed youth."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Awarded the Logistics Innovation Medal (2018) and recognized as Entrepreneur of the Year by Transport Today (2020)."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Lobina Sultana",
+    "title": "Director",
+    "image": "/src/assets/BoDirectors/9.jpg",
+    "born": "27 August 1975, Mymensingh, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Marketing Executive",
+    "known_for": "Director of Marketing at Nova Foods",
+    "marital_status": "Married",
+    "spouse": "Farooq Ahmed",
+    "children": ["Rafi Ahmed"],
+    "address": {
+      "email": "lobina.novafoods@example.com",
+      "house": "House 14, Charpara, Mymensingh"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/lobina-sultana",
+      "twitter": "https://twitter.com/lobina_sultana",
+      "facebook": "https://facebook.com/lobina.sultana"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Lobina Sultana leads brand strategy for Nova Foods, driving substantial market share growth in dairy products."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "Started in advertising in the 1990s, joining Nova Foods in 2005 and revolutionizing their digital marketing approach."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Chair of the Marketing Professionals Forum and guest lecturer at Dhaka University Business School."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Initiated the Nova Food Bank Project, distributing meals to underprivileged communities during Ramadan since 2012."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Winner of the Marketer of the Year Award (2019) and the Digital Innovator Prize (2021)."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Kamrul Hasan",
+    "title": "Advisor",
+    "image": "/src/assets/BoDirectors/11.jpg",
+    "born": "11 January 1960, Bogura, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Islam",
+    "occupation": "Technology Entrepreneur",
+    "known_for": "Director at TechNova Solutions",
+    "marital_status": "Married",
+    "spouse": "Roksana Hasan",
+    "children": ["Shakib Hasan", "Mouna Hasan"],
+    "address": {
+      "email": "kamrul.technova@example.com",
+      "house": "House 9, Newton Road, Bogura"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/kamrul-hasan",
+      "twitter": "https://twitter.com/kamrul_hasan",
+      "facebook": "https://facebook.com/kamrul.hasan"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Kamrul Hasan is a pioneer in Bangladesh’s IT sector, co-founding TechNova Solutions to deliver enterprise software."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "After earning a computer science degree in 1982, he worked in Silicon Valley before returning home in 1990 to launch his first startup."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Advisor to the National ICT Task Force and board member of the Bangladesh Software Exporters Association."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Established the Code for Future initiative, teaching coding skills to rural students at no cost since 2015."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Recipient of the IT Visionary Award (2016) and the National Innovation Medal (2018)."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Ajay Chakraborty",
+    "title": "Advisor",
+    "image": "/src/assets/BoDirectors/10.jpg",
+    "born": "14 April 1969, Jessore, Bangladesh",
+    "nationality": "Bangladeshi",
+    "religion": "Hinduism",
+    "occupation": "Corporate Strategist",
+    "known_for": "Board Director at Vision Telecom",
+    "marital_status": "Married",
+    "spouse": "Anik Chakraborty",
+    "children": ["Priya Chakraborty", "Rohan Chakraborty"],
+    "address": {
+      "email": "trishna.vision@example.com",
+      "house": "House 3, College Road, Jessore"
+    },
+    "social_media": {
+      "linkedin": "https://linkedin.com/in/trishna-chakraborty",
+      "twitter": "https://twitter.com/trishna_chakra",
+      "facebook": "https://facebook.com/trishna.chakraborty"
+    },
+    "description": [
+      {
+        "section": "Introduction",
+        "content": "Trishna Chakraborty is instrumental in shaping Vision Telecom’s long-term strategy and market expansion plans."
+      },
+      {
+        "section": "Early life and business career",
+        "content": "With a background in economics, she joined a global consultancy before moving into the telecom sector in 2000."
+      },
+      {
+        "section": "Professional Positions",
+        "content": "Serves on the national telecom regulatory advisory council and mentors startups in digital communications."
+      },
+      {
+        "section": "Philanthropy",
+        "content": "Leads the TechGirls initiative, empowering young women through scholarships and mentorship in STEM fields."
+      },
+      {
+        "section": "Awards and Credentials",
+        "content": "Honored with the Strategy Excellence Award (2017) and recognized among ‘Top 100 Global Female Leaders’ (2020)."
+      }
+    ]
+  }
+]

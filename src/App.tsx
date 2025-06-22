@@ -20,6 +20,7 @@ import MVC from "./Pages/About/MVC";
 import Laboratory from "./Pages/About/Laboratory";
 import ExplorePlants from "./Pages/ExplorePlants/ExplorePlants";
 import PlantDetails from "./Pages/ExplorePlants/PlantDetails";
+import EventsMedia from "./Pages/EventsMedia/EventsMedia";
 
 function App() {
   return (
@@ -47,7 +48,8 @@ function App() {
           <Route path="/quality" element={<Quality></Quality>} />
           <Route path="/mvc" element={<MVC></MVC>} />
           <Route path="/laboratory" element={<Laboratory></Laboratory>} />
-        
+          <Route path="/eventsmedia" element={<EventsMedia></EventsMedia>} />
+
       <Route path="/plants" element={<ExplorePlants />} />
         <Route path="/plants/:plantId" element={<PlantDetails />} /> 
         

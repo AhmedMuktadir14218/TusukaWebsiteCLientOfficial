@@ -132,7 +132,7 @@ const CorePointComponent: React.FC = () => {
               return (
                 <React.Fragment key={index}>
                   <motion.div
-                    className="bg-[#ffffff] p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start relative"
+                    className="bg-[#ffffff] p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start relative "
                     variants={{ 
                       hidden: { opacity: 0, y: 50 }, 
                       visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } } 

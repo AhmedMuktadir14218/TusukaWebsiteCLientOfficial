@@ -4,7 +4,7 @@ import binoxLogo from '../../assets/Tusuka_Logo_tr.png'; // Assuming your footer
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#f2f2f2] py-16 text-gray-700">
+    <footer className="bg-gradient-to-r from-blue-50 to-indigo-50 py-16 text-gray-700">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
 
         {/* Column 1: Logo and Follow Us */}

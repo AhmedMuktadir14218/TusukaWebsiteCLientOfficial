@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay, FaPause, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import banVideo from '../assets/TusukaBanner.mp4';
-import LogoMoving from './LogoMoving';
-import { Link } from 'react-router-dom';
+// import LogoMoving from './LogoMoving';
+// import { Link } from 'react-router-dom';
 
 const videoUrl = banVideo;
 
@@ -40,11 +40,12 @@ const HeroBanner2: React.FC = () => {
 
   return (
     <div>
-    <section className="relative  w-full h-[85vh] overflow-hidden">
+    <section className="relative  w-full lg:h-[85vh]  md:h-[45vh] sm:h-[38vh] overflow-hidden">
       {/* Background Video */}
       <video
         ref={backgroundVideoRef}
-        className="absolute inset-0 w-full h-full object-cover object-center z-0 opacity-100 blur-[2px] brightness-50"
+        // className="absolute inset-0 w-full h-full object-cover object-center z-0 opacity-100 blur-[2px] brightness-50"
+        className="absolute inset-0 w-full h-full object-cover object-center z-0 "
         src={videoUrl}
         loop
       >
@@ -68,7 +69,7 @@ const HeroBanner2: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              From Bangladesh to the World – <br />Quality You Can Count On.
+              {/* From Bangladesh to the World – <br />Quality You Can Count On. */}
             </motion.h2>
 
             {/* Paragraph */}
@@ -78,7 +79,7 @@ const HeroBanner2: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Tusuka: Engineered for Efficiency, Designed for the Future.
+              {/* Tusuka: Engineered for Efficiency, Designed for the Future. */}
             </motion.p>
 
             {/* Call to Action Button */}
@@ -87,13 +88,13 @@ const HeroBanner2: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
             >
-          <Link to="/contact-us" className="inline">     <button
+          {/* <Link to="/contact-us" className="inline">     <button
                 className="bg-[#040270] text-[#fef2ed] py-2 px-6 rounded-full font-bold hover:bg-blue-800 transition-colors"
                 onClick={() => setIsModalOpen(true)}
               > 
              
                 Learn More
-              </button></Link> 
+              </button></Link>  */}
             </motion.div>
           </motion.div>
 
@@ -127,7 +128,7 @@ const HeroBanner2: React.FC = () => {
 
               {/* Main Button */}
               <div 
-                className="relative z-10 bg-[#040270] opacity-50 text-white p-6 md:p-8 lg:p-10 rounded-full 
+                className="relative z-10 bg-[#040270] opacity-50 text-gray-200 p-6 md:p-8 lg:p-10 rounded-full 
                 shadow-2xl group-hover:shadow-[#040270]/50 transition-all duration-300"
               >
                 {isPlayingBackgroundVideo ? (
@@ -199,8 +200,12 @@ const HeroBanner2: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
-    <LogoMoving></LogoMoving>
+
+
+   {/* <LogoMoving></LogoMoving>  */}
+   
+   </section>
+    
     </div>
   );
 };

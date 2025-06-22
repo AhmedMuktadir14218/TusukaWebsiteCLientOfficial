@@ -142,7 +142,7 @@ const PageHeaderComponent: React.FC<PageHeaderProps> = ({
   return (
     <div className={`relative ${className}`}>
       {/* Image Slider */}
-      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"> {/* Responsive heights */}
+      <div className="relative w-full h-[50vh] sm:h-[35vh] md:h-[55vh] lg:h-[70vh]"> {/* Responsive heights */}
         <Swiper
           modules={[EffectFade, Autoplay, Pagination]}
           effect="fade"

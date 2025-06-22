@@ -135,7 +135,7 @@ function Laboratory() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300 animate-slide-up" // Animation
+                className="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-2  animate-slide-up" // Animation
                 style={{ animationDelay: `${index * 100 + 100}ms` }} // Staggered animation
               >
                 <div className="text-4xl sm:text-5xl text-blue-600 mb-4 transform group-hover:scale-110 transition-transform duration-300"> {/* Icon hover animation */}

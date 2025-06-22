@@ -77,7 +77,7 @@ const logos = [
 
 const LogoMoving: React.FC = () => {
   return (
-    <section className="w-full h-[15vh]  bg-white overflow-hidden relative">
+    <section className="w-full   h-[15vh]    bg-white overflow-hidden relative ">
       <div className="container mx-auto flex items-center justify-start border-l border-r border-gray-300 py-6 px-4 md:px-8">
         <div className="w-1/4 pr-8 hidden md:block"> {/* Left text section */}
           <div className="border-l-4 border-red-600 pl-4">

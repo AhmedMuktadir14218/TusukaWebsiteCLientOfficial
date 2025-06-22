@@ -20,7 +20,7 @@ export const BaseModal: React.FC<ModalProps> = ({ isOpen, title, onClose, childr
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-75 backdrop-blur-sm  p-4 hide-scrollbar"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-75 backdrop-blur-sm  p-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export const BaseModal: React.FC<ModalProps> = ({ isOpen, title, onClose, childr
 export const MarketModal: React.FC<{ data: any; isOpen: boolean; onClose: () => void }> = ({ data, isOpen, onClose }) => {
   return (
     <BaseModal isOpen={isOpen} title="Our Market" onClose={onClose}>
-      <div className="space-y-6 hidden-scrollbar">
+      <div className="space-y-6 hide-scrollbar">
         <div>
           <h3 className="text-xl font-semibold mb-4 text-blue-800">Customer Table</h3>
           <div className="overflow-x-auto">

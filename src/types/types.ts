@@ -1,4 +1,5 @@
 export interface ExploreHeader {
+  cta_text: ReactNode;
   title: string;
   description: string;
   ctaText: string;
@@ -23,7 +24,7 @@ export interface PlantDetails {
 export interface Plant {
   id: string;
   name: string;
-  shortDescription: string;
+  short_description: string;
   images: string[];
   details: PlantDetails;
 }

@@ -10,4 +10,7 @@ declare module 'swiper/css/navigation';
 declare module 'swiper/css/autoplay';
 declare module 'swiper/css/effect-coverflow';
 declare module 'swiper/css/effect-fade';
+declare module'swiper/css/free-mode';
+declare module 'swiper/css/navigation';
+declare module 'swiper/css/thumbs';
 // Add any other Swiper CSS modules you might import, e.g., 'swiper/css/effect-coverflow'

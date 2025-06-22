@@ -25,9 +25,9 @@ const ExploreHeader: React.FC<Props> = ({ header }) => {
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
             {header.description}
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full text-lg font-semibold transition-colors duration-300">
-            {header.ctaText}
-          </button>
+          {/* <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full text-lg font-semibold transition-colors duration-300">
+            {header.cta_text}
+          </button> */}
         </div>
       </div>
     </div>

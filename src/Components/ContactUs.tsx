@@ -46,10 +46,10 @@ const ContactUs: React.FC = () => {
     }
   };
   return (
-    <section className="relative w-full py-20 overflow-hidden">
+    <section className="relative w-full py-20 overflow-hidden ">
       {/* Background Section */}
       <motion.div
-        className="container mx-auto px-4 text-center mb-12"
+        className="container mx-auto px-4  text-center mb-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -88,7 +88,7 @@ const ContactUs: React.FC = () => {
                       w-full md:w-[400px] lg:w-[450px]
                       mt-4 md:mt-0
                       md:right-0 md:top-1/2 md:-translate-y-1/2
-                      bg-[#8DCF9B] text-white 
+                      bg-[#C7CDE6] text-[#040270] 
                       p-6 sm:p-8 lg:p-10
                       rounded-lg shadow-xl"
             initial={{ opacity: 0, x: 100 }}
@@ -152,10 +152,10 @@ const ContactUs: React.FC = () => {
         </div>
       </div>
 
-         <section className="relative w-full py-20 overflow-hidden">
+         <section className="relative w-full pt-8 mt-12 overflow-hidden bg-gradient-to-r from-blue-50 to-indigo-50">
       {/* Header */}
       <motion.div
-        className="container mx-auto px-4 text-center mb-12"
+        className="container mx-auto px-4 text-center mb-12 "
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -170,7 +170,7 @@ const ContactUs: React.FC = () => {
       {/* … your existing map + contact‐info code … */}
 
       {/* Animated Form Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div className="container mx-auto  px-4 sm:px-6 lg:px-8 mt-16">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Side Text */}
           <motion.div
