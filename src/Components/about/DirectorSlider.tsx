@@ -22,17 +22,37 @@ export interface RawDirector {
 const DirectorSlider: React.FC = () => {
   const [directors, setDirectors] = useState<RawDirector[]>([]);
   const [loading, setLoading] = useState(true);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
+  // useEffect(() => {
+  //   axios
+  //     .get('http://localhost:8000/api/directors')
+  //     .then(res => {
+  //       console.log('API response.data.data:', res.data.data);
+  //       setDirectors(res.data.data);
+  //     })
+  //     .catch(err => console.error('Error fetching directors:', err))
+  //     .finally(() => setLoading(false));
+  // }, []);
 
   useEffect(() => {
+    // Ensure the API_BASE_URL is available
+    if (!API_BASE_URL) {
+      console.error('REACT_APP_API_BASE_URL is not defined in the environment variables.');
+      setLoading(false);
+      return;
+    }
+
     axios
-      .get('http://localhost:8000/api/directors')
+      .get(`${API_BASE_URL}/api/directors`) // Use the environment variable here
       .then(res => {
         console.log('API response.data.data:', res.data.data);
         setDirectors(res.data.data);
       })
       .catch(err => console.error('Error fetching directors:', err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [API_BASE_URL]); // Add API_BASE_URL to the dependency array
+
 
   if (loading) {
     return (

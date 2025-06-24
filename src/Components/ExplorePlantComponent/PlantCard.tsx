@@ -28,16 +28,46 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [thumbnail, setThumbnail] = useState<string | null>(null);
 
+  // useEffect(() => {
+  //   // fetch the detailed plant endpoint to get its images
+  //   fetch(`http://localhost:8000/api/explore-plants/plants/${plant.id}`)
+  //     .then(res => {
+  //       if (!res.ok) throw new Error('Could not load plant images');
+  //       return res.json() as Promise<DetailedPlantResponse>;
+  //     })
+  //     .then(json => {
+  //       // build full URLs
+  //       const urls = json.plant_images.map(pi => `http://localhost:8000/${pi.image_path}`);
+  //       // take the last one (or first, if you prefer)
+  //       if (urls.length > 0) {
+  //         setThumbnail(urls[urls.length - 1]);
+  //       }
+  //     })
+  //     .catch(err => {
+  //       console.error('Error loading thumbnail:', err);
+  //       setThumbnail(null);
+  //     });
+  // }, [plant.id]);
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
   useEffect(() => {
+    // Ensure the API_BASE_URL is available
+    if (!API_BASE_URL) {
+      console.error('VITE_API_BASE_URL is not defined in the environment variables.');
+      setThumbnail(null); // Or handle this error more gracefully
+      return;
+    }
+
     // fetch the detailed plant endpoint to get its images
-    fetch(`http://localhost:8000/api/explore-plants/plants/${plant.id}`)
+    fetch(`${API_BASE_URL}/api/explore-plants/plants/${plant.id}`) // Use the environment variable
       .then(res => {
         if (!res.ok) throw new Error('Could not load plant images');
         return res.json() as Promise<DetailedPlantResponse>;
       })
       .then(json => {
         // build full URLs
-        const urls = json.plant_images.map(pi => `http://localhost:8000/${pi.image_path}`);
+        const urls = json.plant_images.map(pi => `${API_BASE_URL}/${pi.image_path}`); // Use the environment variable
         // take the last one (or first, if you prefer)
         if (urls.length > 0) {
           setThumbnail(urls[urls.length - 1]);
@@ -47,7 +77,8 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
         console.error('Error loading thumbnail:', err);
         setThumbnail(null);
       });
-  }, [plant.id]);
+  }, [plant.id, API_BASE_URL]); // Add API_BASE_URL to dependency array
+
 
   return (
     <>

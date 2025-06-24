@@ -602,17 +602,17 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [images, setImages] = useState<string[]>(plant.images);
   const [details, setDetails] = useState<PlantDetails>(plant.details);
-
+ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
   // 1️⃣ Fetch images + normalize details when modal opens
   useEffect(() => {
-    fetch(`http://localhost:8000/api/explore-plants/plants/${plant.id}`)
+    fetch(`${API_BASE_URL}/api/explore-plants/plants/${plant.id}`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch plant details');
         return res.json() as Promise<DetailedPlantResponse>;
       })
       .then(json => {
         // build full URLs for each image
-        setImages(json.plant_images.map(pi => `http://localhost:8000/${pi.image_path}`));
+        setImages(json.plant_images.map(pi => `${API_BASE_URL}/${pi.image_path}`));
         // normalize detail keys to camelCase
         setDetails(
           Object.fromEntries(

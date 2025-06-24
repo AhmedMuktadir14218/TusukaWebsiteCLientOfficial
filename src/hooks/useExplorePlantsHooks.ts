@@ -76,9 +76,10 @@ const transform = (raw: RawPlantsData): PlantsData => ({
 
 export const useExplorePlants = (): PlantsData | null => {
   const [data, setData] = useState<PlantsData | null>(null);
-
+ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
   useEffect(() => {
-    fetch('http://localhost:8000/api/explore-plants')
+    // fetch('http://localhost:8000/api/explore-plants')
+    fetch(`${API_BASE_URL}/api/explore-plants`)
       .then(res => res.json())
       .then((raw: RawPlantsData) => setData(transform(raw)))
       .catch(err => console.error('Error fetching plant data:', err));

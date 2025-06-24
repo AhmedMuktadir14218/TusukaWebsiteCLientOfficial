@@ -42,15 +42,18 @@ const Navbar: React.FC<NavbarProps> = () => {
       ],
     },
   
-    {
-      label: ( <>Explore Plants <IoMdArrowDropdown className="inline" /> </>),
-      subItems: [
-        { label: <Link to="/plants" className="inline">Manufacturing Units</Link>   }, 
-        { label: <Link to="/plants" className="inline">Laundry Unit</Link>   }, 
-        { label: <Link to="/plants" className="inline">Packaging Unit</Link>   }, 
-        { label: <Link to="/plants" className="inline">Embroidery Unit</Link>   }, 
+    // {
+    //   label: ( <> <Link to="/plants"> Explore Plants <IoMdArrowDropdown className="inline" /> </Link></>),
+    //   subItems: [
+    //     { label: <Link to="/plants" className="inline">Manufacturing Units</Link>   }, 
+    //     { label: <Link to="/plants" className="inline">Laundry Unit</Link>   }, 
+    //     { label: <Link to="/plants" className="inline">Packaging Unit</Link>   }, 
+    //     { label: <Link to="/plants" className="inline">Embroidery Unit</Link>   }, 
         
-      ],
+    //   ],
+    // },
+    {
+      label: ( <> <Link to="/plants"> Explore Plants</Link></>),   
     },
 
 
