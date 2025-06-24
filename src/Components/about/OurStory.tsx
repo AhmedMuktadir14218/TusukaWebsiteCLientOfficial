@@ -2,15 +2,29 @@ import React, { useState } from 'react';
 import { useApiData } from '../../hooks/useApiData';
 import { motion } from 'framer-motion';
 
+// Default fallback data
+const defaultData = {
+  title: "Our Story",
+  storyTitle: "Our Story",
+  StoryVideoUrl: "https://www.youtube.com/embed/3ZHHlM9bg14?autoplay=1&loop=1&playlist=3ZHHlM9bg14",
+  foundingVision:
+    "Tusuka Group was established in 1995, and by 1997, it ventured into the garment business as a buying house named 'texel', initially focusing solely on the woven market. Recognizing the global demand for denim, Tusuka shifted its focus in 2001 to specialize in denim/jeans manufacturing.",
+  growthMilestones:
+    "Starting with just 2 sewing lines and a small laundry in 2001, Tusuka expanded significantly. After a year of management recognizing the need for a large-world class in-house laundry section, the washing capacity and new sewing lines were expanded. Now, Tusuka boasts a washing capacity of 45,000 pieces per day and a total of 34 sewing lines dedicated to denim garment making.",
+  currentStance:
+    "Today, Tusuka is dedicated to excellence in merchandising, product development, production, and logistics. The company has earned a reputation throughout the global apparel industry as one of the foremost factories in Bangladesh, recognized for its commitment to quality, timely delivery, and total value. Through an extensive sourcing network, Tusuka effectively procures the best materials and delivers high-quality products and superb service to compete in the emerging market. They utilize progressive tools such as CAD-CAM and have a management team with extensive understanding of Western companies' needs and Eastern production capabilities, excelling in overseas sourcing.",
+};
+
+
+
 const OurStorySection: React.FC = () => {
-  const { data, loading, error } = useApiData();
+ const { storyData, loading, error } = useApiData();
   const [showFullText, setShowFullText] = useState(false);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (!data) return null;
+  // Decide which data to render: API data once loaded, otherwise default
+  const data = !loading && storyData ? storyData : defaultData;
+  const { title, storyTitle, StoryVideoUrl, foundingVision, growthMilestones, currentStance } = data;
 
-  const { title, foundingVision, growthMilestones, currentStance } = data.ourStory;
 //   const truncatedText = growthMilestones.slice(0, 200) + "...";
 
   return (
@@ -54,7 +68,7 @@ const OurStorySection: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Story</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 ml-4">{storyTitle}</h3>
                 </div>
 
                 <div className="prose prose-lg max-w-none">
@@ -132,7 +146,7 @@ const OurStorySection: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-[#EFF5FF] p-2">
               <div className="relative rounded-xl overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/3ZHHlM9bg14?si=DHa1eLgA2_cJ8x_a&autoplay=1&mute=1&loop=1&playlist=3ZHHlM9bg14"
+                  src={StoryVideoUrl}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -1,5 +1,5 @@
-// src/Components/about/DirectorSlider.tsx
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
@@ -13,7 +13,7 @@ export interface RawDirector {
   id: number;
   name: string;
   title: string;
-  image: string;
+  image: string; // e.g. "uploads/directors/xxx.jpg"
   address: { email: string; house: string };
   social_media: { linkedin?: string; twitter?: string; facebook?: string; github?: string };
   description: { section: string; content: string }[];
@@ -21,13 +21,34 @@ export interface RawDirector {
 
 const DirectorSlider: React.FC = () => {
   const [directors, setDirectors] = useState<RawDirector[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/DirectorsData.json')
-      .then(res => res.json())
-      .then(setDirectors)
-      .catch(console.error);
+    axios
+      .get('http://localhost:8000/api/directors')
+      .then(res => {
+        console.log('API response.data.data:', res.data.data);
+        setDirectors(res.data.data);
+      })
+      .catch(err => console.error('Error fetching directors:', err))
+      .finally(() => setLoading(false));
   }, []);
+
+  if (loading) {
+    return (
+      <div className="py-12 flex items-center justify-center">
+        <p className="text-lg text-gray-600">Loading directors…</p>
+      </div>
+    );
+  }
+
+  if (!directors.length) {
+    return (
+      <div className="py-12 flex items-center justify-center">
+        <p className="text-lg text-gray-600">No directors found.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="py-12 bg-gradient-to-r from-blue-50 to-indigo-50 min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -35,8 +56,14 @@ const DirectorSlider: React.FC = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-12 drop-shadow-lg">
           Meet Our Leaders
         </h2>
+
+        {/* 
+          key={directors.length} forces Swiper to re-init when data arrives,
+          preventing the “hang until click” issue 
+        */}
         <Swiper
-          effect={'coverflow'}
+          key={directors.length}
+          effect="coverflow"
           grabCursor
           centeredSlides
           loop
@@ -48,9 +75,9 @@ const DirectorSlider: React.FC = () => {
           modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
           className="mySwiper w-full h-full pb-16"
           breakpoints={{
-            0:    { slidesPerView:1,   spaceBetween:20, coverflowEffect:{ depth:0, modifier:1, slideShadows:false } },
-            768:  { slidesPerView:1.6, spaceBetween:30 },
-            1280: { slidesPerView:1.8, spaceBetween:40 },
+            0:    { slidesPerView: 1,   spaceBetween: 20, coverflowEffect:{ depth:0, modifier:1, slideShadows:false } },
+            768:  { slidesPerView: 1.6, spaceBetween: 30 },
+            1280: { slidesPerView: 1.8, spaceBetween: 40 },
           }}
         >
           {directors.map(d => (

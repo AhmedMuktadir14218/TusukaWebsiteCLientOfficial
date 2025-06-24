@@ -1,4 +1,3 @@
-// src/Components/about/DirectorCard.tsx
 import React, { useState } from 'react';
 import {
   FaLinkedin,
@@ -18,7 +17,22 @@ interface Props {
   director: RawDirector;
 }
 
+const BACKEND_URL = 'http://127.0.0.1:8000';
+
 const DirectorCard: React.FC<Props> = ({ director }) => {
+  // Build full image URL, injecting "directors/" if needed, and log for debugging
+  const fullImageUrl = (path: string) => {
+    console.log('Raw director.image:', path);
+    // If path already contains "uploads/directors/", leave it.
+    // Otherwise replace "uploads/" ➔ "uploads/directors/"
+    const fixedPath = path.includes('uploads/directors/')
+      ? path
+      : path.replace('uploads/', 'uploads/directors/');
+    const url = `${BACKEND_URL}/${fixedPath}`;
+    console.log('Computed fullImageUrl:', url);
+    return url;
+  };
+
   const fullIntro =
     director.description.find(d => d.section === 'Introduction')?.content || '';
   const PREVIEW_LENGTH = 300;
@@ -40,11 +54,11 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent z-0" />
 
           <div className="grid grid-cols-1 md:grid-cols-10 relative z-10">
-            {/* Left: Fixed-size image container */}
+            {/* Left: Image */}
             <div className="md:col-span-4 relative">
               <div className="relative h-[300px] md:h-[500px] overflow-hidden">
                 <img
-                  src={director.image}
+                  src={fullImageUrl(director.image)}
                   alt={director.name}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
@@ -60,7 +74,7 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
               </div>
             </div>
 
-            {/* Right: About + Contact */}
+            {/* Right: About & Contact */}
             <div className="md:col-span-6 flex flex-col p-4 md:p-8">
               <FaQuoteLeft className="text-3xl md:text-4xl text-blue-500/20 mb-4" />
 
@@ -95,7 +109,7 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
                   </a>
                 </div>
 
-                {/* Social icons + View Profile */}
+                {/* Social & View Profile */}
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
                     {social.linkedin && (
@@ -124,7 +138,7 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
         </div>
       </div>
 
-      {/* Modal for full profile */}
+      {/* Modal */}
       <Modal open={open} onClose={handleClose}>
         <Box
           sx={{
@@ -142,13 +156,12 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
             borderRadius: 2,
           }}
         >
-          {/* Left pane: scrollable full details */}
-         
-<Box sx={{ width: '50%', position: 'relative' }}>
+          {/* Left pane */}
+          <Box sx={{ width: '50%', position: 'relative' }}>
             <img
-              src={director.image}
+              src={fullImageUrl(director.image)}
               alt={director.name}
-              className="absolute inset-0 w-full h-full object-cover object-center max-w-full max-h-full"
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
             <Box
               sx={{
@@ -163,14 +176,9 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
               <Typography variant="subtitle2">{director.title}</Typography>
             </Box>
           </Box>
-          {/* Right pane: full-height image + overlay */}
-           <Box
-            sx={{
-              width: '50%',
-              overflowY: 'auto',
-              p: 4,
-            }}
-          >
+
+          {/* Right pane */}
+          <Box sx={{ width: '50%', overflowY: 'auto', p: 4 }}>
             <Typography variant="h4" gutterBottom>
               {director.name}
             </Typography>
@@ -198,7 +206,7 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
   );
 };
 
-const SocialLink: React.FC<{ href: string; icon: React.ComponentType }> = ({
+const SocialLink: React.FC<{ href: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }> = ({
   href,
   icon: Icon,
 }) => (
@@ -208,7 +216,7 @@ const SocialLink: React.FC<{ href: string; icon: React.ComponentType }> = ({
     rel="noopener noreferrer"
     className="p-2 bg-gray-50 rounded-full hover:bg-blue-50 transition-colors"
   >
-    <Icon size={20} className="text-gray-600 hover:text-blue-600" />
+    <Icon width={20} height={20} className="text-gray-600 hover:text-blue-600" />
   </a>
 );
 

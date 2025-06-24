@@ -1,0 +1,255 @@
+{
+  "title": {
+    "main": "Our Manufacturing Powerhouse",
+    "highlighted": "Manufacturing"
+  },
+  "stats": {
+    "primary": [
+      { "id": 1, "label": "Start Manufacturing Unit", "value": "2002", "icon": "industry" },
+      { "id": 2, "label": "Total Workers", "value": "16,938", "icon": "users" },
+      { "id": 3, "label": "Plant Size", "value": "17,27,672 Sqft.", "icon": "building" },
+      { "id": 4, "label": "Machines", "value": "9,331 sets", "icon": "cogs" },
+      { "id": 5, "label": "Sewing Lines", "value": "67 Lines", "icon": "tshirt" },
+      { "id": 6, "label": "Daily Sewing Capacity", "value": "200,000 PCs", "icon": "sewing" }
+    ],
+    "secondary": [
+      { "id": 7, "label": "Wet Laundry Capacity", "value": "90,000 PCs", "icon": "water" },
+      { "id": 8, "label": "Dry Laundry Capacity", "value": "105,000 PCs", "icon": "sun" },
+      { "id": 9, "label": "Production Lead Time", "value": "105 days", "icon": "clock" },
+      { "id": 10, "label": "Yearly Turnover", "value": "$228M", "icon": "dollar" }
+    ]
+  },
+  "productionCapacity": {
+    "title": "Daily Production Capacity",
+    "data": {
+      "labels": ["Sewing", "Wet Laundry", "Dry Laundry"],
+      "datasets": [
+        {
+          "label": "Daily Capacity (PCs)",
+          "data": [200000, 90000, 105000],
+          "backgroundColor": [
+            "rgba(99, 102, 241, 0.8)",
+            "rgba(59, 130, 246, 0.8)",
+            "rgba(168, 85, 247, 0.8)"
+          ],
+          "borderColor": [
+            "rgba(99, 102, 241, 1)",
+            "rgba(59, 130, 246, 1)",
+            "rgba(168, 85, 247, 1)"
+          ],
+          "borderWidth": 1
+        }
+      ]
+    },
+    "metrics": [
+      { "label": "Lead Time", "value": "105 days", "icon": "clock" },
+      { "label": "Yearly Turnover", "value": "$228M", "icon": "dollar" }
+    ]
+  },
+  "units": [
+    {
+      "title": "Manufacturing Units",
+      
+      
+      "plants": [
+        {
+          "id": "tusuka-fashions",
+          "name": "Tusuka Fashions Ltd.",
+          
+          "images":  
+            "/src/assets/Tusuka Fashions Ltd/Tusuka Fashions Ltd 01.jpg",
+            
+            "details": {
+            "employees": 800,
+            "lines": 4,
+            "capacity": "6,500 pcs/day",
+            "space": "54,376 SFT"
+           }
+        },
+        {
+          "id": "tusuka-jeans",
+          "name": "Tusuka Jeans Ltd.",
+          
+          "images": 
+            "/src/assets/Tusuka Jeans Ltd/Tusuka Jeans Ltd01.jpg", 
+         
+          "details": {
+            "employees": 2900,
+            "lines": 15,
+            "capacity": "21,500 pcs/day (5 pocket jeans)",
+            "space": "195,000 SFT"
+          }  
+            
+      
+          
+        },
+        {
+          "id": "tusuka-trousers",
+          "name": "Tusuka Trousers Ltd.",
+          
+          "images":  
+            "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 01.jpg",
+            
+          "details": {
+            "employees": 2400,
+            "lines": 12,
+            "capacity": "20,000 pcs/day",
+            "space": "163,000 SFT"
+         }  
+    
+          
+        },
+        {
+          "id": "tusuka-denim",
+          "name": "Tusuka Denim Ltd.",
+          
+          "images": 
+            "/src/assets/Tusuka Denim Ltd/Tusuka Denim Ltd 01.jpg",
+             
+          "details": {
+            "employees": 1900,
+            "lines": 9,
+            "capacity": "15,000 pcs/day (5 pocket jeans)",
+            "space": "87,155 SFT"
+           } 
+      
+          
+        },
+        {
+          "id": "tusuka-apparels",
+          "name": "Tusuka Apparels Ltd.",
+          
+          "images":  
+            "/src/assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 01.jpg",
+            
+           
+          "details": {
+            "employees": 950,
+            "lines": 7,
+            "capacity": "9,800 pcs/day",
+            "space": "160,690 SFT"
+          }
+      
+          
+        },
+        {
+          "id": "tusuka-stitches",
+          "name": "Tusuka Stitches Ltd.",
+          
+          "images": 
+            "/src/assets/Tusuka Trousers Ltd/Tusuka Trousers Ltd 01.jpg",
+            
+          "details": {
+            "employees": 1400,
+            "lines": 50,
+            "capacity":  "20,800 pcs/day",
+            "space": "439,047 SFT"
+            } 
+      
+          
+        }
+      ]
+    },
+    {
+      "title": "Laundry Units",
+      
+      
+      "plants": [
+        {
+          "id": "tusuka-processing",
+          "name": "Tusuka Processing Ltd.",
+          
+          "images":  
+            "/src/assets/Tusuka Processing Ltd/Tusuka Processing Ltd 01.jpg" ,
+          "details": {
+            "employees": 3650,"capacity":  "20,800 pcs/day", "lines": 12,
+            "space": "275,112 SFT",
+            "machines": 1125
+            }
+      
+          
+        },
+        {
+          "id": "tusuka-washing",
+          "name": "Tusuka Washing Ltd.",
+          
+          "images": 
+            "/src/assets/Tusuka Washing Ltd/Tusuka Washing Ltd 01.jpg",
+           
+          "details": {
+            "employees": 1300,"capacity":  "20,800 pcs/day",
+             "lines": 12,
+            "space": "92,355 SFT",
+            "machines": 1084 
+            }
+      
+          
+        }
+      ]
+    },
+    {
+      "title": "Packaging Unit",
+      
+      
+      "plants": [
+        {
+          "id": "tusuka-packaging",
+          "name": "Tusuka Packaging Ltd.",
+          
+          "images":  
+            "/src/assets/Tusuka Packaging Ltd/Tusuka Packaging Ltd 01.jpg", 
+          "details": {
+            "employees": 25, "lines": 12,
+            "capacity": "200,500 pcs/day",
+            "space": "25,000 SFT",
+            "machines": "Fully Automatic 72” width"
+            }
+      
+          
+        }
+      ]
+    },
+    {
+      "title": "Embroidery Unit",
+      
+      
+      "plants": [
+        {
+          "name": "Needle Art Embroidery Ltd.",
+          
+          "images":  
+            "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 01.jpg",
+          
+          "details": {
+            "employees": 90, "lines": 12,
+            "machines": 15,
+            "space": "9,900 SFT"
+           }
+      
+          
+        }
+      ]
+    }
+  ],
+  "bankingPartners": {
+    "title": "Banking Partners",
+    "banks": [
+      "Eastern Bank Ltd.",
+      "Uttara Bank Ltd.",
+      "One Bank Ltd.",
+      "The City Bank Ltd."
+    ],
+    "imagePath": "../src/assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 01.jpg"
+  },
+  "sisterConcerns": {
+    "title": "Sister Concerns",
+    "concerns": [
+      { "name": "Novoair", "desc": "Flight and Aviation", "icon": "✈️" },
+      { "name": "Novo Holidays", "desc": "Travel agency", "icon": "🌴" },
+      { "name": "Novotel", "desc": "IGW and Network agency", "icon": "📡" },
+      { "name": "NovoCom", "desc": "IIG", "icon": "🖥️" },
+      { "name": "InterCloud", "desc": "ISP provider", "icon": "☁️" }
+    ]
+  }
+}
+

@@ -175,7 +175,6 @@
       "description": "Our embroidery unit ensures premium design stitching quality.",
       "plants": [
         {
-          "id": "needle-art",
           "name": "Needle Art Embroidery Ltd.",
           "shortDescription": "Located in Tusuka Complex, Gazipur with 90 skilled employees.",
           "images": ["/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 01.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 02.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 03.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 04.jpg", "/src/assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 05.jpg"],
