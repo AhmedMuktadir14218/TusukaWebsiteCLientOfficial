@@ -28,7 +28,7 @@ const OurStorySection: React.FC = () => {
 //   const truncatedText = growthMilestones.slice(0, 200) + "...";
 
   return (
-    <section className=" py-8 bg-[#CDCDE3]  ">
+    <section className=" py-8 bg-[#EEF2FF]  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 
@@ -37,9 +37,9 @@ const OurStorySection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-4 block">
+          {/* <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-4 block">
             About Tusuka
-          </span>
+          </span> */}
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             {title}
           </h2>

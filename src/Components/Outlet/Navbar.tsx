@@ -128,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <button className="text-black hover:text-blue-400">
             <FaSearch size={18} />
           </button>
-          <button className="bg-[#040270] text-[#fef2ed] py-2 px-6 rounded-full font-bold hover:bg-blue-800 transition-colors">
+          <button className="bg-[linear-gradient(174deg,rgba(12,10,146,1)_0%,rgba(67,45,215,1)_50%,rgba(150,139,224,1)_100%)] text-[#fef2ed] py-2 px-6 rounded-full font-bold hover:bg-blue-800 transition-colors">
             <Link to="/contact-us" className="inline">Let's Talk</Link> 
           </button>
         </div>
