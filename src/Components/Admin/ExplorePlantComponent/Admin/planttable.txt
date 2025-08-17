@@ -1,0 +1,304 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
+import { useState } from 'react';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import { Add as AddIcon, Delete as DeleteIcon, Edit as EditIcon, Close as CloseIcon } from '@mui/icons-material';
+
+interface PlantsTableProps {
+  unitId: number;
+  plants: any[];
+  onAdd: (unitId: number, plant: any) => void;
+  onEdit: (unitId: number, plantId: number, plant: any) => void;
+  onDelete: (unitId: number, plantId: number) => void;
+}
+
+export const PlantsTable = ({ unitId, plants, onAdd, onEdit, onDelete }: PlantsTableProps) => {
+  const [open, setOpen] = useState(false);
+  const [currentPlant, setCurrentPlant] = useState<any>(null);
+  const [images, setImages] = useState<string[]>([]);
+  const [newImage, setNewImage] = useState('');
+
+  const handleOpenAdd = () => {
+    setCurrentPlant({
+      name: '',
+      plant_id: '',
+      short_description: '',
+      details: {
+        employees: 0,
+        wetCapacity: '',
+        dryCapacity: '',
+        space: '',
+        machines: 0,
+        address: '',
+        locationEmbed: ''
+      }
+    });
+    setImages([]);
+    setOpen(true);
+  };
+
+  const handleOpenEdit = (plant: any) => {
+    setCurrentPlant(plant);
+    setImages([...plant.images]);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setCurrentPlant(null);
+    setImages([]);
+  };
+
+  const handleSubmit = () => {
+    const plantData = {
+      ...currentPlant,
+      images: [...images],
+      unit_id: unitId
+    };
+
+    if (currentPlant.id) {
+      onEdit(unitId, currentPlant.id, plantData);
+    } else {
+      onAdd(unitId, plantData);
+    }
+    handleClose();
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    if (name.startsWith('details.')) {
+      const field = name.split('.')[1];
+      setCurrentPlant({
+        ...currentPlant,
+        details: {
+          ...currentPlant.details,
+          [field]: value
+        }
+      });
+    } else {
+      setCurrentPlant({
+        ...currentPlant,
+        [name]: value
+      });
+    }
+  };
+
+  const handleAddImage = () => {
+    if (newImage.trim()) {
+      setImages([...images, newImage.trim()]);
+      setNewImage('');
+    }
+  };
+
+  const handleRemoveImage = (index: number) => {
+    setImages(images.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div className="mb-6">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-bold">Plants</h2>
+        <Button variant="contained" startIcon={<AddIcon />} onClick={handleOpenAdd}>
+          Add Plant
+        </Button>
+      </div>
+
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell>Plant ID</TableCell>
+              <TableCell>Short Description</TableCell>
+              <TableCell>Employees</TableCell>
+              <TableCell>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {plants.map((plant) => (
+              <TableRow key={plant.id}>
+                <TableCell>{plant.name}</TableCell>
+                <TableCell>{plant.plant_id}</TableCell>
+                <TableCell>{plant.short_description}</TableCell>
+                <TableCell>{plant.details.employees}</TableCell>
+                <TableCell>
+                  <Button
+                    variant="outlined"
+                    startIcon={<EditIcon />}
+                    onClick={() => handleOpenEdit(plant)}
+                    className="mr-2"
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    color="error"
+                    startIcon={<DeleteIcon />}
+                    onClick={() => onDelete(unitId, plant.id)}
+                  >
+                    Delete
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+        <DialogTitle>{currentPlant?.id ? 'Edit Plant' : 'Add Plant'}</DialogTitle>
+        <DialogContent>
+          <Grid container spacing={2} className="mt-2">
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Name"
+                name="name"
+                value={currentPlant?.name || ''}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Plant ID"
+                name="plant_id"
+                value={currentPlant?.plant_id || ''}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Short Description"
+                name="short_description"
+                value={currentPlant?.short_description || ''}
+                onChange={handleChange}
+                margin="normal"
+                multiline
+                rows={3}
+              />
+            </Grid>
+
+            {/* Images Section */}
+            <Grid item xs={12}>
+              <div className="mb-4">
+                <h4 className="text-lg font-medium mb-2">Images</h4>
+                <div className="flex gap-2 mb-2">
+                  <TextField
+                    fullWidth
+                    label="Image URL"
+                    value={newImage}
+                    onChange={(e) => setNewImage(e.target.value)}
+                    margin="none"
+                    size="small"
+                  />
+                  <Button variant="contained" onClick={handleAddImage}>
+                    Add
+                  </Button>
+                </div>
+                <div className="space-y-2">
+                  {images.map((img, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <img src={img} alt={`Preview ${index}`} className="w-16 h-16 object-cover" />
+                      <span className="flex-1 truncate">{img}</span>
+                      <IconButton onClick={() => handleRemoveImage(index)}>
+                        <CloseIcon />
+                      </IconButton>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Grid>
+
+            {/* Details Section */}
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                type="number"
+                label="Employees"
+                name="details.employees"
+                value={currentPlant?.details?.employees || 0}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Wet Capacity"
+                name="details.wetCapacity"
+                value={currentPlant?.details?.wetCapacity || ''}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Dry Capacity"
+                name="details.dryCapacity"
+                value={currentPlant?.details?.dryCapacity || ''}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Space"
+                name="details.space"
+                value={currentPlant?.details?.space || ''}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                type="number"
+                label="Machines"
+                name="details.machines"
+                value={currentPlant?.details?.machines || 0}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Address"
+                name="details.address"
+                value={currentPlant?.details?.address || ''}
+                onChange={handleChange}
+                margin="normal"
+                multiline
+                rows={2}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Location Embed URL"
+                name="details.locationEmbed"
+                value={currentPlant?.details?.locationEmbed || ''}
+                onChange={handleChange}
+                margin="normal"
+              />
+            </Grid>
+          </Grid>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleSubmit} variant="contained">
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+};

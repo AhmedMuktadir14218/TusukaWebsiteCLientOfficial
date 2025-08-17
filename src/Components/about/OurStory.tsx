@@ -18,11 +18,11 @@ const defaultData = {
 
 
 const OurStorySection: React.FC = () => {
- const { storyData, loading, error } = useApiData();
+ const { storyData, loading } = useApiData();
   const [showFullText, setShowFullText] = useState(false);
 
   // Decide which data to render: API data once loaded, otherwise default
-  const data = !loading && storyData ? storyData : defaultData;
+  const data = !loading && storyData ? { ...defaultData, ...storyData } : defaultData;
   const { title, storyTitle, StoryVideoUrl, foundingVision, growthMilestones, currentStance } = data;
 
 //   const truncatedText = growthMilestones.slice(0, 200) + "...";
@@ -37,9 +37,9 @@ const OurStorySection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          {/* <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-4 block">
+          <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-4 block">
             About Tusuka
-          </span> */}
+          </span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             {title}
           </h2>

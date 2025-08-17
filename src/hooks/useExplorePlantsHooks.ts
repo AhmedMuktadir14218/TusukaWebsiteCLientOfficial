@@ -53,6 +53,7 @@ const transform = (raw: RawPlantsData): PlantsData => ({
     title: raw.exploreHeader.title,
     description: raw.exploreHeader.description,
     ctaText: raw.exploreHeader.cta_text,
+    cta_text: raw.exploreHeader.cta_text,
     image: raw.exploreHeader.image,
   },
   units: raw.units.map(u => ({
@@ -60,15 +61,15 @@ const transform = (raw: RawPlantsData): PlantsData => ({
     title: u.title,
     description: u.description,
     order: u.order,
+    backgroundImage: '',
     plants: u.plants.map(p => ({
       id: p.id.toString(),
       plantId: p.plant_id,
       name: p.name,
-      shortDescription: p.short_description,
+      short_description: p.short_description, // Match interface exactly
       details: Object.fromEntries(
         Object.entries(p.details).map(([k,v]) => [toCamel(k), v])
       ),
-      // images will be fetched in the modal
       images: [] as string[],
     }))
   }))

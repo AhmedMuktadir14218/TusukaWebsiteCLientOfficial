@@ -9,7 +9,7 @@ function MVC() {
   
   return (
     <div>
-      <MVC_Component initialTab={activeTab} id={""} title={""} content={""} />
+      <MVC_Component initialTab={activeTab}/>
     </div>
   )
 }

@@ -8,8 +8,7 @@ import CorePointComponent from "../Components/CorePointComponent/CorePointCompon
 // import HeroBanner from "../Components/HeroBanner"
 import HeroBanner2 from "../Components/HeroBanner2"
 import LogoMoving from "../Components/LogoMoving"
-import { useAboutHero } from "../hooks/useAbouthero"
-import { useApiData } from "../hooks/useApiData"
+import { useAboutHero } from "../hooks/useAbouthero" 
 
  
 function Home() {

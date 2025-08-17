@@ -12,7 +12,6 @@ interface Plant {
   name: string;
   short_description: string;
   details: PlantDetails;
-  // (we no longer expect plant.images here)
 }
 
 interface Props {
@@ -28,57 +27,57 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [thumbnail, setThumbnail] = useState<string | null>(null);
 
-  // useEffect(() => {
-  //   // fetch the detailed plant endpoint to get its images
-  //   fetch(`http://localhost:8000/api/explore-plants/plants/${plant.id}`)
-  //     .then(res => {
-  //       if (!res.ok) throw new Error('Could not load plant images');
-  //       return res.json() as Promise<DetailedPlantResponse>;
-  //     })
-  //     .then(json => {
-  //       // build full URLs
-  //       const urls = json.plant_images.map(pi => `http://localhost:8000/${pi.image_path}`);
-  //       // take the last one (or first, if you prefer)
-  //       if (urls.length > 0) {
-  //         setThumbnail(urls[urls.length - 1]);
-  //       }
-  //     })
-  //     .catch(err => {
-  //       console.error('Error loading thumbnail:', err);
-  //       setThumbnail(null);
-  //     });
-  // }, [plant.id]);
-
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+  const VITE_API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
 
   useEffect(() => {
-    // Ensure the API_BASE_URL is available
+    // Helper function moved inside useEffect
+    // This function will be recreated on each render, but since it's only used within
+    // this specific useEffect and its dependencies (VITE_API_IMAGE_URL) are in the
+    // effect's dependency array, it's considered stable by ESLint for this context.
+    const getFullImageUrl = (imagePath: string): string => {
+      // If the imagePath already starts with 'http', it's likely an absolute URL
+      if (imagePath.startsWith('http')) {
+        return imagePath;
+      }
+      // Prepend the VITE_API_IMAGE_URL and ensure no double slashes
+      return `${VITE_API_IMAGE_URL}/${imagePath.replace(/^\/+/, '')}`;
+    };
+
+    // Ensure both base URLs are available
     if (!API_BASE_URL) {
       console.error('VITE_API_BASE_URL is not defined in the environment variables.');
-      setThumbnail(null); // Or handle this error more gracefully
+      setThumbnail(null);
+      return;
+    }
+    if (!VITE_API_IMAGE_URL) {
+      console.error('VITE_API_IMAGE_URL is not defined in the environment variables.');
+      setThumbnail(null);
       return;
     }
 
     // fetch the detailed plant endpoint to get its images
-    fetch(`${API_BASE_URL}/api/explore-plants/plants/${plant.id}`) // Use the environment variable
+    fetch(`${API_BASE_URL}/api/explore-plants/plants/${plant.id}`)
       .then(res => {
         if (!res.ok) throw new Error('Could not load plant images');
         return res.json() as Promise<DetailedPlantResponse>;
       })
       .then(json => {
-        // build full URLs
-        const urls = json.plant_images.map(pi => `${API_BASE_URL}/${pi.image_path}`); // Use the environment variable
-        // take the last one (or first, if you prefer)
+        // Build full URLs for all images using the `getFullImageUrl` helper
+        const urls = json.plant_images.map(pi => getFullImageUrl(pi.image_path));
+
+        // Take the last one (or first, if you prefer) for the thumbnail
         if (urls.length > 0) {
           setThumbnail(urls[urls.length - 1]);
+        } else {
+          setThumbnail(null); // No images found
         }
       })
       .catch(err => {
         console.error('Error loading thumbnail:', err);
         setThumbnail(null);
       });
-  }, [plant.id, API_BASE_URL]); // Add API_BASE_URL to dependency array
-
+  }, [plant.id, API_BASE_URL, VITE_API_IMAGE_URL]); // Dependencies remain the same as the function `getFullImageUrl` is now internal to the effect
 
   return (
     <>
@@ -86,8 +85,9 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
         <PlantDetailsModal
           plant={{
             ...plant,
-            images: thumbnail ? [thumbnail] : [],        // pass at least one image so modal shows it
-            shortDescription: plant.short_description,    // if you have migrated to camelCase
+            // Pass the thumbnail URL and ensure proper camelCase for consistency
+            images: thumbnail ? [thumbnail] : [],
+            shortDescription: plant.short_description,
           }}
           onClose={() => setIsModalOpen(false)}
         />
@@ -99,7 +99,7 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
         <div className="w-full aspect-[4/3] bg-gray-100">
           {thumbnail ? (
             <img
-              src={thumbnail}
+              src={thumbnail} // `thumbnail` already holds the full URL
               alt={plant.name}
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               loading="lazy"
@@ -124,7 +124,7 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
             <button
               className="text-[#040270] font-semibold hover:underline text-left"
               onClick={e => {
-                e.stopPropagation();
+                e.stopPropagation(); // Prevent card's onClick from firing again
                 setIsModalOpen(true);
               }}
             >
@@ -138,133 +138,3 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
 };
 
 export default PlantCard;
-
-
-// src/Components/ExplorePlantComponent/PlantCard.tsx
-// src/Components/ExplorePlantComponent/PlantCard.tsx
-// import React, { useState, useEffect } from 'react';
-// import PlantDetailsModal from '../../Pages/ExplorePlants/PlantDetailsModal';
-
-// interface PlantDetails {
-//   [key: string]: any;
-// }
-
-// interface Plant {
-//   id: string;
-//   name: string;
-//   short_description: string;
-//   details: PlantDetails;
-// }
-
-// interface Props {
-//   plant: Plant;
-// }
-
-// interface DetailedPlantResponse {
-//   id: number;
-//   plant_images: Array<{ image_path: string }>;
-// }
-
-// const PlantCard: React.FC<Props> = ({ plant }) => {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-//   const [thumbnail, setThumbnail] = useState<string | null>(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     setLoading(true);
-//     fetch(`http://localhost:8000/api/explore-plants/plants/${plant.id}`)
-//       .then(res => {
-//         if (!res.ok) throw new Error('Could not load plant images');
-//         return res.json() as Promise<DetailedPlantResponse>;
-//       })
-//       .then(json => {
-//         const urls = json.plant_images.map(pi => `http://localhost:8000/${pi.image_path}`);
-//         if (urls.length > 0) {
-//           setThumbnail(urls[urls.length - 1]);
-//         }
-//         setLoading(false);
-//       })
-//       .catch(err => {
-//         console.error('Error loading thumbnail:', err);
-//         setThumbnail(null);
-//         setLoading(false);
-//       });
-//   }, [plant.id]);
-
-//   // Function to truncate description for card display
-//   const truncateDescription = (text: string, maxLength: number = 100) => {
-//     if (!text) return 'No description available';
-//     if (text.length <= maxLength) return text;
-//     return `${text.substring(0, maxLength)}...`;
-//   };
-
-//   return (
-//     <>
-//       {isModalOpen && (
-//         <PlantDetailsModal
-//           plant={{
-//             ...plant,
-//             images: thumbnail ? [thumbnail] : [],
-//             shortDescription: plant.short_description,
-//           }}
-//           onClose={() => setIsModalOpen(false)}
-//         />
-//       )}
-      
-//       <div
-//         className="group relative flex flex-col h-full rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-white hover:shadow-md"
-//         onClick={() => setIsModalOpen(true)}
-//       >
-//         {/* Image Section */}
-//         <div className="w-full aspect-[4/3] bg-gray-100 relative">
-//           {loading ? (
-//             <div className="w-full h-full flex items-center justify-center">
-//               <div className="animate-pulse bg-gray-200 w-full h-full"></div>
-//             </div>
-//           ) : thumbnail ? (
-//             <img
-//               src={thumbnail}
-//               alt={plant.name}
-//               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-//               loading="lazy"
-//             />
-//           ) : (
-//             <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-200">
-//               <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-//               </svg>
-//             </div>
-//           )}
-//         </div>
-
-//         {/* Content Section */}
-//         <div className="flex flex-col flex-1 p-5">
-//           {/* Plant Name */}
-//           <h3 className="text-lg font-semibold mb-2 text-gray-800 line-clamp-1">
-//             {plant.name}
-//           </h3>
-          
-//           {/* Description - Focused section */}
-//           <div className="mb-3 flex-1">
-//             <p className="text-gray-600 text-sm line-clamp-3">
-//               {truncateDescription(plant.short_description, 150)}
-//             </p>
-//           </div>
-          
-//           {/* Simple "Learn More" button */}
-//           <button
-//             className="text-[#040270] font-medium hover:underline text-sm text-left mt-auto pt-2"
-//             onClick={(e) => {
-//               e.stopPropagation();
-//               setIsModalOpen(true);
-//             }}
-//           >
-//             Learn more →
-//           </button>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default PlantCard;

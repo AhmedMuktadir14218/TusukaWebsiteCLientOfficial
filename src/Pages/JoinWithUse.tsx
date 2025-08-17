@@ -27,7 +27,7 @@ function JoinWithUse() {
     const [error, setError] = useState<string | null>(null);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [selectedJob, setSelectedJob] = useState<Job | null>(null);
-     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     useEffect(() => {
         const fetchJobs = async () => {

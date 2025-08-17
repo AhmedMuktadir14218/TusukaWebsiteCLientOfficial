@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import type { SliderImage, Metrics } from '../types/about'
+import type { SliderImage } from '../types/about'
 
 interface HeroData {
   title: string
@@ -10,14 +10,14 @@ interface HeroData {
 
 interface UseAboutHeroReturn {
   heroData: HeroData | null
-  metricsData: Metrics | null
+  metricsData: any | null
   loading: boolean
   error: string | null
 }
 
 export function useAboutHero(): UseAboutHeroReturn {
   const [heroData,   setHeroData]   = useState<HeroData | null>(null)
-  const [metricsData, setMetricsData] = useState<Metrics | null>(null)
+  const [metricsData, setMetricsData] = useState<any | null>(null)
   const [loading,    setLoading]    = useState(true)
   const [error,      setError]      = useState<string | null>(null)
 

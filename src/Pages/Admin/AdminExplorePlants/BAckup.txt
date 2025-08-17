@@ -1,0 +1,1105 @@
+
+
+// // D:\Xampp\htdocs\tusukaWebServer-4\resources\js\pages\ExplorePlants\ExplorePlants.tsx
+// import React, { useState, useEffect } from 'react';
+// import {
+//   Box,
+//   Typography,
+//   Paper,
+//   Table,
+//   TableBody,
+//   TableCell,
+//   TableContainer,
+//   TableHead,
+//   TableRow,
+//   TextField,
+//   Button,
+//   IconButton,
+//   Dialog,
+//   DialogTitle,
+//   DialogContent,
+//   DialogActions,
+//   Grid,
+//   Card,
+//   CardContent,
+//   CardMedia
+// } from '@mui/material';
+// import { Edit as EditIcon, Save as SaveIcon, Delete as DeleteIcon, Add as AddIcon } from '@mui/icons-material';
+// import axios from 'axios';
+
+// interface ExploreHeader {
+//   id: number;
+//   title: string;
+//   description: string;
+//   cta_text: string;
+//   image: string;
+// }
+
+// interface Unit {
+//   id: number;
+//   title: string;
+//   background_image: string;
+//   description: string;
+//   order: number;
+//   plants: Plant[];
+// }
+
+// interface Plant {
+//   id: number;
+//   unit_id: number;
+//   plant_id: string;
+//   name: string;
+//   short_description: string;
+//   images: string[];
+//   details: {
+//     employees: number;
+//     wetCapacity: string;
+//     dryCapacity: string;
+//     space: string;
+//     machines?: number;
+//     address: string;
+//     locationEmbed: string;
+//   };
+//   order: number;
+// }
+
+// interface ExplorePlantsData {
+//   exploreHeader: ExploreHeader;
+//   units: Unit[];
+// }
+
+// const ExplorePlants: React.FC = () => {
+//   const [data, setData] = useState<ExplorePlantsData | null>(null);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState<string | null>(null);
+  
+//   // Header edit states
+//   const [headerEditMode, setHeaderEditMode] = useState(false);
+//   const [headerForm, setHeaderForm] = useState<ExploreHeader>({
+//     id: 0,
+//     title: '',
+//     description: '',
+//     cta_text: '',
+//     image: ''
+//   });
+  
+//   // Unit states
+//   const [unitEditMode, setUnitEditMode] = useState<number | null>(null);
+//   const [unitForm, setUnitForm] = useState<Omit<Unit, 'plants'>>({
+//     id: 0,
+//     title: '',
+//     background_image: '',
+//     description: '',
+//     order: 0
+//   });
+//   const [showUnitDialog, setShowUnitDialog] = useState(false);
+  
+//   // Plant states
+//   const [plantEditMode, setPlantEditMode] = useState<number | null>(null);
+//   const [plantForm, setPlantForm] = useState<Omit<Plant, 'unit_id' | 'order'>>({
+//     id: 0,
+//     plant_id: '',
+//     name: '',
+//     short_description: '',
+//     images: [],
+//     details: {
+//       employees: 0,
+//       wetCapacity: '',
+//       dryCapacity: '',
+//       space: '',
+//       address: '',
+//       locationEmbed: ''
+//     }
+//   });
+//   const [showPlantDialog, setShowPlantDialog] = useState(false);
+//   const [selectedUnitId, setSelectedUnitId] = useState<number | null>(null);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const response = await axios.get('/api/explore-plants');
+//         setData(response.data);
+//         setHeaderForm(response.data.exploreHeader);
+//         setLoading(false);
+//       } catch (err) {
+//         setError('Failed to fetch data');
+//         setLoading(false);
+//         console.error(err);
+//       }
+//     };
+    
+//     fetchData();
+//   }, []);
+
+//   const handleHeaderEdit = () => {
+//     setHeaderEditMode(true);
+//   };
+
+//   const handleHeaderSave = async () => {
+//     try {
+//       const response = await axios.post('/api/explore-plants/header', headerForm);
+//       setData(prev => prev ? { ...prev, exploreHeader: response.data } : null);
+//       setHeaderEditMode(false);
+//     } catch (err) {
+//       console.error('Failed to update header', err);
+//     }
+//   };
+
+//   const handleHeaderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     const { name, value } = e.target;
+//     setHeaderForm(prev => ({ ...prev, [name]: value }));
+//   };
+
+//   const handleUnitEdit = (unit: Unit) => {
+//     setUnitForm({
+//       id: unit.id,
+//       title: unit.title,
+//       background_image: unit.background_image,
+//       description: unit.description,
+//       order: unit.order
+//     });
+//     setUnitEditMode(unit.id);
+//   };
+
+//   const handleUnitSave = async (unitId: number) => {
+//     try {
+//       const response = await axios.put(`/api/explore-plants/units/${unitId}`, unitForm);
+//       setData(prev => {
+//         if (!prev) return null;
+//         const updatedUnits = prev.units.map(u => 
+//           u.id === unitId ? { ...u, ...response.data } : u
+//         );
+//         return { ...prev, units: updatedUnits };
+//       });
+//       setUnitEditMode(null);
+//     } catch (err) {
+//       console.error('Failed to update unit', err);
+//     }
+//   };
+
+//   const handleUnitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     const { name, value } = e.target;
+//     setUnitForm(prev => ({ ...prev, [name]: value }));
+//   };
+
+//   const handleAddUnit = () => {
+//     setUnitForm({
+//       id: 0,
+//       title: '',
+//       background_image: '',
+//       description: '',
+//       order: data?.units.length || 0
+//     });
+//     setShowUnitDialog(true);
+//   };
+
+//   const handleSubmitUnit = async () => {
+//     try {
+//       const response = await axios.post('/api/explore-plants/units', unitForm);
+//       setData(prev => {
+//         if (!prev) return null;
+//         return { ...prev, units: [...prev.units, response.data] };
+//       });
+//       setShowUnitDialog(false);
+//     } catch (err) {
+//       console.error('Failed to add unit', err);
+//     }
+//   };
+
+//   const handleDeleteUnit = async (unitId: number) => {
+//     try {
+//       await axios.delete(`/api/explore-plants/units/${unitId}`);
+//       setData(prev => {
+//         if (!prev) return null;
+//         return { ...prev, units: prev.units.filter(u => u.id !== unitId) };
+//       });
+//     } catch (err) {
+//       console.error('Failed to delete unit', err);
+//     }
+//   };
+
+//   const handlePlantEdit = (plant: Plant) => {
+//     setPlantForm({
+//       id: plant.id,
+//       plant_id: plant.plant_id,
+//       name: plant.name,
+//       short_description: plant.short_description,
+//       images: [...plant.images],
+//       details: { ...plant.details }
+//     });
+//     setPlantEditMode(plant.id);
+//   };
+
+//   const handlePlantSave = async (plantId: number) => {
+//     try {
+//       const response = await axios.put(`/api/explore-plants/plants/${plantId}`, plantForm);
+//       setData(prev => {
+//         if (!prev) return null;
+//         const updatedUnits = prev.units.map(u => ({
+//           ...u,
+//           plants: u.plants.map(p => 
+//             p.id === plantId ? { ...p, ...response.data } : p
+//           )
+//         }));
+//         return { ...prev, units: updatedUnits };
+//       });
+//       setPlantEditMode(null);
+//     } catch (err) {
+//       console.error('Failed to update plant', err);
+//     }
+//   };
+
+//   const handlePlantChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     const { name, value } = e.target;
+//     if (name.startsWith('details.')) {
+//       const detailField = name.split('.')[1];
+//       setPlantForm(prev => ({
+//         ...prev,
+//         details: {
+//           ...prev.details,
+//           [detailField]: value
+//         }
+//       }));
+//     } else {
+//       setPlantForm(prev => ({ ...prev, [name]: value }));
+//     }
+//   };
+
+//   const handleAddPlant = (unitId: number) => {
+//     setSelectedUnitId(unitId);
+//     setPlantForm({
+//       id: 0,
+//       plant_id: '',
+//       name: '',
+//       short_description: '',
+//       images: [],
+//       details: {
+//         employees: 0,
+//         wetCapacity: '',
+//         dryCapacity: '',
+//         space: '',
+//         address: '',
+//         locationEmbed: ''
+//       }
+//     });
+//     setShowPlantDialog(true);
+//   };
+
+//   const handleSubmitPlant = async () => {
+//     if (!selectedUnitId) return;
+    
+//     try {
+//       const response = await axios.post('/api/explore-plants/plants', {
+//         ...plantForm,
+//         unit_id: selectedUnitId
+//       });
+//       setData(prev => {
+//         if (!prev) return null;
+//         const updatedUnits = prev.units.map(u => 
+//           u.id === selectedUnitId 
+//             ? { ...u, plants: [...u.plants, response.data] } 
+//             : u
+//         );
+//         return { ...prev, units: updatedUnits };
+//       });
+//       setShowPlantDialog(false);
+//     } catch (err) {
+//       console.error('Failed to add plant', err);
+//     }
+//   };
+
+//   const handleDeletePlant = async (plantId: number) => {
+//     try {
+//       await axios.delete(`/api/explore-plants/plants/${plantId}`);
+//       setData(prev => {
+//         if (!prev) return null;
+//         const updatedUnits = prev.units.map(u => ({
+//           ...u,
+//           plants: u.plants.filter(p => p.id !== plantId)
+//         }));
+//         return { ...prev, units: updatedUnits };
+//       });
+//     } catch (err) {
+//       console.error('Failed to delete plant', err);
+//     }
+//   };
+
+//   if (loading) return <Typography>Loading...</Typography>;
+//   if (error) return <Typography color="error">{error}</Typography>;
+//   if (!data) return <Typography>No data available</Typography>;
+
+//   return (
+//     <Box sx={{ p: 3 }}>
+//       {/* Header Section */}
+//       <Paper sx={{ p: 3, mb: 4 }}>
+//         <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+//           <Typography variant="h5">Explore Header</Typography>
+//           {headerEditMode ? (
+//             <Button 
+//               variant="contained" 
+//               color="primary" 
+//               startIcon={<SaveIcon />}
+//               onClick={handleHeaderSave}
+//             >
+//               Save
+//             </Button>
+//           ) : (
+//             <Button 
+//               variant="outlined" 
+//               startIcon={<EditIcon />}
+//               onClick={handleHeaderEdit}
+//             >
+//               Edit
+//             </Button>
+//           )}
+//         </Box>
+        
+//         {headerEditMode ? (
+//           <Grid container spacing={2}>
+//             <Grid item xs={12} md={6}>
+//               <TextField
+//                 fullWidth
+//                 label="Title"
+//                 name="title"
+//                 value={headerForm.title}
+//                 onChange={handleHeaderChange}
+//                 margin="normal"
+//               />
+//               <TextField
+//                 fullWidth
+//                 label="Description"
+//                 name="description"
+//                 value={headerForm.description}
+//                 onChange={handleHeaderChange}
+//                 margin="normal"
+//                 multiline
+//                 rows={4}
+//               />
+//               <TextField
+//                 fullWidth
+//                 label="CTA Text"
+//                 name="cta_text"
+//                 value={headerForm.cta_text}
+//                 onChange={handleHeaderChange}
+//                 margin="normal"
+//               />
+//               <TextField
+//                 fullWidth
+//                 label="Image URL"
+//                 name="image"
+//                 value={headerForm.image}
+//                 onChange={handleHeaderChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12} md={6}>
+//               {headerForm.image && (
+//                 <Card>
+//                   <CardMedia
+//                     component="img"
+//                     height="300"
+//                     image={headerForm.image}
+//                     alt="Header Preview"
+//                   />
+//                 </Card>
+//               )}
+//             </Grid>
+//           </Grid>
+//         ) : (
+//           <Card>
+//             <CardMedia
+//               component="img"
+//               height="300"
+//               image={data.exploreHeader.image}
+//               alt={data.exploreHeader.title}
+//             />
+//             <CardContent>
+//               <Typography variant="h4" gutterBottom>
+//                 {data.exploreHeader.title}
+//               </Typography>
+//               <Typography variant="body1" paragraph>
+//                 {data.exploreHeader.description}
+//               </Typography>
+//               <Typography variant="button" color="primary">
+//                 {data.exploreHeader.cta_text}
+//               </Typography>
+//             </CardContent>
+//           </Card>
+//         )}
+//       </Paper>
+
+//       {/* Units Section */}
+//       <Paper sx={{ p: 3, mb: 4 }}>
+//         <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+//           <Typography variant="h5">Units</Typography>
+//           <Button 
+//             variant="contained" 
+//             color="primary" 
+//             startIcon={<AddIcon />}
+//             onClick={handleAddUnit}
+//           >
+//             Add Unit
+//           </Button>
+//         </Box>
+
+//         <TableContainer>
+//           <Table>
+//             <TableHead>
+//               <TableRow>
+//                 <TableCell>Title</TableCell>
+//                 <TableCell>Description</TableCell>
+//                 <TableCell>Background Image</TableCell>
+//                 <TableCell>Order</TableCell>
+//                 <TableCell>Actions</TableCell>
+//               </TableRow>
+//             </TableHead>
+//             <TableBody>
+//               {data.units.map(unit => (
+//                 <TableRow key={unit.id}>
+//                   {unitEditMode === unit.id ? (
+//                     <>
+//                       <TableCell>
+//                         <TextField
+//                           fullWidth
+//                           name="title"
+//                           value={unitForm.title}
+//                           onChange={handleUnitChange}
+//                         />
+//                       </TableCell>
+//                       <TableCell>
+//                         <TextField
+//                           fullWidth
+//                           name="description"
+//                           value={unitForm.description}
+//                           onChange={handleUnitChange}
+//                         />
+//                       </TableCell>
+//                       <TableCell>
+//                         <TextField
+//                           fullWidth
+//                           name="background_image"
+//                           value={unitForm.background_image}
+//                           onChange={handleUnitChange}
+//                         />
+//                       </TableCell>
+//                       <TableCell>
+//                         <TextField
+//                           fullWidth
+//                           type="number"
+//                           name="order"
+//                           value={unitForm.order}
+//                           onChange={handleUnitChange}
+//                         />
+//                       </TableCell>
+//                       <TableCell>
+//                         <IconButton color="primary" onClick={() => handleUnitSave(unit.id)}>
+//                           <SaveIcon />
+//                         </IconButton>
+//                       </TableCell>
+//                     </>
+//                   ) : (
+//                     <>
+//                       <TableCell>{unit.title}</TableCell>
+//                       <TableCell>{unit.description}</TableCell>
+//                       <TableCell>
+//                         {unit.background_image && (
+//                           <img 
+//                             src={unit.background_image} 
+//                             alt={unit.title} 
+//                             style={{ width: 100, height: 'auto' }} 
+//                           />
+//                         )}
+//                       </TableCell>
+//                       <TableCell>{unit.order}</TableCell>
+//                       <TableCell>
+//                         <IconButton color="primary" onClick={() => handleUnitEdit(unit)}>
+//                           <EditIcon />
+//                         </IconButton>
+//                         <IconButton color="error" onClick={() => handleDeleteUnit(unit.id)}>
+//                           <DeleteIcon />
+//                         </IconButton>
+//                       </TableCell>
+//                     </>
+//                   )}
+//                 </TableRow>
+//               ))}
+//             </TableBody>
+//           </Table>
+//         </TableContainer>
+//       </Paper>
+
+//       {/* Plants Section */}
+//       {data.units.map(unit => (
+//         <Paper key={unit.id} sx={{ p: 3, mb: 4 }}>
+//           <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+//             <Typography variant="h5">Plants in {unit.title}</Typography>
+//             <Button 
+//               variant="contained" 
+//               color="primary" 
+//               startIcon={<AddIcon />}
+//               onClick={() => handleAddPlant(unit.id)}
+//             >
+//               Add Plant
+//             </Button>
+//           </Box>
+
+//           <TableContainer>
+//             <Table>
+//               <TableHead>
+//                 <TableRow>
+//                   <TableCell>Name</TableCell>
+//                   <TableCell>Plant ID</TableCell>
+//                   <TableCell>Short Description</TableCell>
+//                   <TableCell>Employees</TableCell>
+//                   <TableCell>Actions</TableCell>
+//                 </TableRow>
+//               </TableHead>
+//               <TableBody>
+//                 {unit.plants.map(plant => (
+//                   <TableRow key={plant.id}>
+//                     {plantEditMode === plant.id ? (
+//                       <>
+//                         <TableCell>
+//                           <TextField
+//                             fullWidth
+//                             name="name"
+//                             value={plantForm.name}
+//                             onChange={handlePlantChange}
+//                           />
+//                         </TableCell>
+//                         <TableCell>
+//                           <TextField
+//                             fullWidth
+//                             name="plant_id"
+//                             value={plantForm.plant_id}
+//                             onChange={handlePlantChange}
+//                           />
+//                         </TableCell>
+//                         <TableCell>
+//                           <TextField
+//                             fullWidth
+//                             name="short_description"
+//                             value={plantForm.short_description}
+//                             onChange={handlePlantChange}
+//                           />
+//                         </TableCell>
+//                         <TableCell>
+//                           <TextField
+//                             fullWidth
+//                             type="number"
+//                             name="details.employees"
+//                             value={plantForm.details.employees}
+//                             onChange={handlePlantChange}
+//                           />
+//                         </TableCell>
+//                         <TableCell>
+//                           <IconButton color="primary" onClick={() => handlePlantSave(plant.id)}>
+//                             <SaveIcon />
+//                           </IconButton>
+//                         </TableCell>
+//                       </>
+//                     ) : (
+//                       <>
+//                         <TableCell>{plant.name}</TableCell>
+//                         <TableCell>{plant.plant_id}</TableCell>
+//                         <TableCell>{plant.short_description}</TableCell>
+//                         <TableCell>{plant.details.employees}</TableCell>
+//                         <TableCell>
+//                           <IconButton color="primary" onClick={() => handlePlantEdit(plant)}>
+//                             <EditIcon />
+//                           </IconButton>
+//                           <IconButton color="error" onClick={() => handleDeletePlant(plant.id)}>
+//                             <DeleteIcon />
+//                           </IconButton>
+//                         </TableCell>
+//                       </>
+//                     )}
+//                   </TableRow>
+//                 ))}
+//               </TableBody>
+//             </Table>
+//           </TableContainer>
+//         </Paper>
+//       ))}
+
+//       {/* Add/Edit Unit Dialog */}
+//       <Dialog open={showUnitDialog} onClose={() => setShowUnitDialog(false)} maxWidth="md" fullWidth>
+//         <DialogTitle>{unitForm.id ? 'Edit Unit' : 'Add New Unit'}</DialogTitle>
+//         <DialogContent>
+//           <Grid container spacing={2} sx={{ mt: 1 }}>
+//             <Grid item xs={12}>
+//               <TextField
+//                 fullWidth
+//                 label="Title"
+//                 name="title"
+//                 value={unitForm.title}
+//                 onChange={handleUnitChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12}>
+//               <TextField
+//                 fullWidth
+//                 label="Description"
+//                 name="description"
+//                 value={unitForm.description}
+//                 onChange={handleUnitChange}
+//                 margin="normal"
+//                 multiline
+//                 rows={4}
+//               />
+//             </Grid>
+//             <Grid item xs={12}>
+//               <TextField
+//                 fullWidth
+//                 label="Background Image URL"
+//                 name="background_image"
+//                 value={unitForm.background_image}
+//                 onChange={handleUnitChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12}>
+//               <TextField
+//                 fullWidth
+//                 type="number"
+//                 label="Order"
+//                 name="order"
+//                 value={unitForm.order}
+//                 onChange={handleUnitChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//           </Grid>
+//         </DialogContent>
+//         <DialogActions>
+//           <Button onClick={() => setShowUnitDialog(false)}>Cancel</Button>
+//           <Button onClick={handleSubmitUnit} color="primary" variant="contained">
+//             Save
+//           </Button>
+//         </DialogActions>
+//       </Dialog>
+
+//       {/* Add/Edit Plant Dialog */}
+//       <Dialog open={showPlantDialog} onClose={() => setShowPlantDialog(false)} maxWidth="md" fullWidth>
+//         <DialogTitle>{plantForm.id ? 'Edit Plant' : 'Add New Plant'}</DialogTitle>
+//         <DialogContent>
+//           <Grid container spacing={2} sx={{ mt: 1 }}>
+//             <Grid item xs={12} md={6}>
+//               <TextField
+//                 fullWidth
+//                 label="Name"
+//                 name="name"
+//                 value={plantForm.name}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12} md={6}>
+//               <TextField
+//                 fullWidth
+//                 label="Plant ID"
+//                 name="plant_id"
+//                 value={plantForm.plant_id}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12}>
+//               <TextField
+//                 fullWidth
+//                 label="Short Description"
+//                 name="short_description"
+//                 value={plantForm.short_description}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//                 multiline
+//                 rows={3}
+//               />
+//             </Grid>
+//             <Grid item xs={12} md={6}>
+//               <TextField
+//                 fullWidth
+//                 type="number"
+//                 label="Employees"
+//                 name="details.employees"
+//                 value={plantForm.details.employees}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12} md={6}>
+//               <TextField
+//                 fullWidth
+//                 label="Wet Capacity"
+//                 name="details.wetCapacity"
+//                 value={plantForm.details.wetCapacity}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12} md={6}>
+//               <TextField
+//                 fullWidth
+//                 label="Dry Capacity"
+//                 name="details.dryCapacity"
+//                 value={plantForm.details.dryCapacity}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12} md={6}>
+//               <TextField
+//                 fullWidth
+//                 label="Space"
+//                 name="details.space"
+//                 value={plantForm.details.space}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//             <Grid item xs={12}>
+//               <TextField
+//                 fullWidth
+//                 label="Address"
+//                 name="details.address"
+//                 value={plantForm.details.address}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//                 multiline
+//                 rows={2}
+//               />
+//             </Grid>
+//             <Grid item xs={12}>
+//               <TextField
+//                 fullWidth
+//                 label="Location Embed URL"
+//                 name="details.locationEmbed"
+//                 value={plantForm.details.locationEmbed}
+//                 onChange={handlePlantChange}
+//                 margin="normal"
+//               />
+//             </Grid>
+//           </Grid>
+//         </DialogContent>
+//         <DialogActions>
+//           <Button onClick={() => setShowPlantDialog(false)}>Cancel</Button>
+//           <Button onClick={handleSubmitPlant} color="primary" variant="contained">
+//             Save
+//           </Button>
+//         </DialogActions>
+//       </Dialog>
+//     </Box>
+//   );
+// };
+
+// export default ExplorePlants;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import AppLayout from '@/layouts/app-layout';
+import { ExploreHeader } from '@/components/ExplorePlantComponent/Admin/ExploreHeader';
+import { UnitsTable } from '@/components/ExplorePlantComponent/Admin/UnitsTable';
+import { PlantsTable } from '@/components/ExplorePlantComponent/Admin/PlantsTable';
+import { Alert, Button, CircularProgress } from '@mui/material';
+ 
+interface ExploreHeaderData {
+  id: number;
+  title: string;
+  description: string;
+  cta_text: string;
+  image: string;
+}
+
+interface Plant {
+  id: number;
+  unit_id: number;
+  plant_id: string;
+  name: string;
+  short_description: string;
+  images: string[];
+  details: Record<string, unknown>;
+}
+
+interface Unit {
+  id: number;
+  title: string;
+  background_image: string;
+  description: string;
+  order: number;
+  plants: Plant[];
+}
+
+interface ExplorePlantsData {
+  exploreHeader: ExploreHeaderData;
+  units: Unit[];
+}
+
+const ExplorePlants = () => {
+  const [data, setData] = useState<ExplorePlantsData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get('/api/explore-plants');
+      setData(response.data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // const handleHeaderSave = async (header: Partial<ExploreHeaderData>) => {
+  //   try {
+  //     const response = await axios.post('/api/explore-plants/header', header);
+  //     setData(prev => prev ? { ...prev, exploreHeader: response.data } : null);
+  //     return true;
+  //   } catch (err) {
+  //     console.error('Failed to update header', err);
+  //     throw err;
+  //   }
+  // };
+const handleHeaderSave = async (header: Partial<ExploreHeaderData>) => {
+  try {
+    const formData = new FormData();
+    
+    // Append all text fields
+    formData.append('title', header.title || '');
+    formData.append('description', header.description || '');
+    formData.append('cta_text', header.cta_text || '');
+    
+    // Handle file upload if it's a File object
+    if (header.image instanceof File) {
+      formData.append('image', header.image);
+    } else if (typeof header.image === 'string') {
+      // If it's a string (existing URL), send as is
+      formData.append('image', header.image);
+    }
+
+    const response = await axios.post('/api/explore-plants/header', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    
+    setData(prev => prev ? { ...prev, exploreHeader: response.data } : null);
+    return true;
+  } catch (err) {
+    console.error('Failed to update header', err);
+    throw err;
+  }
+};
+const handleAddUnit = async (unitData: FormData): Promise<void> => {
+  try {
+    const response = await axios.post('/api/explore-plants/units', unitData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    setData(prev => prev ? { 
+      ...prev, 
+      units: [...prev.units, { ...response.data, plants: [] }] 
+    } : null);
+  } catch (err) {
+    console.error('Failed to add unit', err);
+    throw err;
+  }
+};
+
+const handleEditUnit = async (id: number, unitData: FormData): Promise<void> => {
+  try {
+    const response = await axios.post(`/api/explore-plants/units/${id}?_method=PUT`, unitData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    setData(prev => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        units: prev.units.map(u => u.id === id ? { ...u, ...response.data } : u)
+      };
+    });
+  } catch (err) {
+    console.error('Failed to update unit', err);
+    throw err;
+  }
+};
+  const handleDeleteUnit = async (id: number): Promise<void> => {
+    try {
+      await axios.delete(`/api/explore-plants/units/${id}`);
+      setData(prev => {
+        if (!prev) return null;
+        return {
+          ...prev,
+          units: prev.units.filter(u => u.id !== id)
+        };
+      });
+    } catch (err) {
+      console.error('Failed to delete unit', err);
+      throw err;
+    }
+  };
+
+  const handleAddPlant = async (unitId: number, plant: Omit<Plant, 'id'>) => {
+    try {
+      const response = await axios.post('/api/explore-plants/plants', {
+        ...plant,
+        unit_id: unitId
+      });
+      setData(prev => {
+        if (!prev) return null;
+        return {
+          ...prev,
+          units: prev.units.map(u => 
+            u.id === unitId 
+              ? { ...u, plants: [...u.plants, response.data] } 
+              : u
+          )
+        };
+      });
+      return true;
+    } catch (err) {
+      console.error('Failed to add plant', err);
+      throw err;
+    }
+  };
+
+  const handleEditPlant = async (unitId: number, plantId: number, plant: Partial<Plant>) => {
+    try {
+      const response = await axios.put(`/api/explore-plants/plants/${plantId}`, plant);
+      setData(prev => {
+        if (!prev) return null;
+        return {
+          ...prev,
+          units: prev.units.map(u => ({
+            ...u,
+            plants: u.plants.map(p => 
+              p.id === plantId ? { ...p, ...response.data } : p
+            )
+          }))
+        };
+      });
+      return true;
+    } catch (err) {
+      console.error('Failed to update plant', err);
+      throw err;
+    }
+  };
+
+  const handleDeletePlant = async (unitId: number, plantId: number) => {
+    try {
+      await axios.delete(`/api/explore-plants/plants/${plantId}`);
+      setData(prev => {
+        if (!prev) return null;
+        return {
+          ...prev,
+          units: prev.units.map(u => ({
+            ...u,
+            plants: u.plants.filter(p => p.id !== plantId)
+          }))
+        };
+      });
+      return true;
+    } catch (err) {
+      console.error('Failed to delete plant', err);
+      throw err;
+    }
+  };
+
+  if (loading) {
+    return (
+      <AppLayout>
+        <div className="flex justify-center items-center h-64">
+          <CircularProgress />
+        </div>
+      </AppLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <AppLayout>
+        <div className="p-6">
+          <Alert severity="error" className="mb-4">
+            {error}
+          </Alert>
+          <Button 
+            variant="contained" 
+            onClick={fetchData}
+          >
+            Retry
+          </Button>
+        </div>
+      </AppLayout>
+    );
+  }
+
+  if (!data) {
+    return (
+      <AppLayout>
+        <div className="p-6">
+          <Alert severity="warning">No data available</Alert>
+        </div>
+      </AppLayout>
+    );
+  }
+
+  return (
+    <AppLayout>
+      <div className="p-6">
+        <ExploreHeader 
+          header={data.exploreHeader} 
+          onSave={handleHeaderSave} 
+        />
+
+        <UnitsTable
+          units={data.units}
+          onAdd={handleAddUnit}
+          onEdit={handleEditUnit}
+          onDelete={handleDeleteUnit}
+        />
+
+        {data.units.map(unit => (
+          <div key={unit.id} className="mb-8">
+            <h3 className="text-xl font-semibold mb-4">{unit.title} Plants</h3>
+            <PlantsTable
+              unitId={unit.id}
+              plants={unit.plants}
+              onAdd={handleAddPlant}
+              onEdit={handleEditPlant}
+              onDelete={handleDeletePlant}
+            />
+          </div>
+        ))}
+      </div>
+    </AppLayout>
+  );
+};
+
+export default ExplorePlants;
+

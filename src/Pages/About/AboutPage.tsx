@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useApiData } from '../../hooks/useApiData';
+import React, { useState } from 'react'; 
 import SidebarMenu from '../../Components/SidebarMenu';
 import AboutHero from '../../Components/about/AboutHero';
 import OurStory from '../../Components/about/OurStory';
@@ -27,13 +26,27 @@ const AboutPage: React.FC = () => {
   if (!heroData || !metricsData) return <div className="min-h-screen flex items-center justify-center">No data available</div>;
 
   // prefix upload paths with your API host
-  const apiBase = import.meta.env.VITE_API_BASE_URL;
-  const imagesWithFullUrl: SliderImage[] = heroData.sliderImages.map(img => ({
-    ...img,
-    src: img.src.startsWith('http')
-      ? img.src
-      : `${apiBase}/${img.src}`,
-  }));
+// prefix upload paths with your API host
+const apiBase = import.meta.env.VITE_API_BASE_URL; // http://localhost/TusukaWebServerV6
+
+const imagesWithFullUrl: SliderImage[] = heroData.sliderImages.map(img => {
+  let finalSrc = img.src;
+
+  // If not starting with http, build full URL
+  if (!img.src.startsWith('http')) {
+    finalSrc = `${apiBase}/${img.src}`;
+  } else {
+    // If full URL but missing 'public/' in path, insert it
+    if (img.src.includes('/uploads/') && !img.src.includes('/public/uploads/')) {
+      finalSrc = img.src.replace('/uploads/', '/public/uploads/');
+    }
+  }
+
+  return { ...img, src: finalSrc };
+});
+
+console.log(imagesWithFullUrl)
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -74,7 +87,7 @@ const AboutPage: React.FC = () => {
 
         <QualityComponent />
 
-        <MVC_Component id="" title="" content="" />
+        <MVC_Component />
 
         <OurCommitment
           title={heroData.title /* or data.commitment from another endpoint */}
@@ -82,7 +95,7 @@ const AboutPage: React.FC = () => {
           conclusion=""
         />
 
-        <Laboratory />
+        {/* <Laboratory /> */}
       </main>
     </div>
   );

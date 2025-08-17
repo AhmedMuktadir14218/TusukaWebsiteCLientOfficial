@@ -402,7 +402,7 @@ ChartJS.register(
 );
 
 // Icon mapping
-const iconComponents: Record<string, JSX.Element> = {
+const iconComponents: Record<string, React.ReactNode> = {
   industry: <FaIndustry className="text-indigo-600" />,
   users: <FaUsers className="text-indigo-600" />,
   building: <FaBuilding className="text-indigo-600" />,

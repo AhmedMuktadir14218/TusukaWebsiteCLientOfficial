@@ -94,7 +94,7 @@ const HeroBanner2: React.FC = () => {
               > 
              
                 Learn More
-              </button></Link>  */}
+              </button></Link>  */} 
             </motion.div>
           </motion.div>
 
@@ -201,8 +201,7 @@ const HeroBanner2: React.FC = () => {
         )}
       </AnimatePresence>
 
-
-   {/* <LogoMoving></LogoMoving>  */}
+ 
    
    </section>
     

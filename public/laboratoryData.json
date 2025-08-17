@@ -1,0 +1,131 @@
+{
+    "pageHeader": {
+        "title": "Our Laboratory",
+        "description": "At Tusuka, we prioritize quality and innovation in our laboratory operation.",
+        "images": [
+            {
+                "id": 36,
+                "path":   "../src/assets/laboratory/laboratory1.jpg",
+                "filename": "NRT2ucVZycYxsjoI45bi.jpg"
+              
+       
+            },
+            {
+                "id": 40,
+                "path": "../src/assets/laboratory/laboratory2.jpg",
+                "filename": "nTioiequ7n4kXCI6hs9R.jpg"
+            },
+            {
+                "id": 41,
+                "path": "../src/assets/laboratory/laboratory3.jpg",
+                "filename": "N9IipItd2wsR0lwpHi9b.jpg"
+            },
+            {
+                "id": 43,
+                "path": "../src/assets/laboratory/laboratory4.jpg",
+                "filename": "8JbsWuzhdfN8BIYPJA7S.jpg"
+            },
+            {
+                "id": 44,
+                "path": "../src/assets/laboratory/laboratory5.jpg",
+                "filename": "3Vob1JEE84ICaWQgSE95.jpg"
+            },
+            {
+                "id": 45,
+                "path": "../src/assets/laboratory/laboratory2.jpg",
+                "filename": "un361509OuZZJqM3Qrvm.jpg"
+            },
+            {
+                "id": 46,
+                "path": "../src/assets/laboratory/laboratory3.jpg",
+                "filename": "NjVJ7ccgSqTvX2xiiwRx.jpg"
+            }
+        ]
+    },
+    "introSection": {
+        "image": {
+            "id": 47,
+            "path": "../src/assets/laboratory/laboratory3.jpg",
+            "filename": "j5isWmPv6JjP6Yo5BDKr.jpg"
+        },
+        "title": "State-of-the-Art",
+        "paragraphs": [
+            "Tusuka established its own in-house fabric and garments testing laboratory with state of the art technology. Approved by numerous international standards, our lab is fully equipped for testing all types of fabrics to ensure all garment compliance are met.",
+            "Our goal is to provide total satisfaction to our customers, through quality services and maintaining complete security, confidentiality, and integrity of test results."
+        ]
+    },
+    "services": [
+        {
+            "iconType": "FaMicroscope",
+            "title": "International Standards",
+            "description": "Testing according to standards."
+        },
+        {
+            "iconType": "MdSecurity",
+            "title": "Quality Assurance",
+            "description": "Approved by world-renowned buyers."
+        },
+        {
+            "iconType": "MdSecurity",
+            "title": "Quality Assurance",
+            "description": "Approved by renowned buyers."
+        }
+    ],
+    "facilities": {
+        "SectionTitle": "Our Facilities",
+        "SectionDescription": "We are equipped with the latest technology and equipment to ensure accurate and reliable results.",
+        "colorFastness": {
+            "iconType": "GiChemicalDrop",
+            "title": "Color change  Fastness Tests",
+            "items": [
+                "Color Fastness to Washing",
+                "Color Fastness to Water",
+                "Color Fastness to Rubbing",
+                "Color Fastness to Perspiration",
+                "Color Fastness to Phenolic Yellowing",
+                "Color fastness to household Laundering"
+            ]
+        },
+        "physical": {
+            "iconType": "MdPrecisionManufacturing",
+            "title": "Physical Tests",
+            "items": [
+                "Appearance after wash",
+                "Dimensional stability to washing",
+                "Grams per square meter (GSM)",
+                "Twisting",
+                "PH Value",
+                "Tear Strength"
+            ]
+        },
+        "strength": {
+            "iconType": "FaAtom",
+            "title": "Strength Tests",
+            "items": [
+                "Tensile Strength",
+                "Seam slippage",
+                "Stretch Recovery",
+                "Nickel",
+                "Pull Test",
+                "Compression Test"
+            ]
+        }
+    },
+    "certifications": [
+        {
+            "iconType": "FaCertificate",
+            "title": "Internationally Certified .",
+            "description": "Our laboratory  global testing standards"
+        },
+        {
+            "iconType": "MdSecurity",
+            "title": "Secure Results",
+            "description": "Confidential and reliable testing process"
+        },
+        {
+            "iconType": "GiMicroscope",
+            "title": "Advanced Equipment",
+            "description": "State-of-the-art testing facilities"
+        }
+    ]
+}
