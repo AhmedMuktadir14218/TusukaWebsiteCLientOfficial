@@ -26,7 +26,7 @@ const AdminLogin = () => {
 
     try {
       const result = await axios.post(
-  `${API_BASE_URL}api/login`,
+  `${API_BASE_URL}/api/login`,
   { email, password },
   {
     headers: {
