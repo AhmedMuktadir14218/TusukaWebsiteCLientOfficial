@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 const ExplorePlants: React.FC = () => {
   
   const data = useExplorePlants();
-  console.log(data)
+  // console.log(data)
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const activeTab = queryParams.get('tab') || 'Manufactured'; // default to Manufactured if no tab param

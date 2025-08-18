@@ -1,47 +1,25 @@
-import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+// src/Pages/Admin/Login/Login.tsx
+import { useState } from "react"; 
 import loginCover from "./../../../assets/homeban55.jpg";
+import { useAuth } from "../../../Context/AuthContext";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState("");
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const { login, error } = useAuth();
 
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email || !password) {
-      setError("Please enter both email and password.");
+      alert("Please enter both email and password.");
       return;
     }
 
     setIsSubmitting(true);
-    setError("");
-
-    try {
-      const result = await axios.post(
-  `${API_BASE_URL}/api/login`,
-  { email, password },
-  {
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-    },
-    withCredentials: false, // this is key
-  }
-);
-
-      localStorage.setItem("token", result.data.token);
-      navigate("/admin");
-    } catch (err) {
-      setError(`Invalid credentials ${err}`);
-    }
+    await login(email, password);
+    setIsSubmitting(false);
   };
 
   return (
@@ -53,7 +31,7 @@ const AdminLogin = () => {
           alt="Background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0  bg-opacity-50 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-opacity-50 backdrop-blur-sm"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-md px-4">
@@ -63,7 +41,7 @@ const AdminLogin = () => {
               <div className="text-center mb-8">
                 <div className="flex justify-center">
                   <img
-                    className="h-16 w-auto" // Height set to 16 (64px), width auto to maintain aspect ratio
+                    className="h-16 w-auto"
                     src="https://i.ibb.co.com/sd4bz8Dr/logotusuka.jpg"
                     alt=""
                   />

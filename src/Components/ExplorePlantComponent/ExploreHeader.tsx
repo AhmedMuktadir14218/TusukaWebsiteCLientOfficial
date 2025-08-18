@@ -9,7 +9,7 @@ interface Props {
 const VITE_API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
 
 const ExploreHeader: React.FC<Props> = ({ header }) => {
-  console.log("ExploreHeader Props:", header);
+  // console.log("ExploreHeader Props:", header);
 
   // Construct the full image URL
   const fullImageUrl = header.image ? `${VITE_API_IMAGE_URL}/${header.image}` : '';

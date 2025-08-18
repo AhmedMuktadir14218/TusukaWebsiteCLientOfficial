@@ -83,7 +83,7 @@ const DirectorsInfo: React.FC = () => {
       setLoading(false);
     }
   };
-console.log(fetchDirectors)
+// console.log(fetchDirectors)
   // useEffect(fetchDirectors, []);
   useEffect(() => {
   fetchDirectors();
@@ -261,7 +261,7 @@ const fullImageUrl = (path?: string) => {
             ) : directors.length ? (
               directors.map(dir => {
                 const imgUrl = fullImageUrl(dir.image);
-                console.log('Image URL:', imgUrl);
+                // console.log('Image URL:', imgUrl);
 
                 return (
                   <TableRow key={dir.id}>

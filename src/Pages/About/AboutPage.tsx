@@ -45,7 +45,7 @@ const imagesWithFullUrl: SliderImage[] = heroData.sliderImages.map(img => {
   return { ...img, src: finalSrc };
 });
 
-console.log(imagesWithFullUrl)
+// console.log(imagesWithFullUrl)
 
 
   return (

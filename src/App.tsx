@@ -27,12 +27,15 @@ import AdminJobs from "./Pages/Admin/AdminJobs/AdminJobs";
 import AdminAbout from "./Pages/Admin/AdminAbout/AdminAbout";
 import Laboratory from "./Pages/Admin/Laboratory/Laboratory";
 import DirectorsInfo from "./Pages/Admin/DirectorsInfo/Directorsinfo";
+import { AuthProvider } from "./Context/AuthContext";
 
  
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/TusukaWebsite">
+      {/* <BrowserRouter> */}
+      <AuthProvider>
         <Routes>
           {/* Public Pages */}
           <Route path="/" element={<Layout />}>
@@ -53,9 +56,11 @@ function App() {
           </Route>
 
           {/* Admin Login (public) */}
+
           <Route path="/admin/login" element={<AdminLogin />} />
 
           {/* Admin Private Routes */}
+          
           {/* The AdminPrivateRoute component will handle authentication check */}
           <Route path="/admin" element={<AdminPrivateRoute />}>
             {/* If authenticated, the AdminLayout will render the Sidebar and the specific admin page */}
@@ -75,6 +80,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
+        </AuthProvider>
       </BrowserRouter>
       <SmoothFollower />
     </>

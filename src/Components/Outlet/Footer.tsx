@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Added LinkedIn for common social icons
 import binoxLogo from '../../assets/Tusuka_Logo_tr.png'; // Assuming your footer logo is named binox-logo.png in assets
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -47,6 +48,7 @@ const Footer: React.FC = () => {
             <li><a href="#" className="text-sm hover:text-blue-800 transition-colors">Privacy Policy</a></li>
             <li><a href="#" className="text-sm hover:text-blue-800 transition-colors">Awards & Recognitions</a></li>
             <li><a href="#" className="text-sm hover:text-blue-800 transition-colors">Careers</a></li>
+            <li><Link to="/admin" className="text-sm hover:text-blue-800 transition-colors">Login</Link></li>
           </ul>
         </div>
 

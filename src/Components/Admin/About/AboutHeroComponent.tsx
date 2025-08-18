@@ -53,7 +53,7 @@ const getImageUrl = (relativePath: string) => {
   const [modalImageSrc, setModalImageSrc] = useState<string>('');
 
   useEffect(() => { fetchHero(); }, []);
-console.log(hero)
+// console.log(hero)
   const fetchHero = async () => {
     try {
       const res = await fetch(`${API_BASE_URL}/api/about-hero`);

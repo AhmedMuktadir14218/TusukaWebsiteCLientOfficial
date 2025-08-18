@@ -46,7 +46,7 @@ const DirectorSlider: React.FC = () => {
     axios
       .get(`${API_BASE_URL}/api/directors`) // Use the environment variable here
       .then(res => {
-        console.log('API response.data.data:', res.data.data);
+        // console.log('API response.data.data:', res.data.data);
         setDirectors(res.data.data);
       })
       .catch(err => console.error('Error fetching directors:', err))

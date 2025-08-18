@@ -51,7 +51,7 @@ export const UnitsTable = ({ units, onAdd, onEdit, onDelete }: UnitsTableProps) 
   };
 
   // Log units to debug (can remove in production)
-  console.log("Units in Table:", units);
+  // console.log("Units in Table:", units);
 
   const handleOpenAdd = () => {
     setCurrentUnit({
@@ -192,7 +192,7 @@ export const UnitsTable = ({ units, onAdd, onEdit, onDelete }: UnitsTableProps) 
             <TableRow>
               <TableCell>Title</TableCell>
               <TableCell>Description</TableCell>
-              <TableCell>Background Image</TableCell>
+              {/* <TableCell>Background Image</TableCell> */}
               <TableCell>Order</TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
@@ -202,7 +202,7 @@ export const UnitsTable = ({ units, onAdd, onEdit, onDelete }: UnitsTableProps) 
               <TableRow key={unit.id}>
                 <TableCell>{unit.title}</TableCell>
                 <TableCell>{unit.description}</TableCell>
-                <TableCell>
+                {/* <TableCell>
                   {unit.background_image && (
                     <img 
                       src={getFullImageUrl(unit.background_image)} // Use helper function for table display
@@ -210,7 +210,7 @@ export const UnitsTable = ({ units, onAdd, onEdit, onDelete }: UnitsTableProps) 
                       className="w-20 h-auto object-cover" 
                     />
                   )}
-                </TableCell>
+                </TableCell> */}
                 <TableCell>{unit.order}</TableCell>
                 <TableCell>
                   <Button

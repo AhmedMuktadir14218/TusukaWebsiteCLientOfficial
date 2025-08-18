@@ -20,8 +20,6 @@ type Job = {
     updated_at: string;
 };
 
-
-
 const initialFormData: Omit<Job, 'id' | 'user_id' | 'created_at' | 'updated_at'> = {
     position: '',
     vacancy: 1,

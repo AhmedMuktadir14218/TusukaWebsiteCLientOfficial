@@ -22,14 +22,14 @@ const BACKEND_URL = import.meta.env.VITE_API_BASE_URL;
 const DirectorCard: React.FC<Props> = ({ director }) => {
   // Build full image URL, injecting "directors/" if needed, and log for debugging
   const fullImageUrl = (path: string) => {
-    console.log('Raw director.image:', path);
+    // console.log('Raw director.image:', path);
     // If path already contains "uploads/directors/", leave it.
     // Otherwise replace "uploads/" ➔ "uploads/directors/"
     const fixedPath = path.includes('uploads/directors/')
       ? path
       : path.replace('uploads/', 'public/uploads/directors/');
     const url = `${BACKEND_URL}/${fixedPath}`;
-    console.log('Computed fullImageUrl:', url);
+    // console.log('Computed fullImageUrl:', url);
     return url;
   };
 
