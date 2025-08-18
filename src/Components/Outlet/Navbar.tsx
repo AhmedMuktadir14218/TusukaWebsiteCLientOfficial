@@ -111,13 +111,13 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Link>
       ),
     },
-    {
-      label: (
-        <Link to="/admin" className="inline">
-          Admin
-        </Link>
-      ),
-    },
+    // {
+    //   label: (
+    //     <Link to="/admin" className="inline">
+    //       Admin
+    //     </Link>
+    //   ),
+    // },
   ];
 
   useEffect(() => {
