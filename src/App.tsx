@@ -63,15 +63,15 @@ function App() {
               <Route index element={<Dashboard />} /> {/* This will be /admin */}
               {/* Add other admin routes here */}
               {/* These paths will be relative to /admin */}
-              <Route path="explore-plants" element={<AdminExplorePlants></AdminExplorePlants>} /> {/* Example: /admin/explore-plants */}
-              <Route path="laboratory" element={<Laboratory></Laboratory>} /> {/* Example: /admin/laboratory */}
+              <Route path="/admin/explore-plants" element={<AdminExplorePlants></AdminExplorePlants>} /> {/* Example: /admin/explore-plants */}
+              <Route path="/admin/laboratory" element={<Laboratory></Laboratory>} /> {/* Example: /admin/laboratory */}
               {/* You might want to create Admin-specific versions of these pages or reuse */}
               {/* For instance, an AdminProducts page instead of just ExplorePlants directly */}
               {/* <Route path="products" element={<AdminProducts />} /> */}
               {/* <Route path="users" element={<AdminUsers />} /> */}
-              <Route path="directorsInfo" element={<DirectorsInfo />} />
-              <Route path="about" element={<AdminAbout></AdminAbout>} />
-              <Route path="jobs" element={<AdminJobs></AdminJobs>} />
+              <Route path="/admin/directorsInfo" element={<DirectorsInfo />} />
+              <Route path="/admin/about" element={<AdminAbout></AdminAbout>} />
+              <Route path="/admin/jobs" element={<AdminJobs></AdminJobs>} />
             </Route>
           </Route>
         </Routes>
