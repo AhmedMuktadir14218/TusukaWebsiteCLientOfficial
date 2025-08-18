@@ -1,0 +1,150 @@
+"filename", "language", "Properties", "HTML", "JSON", "JavaScript", "XML", "TypeScript", "JSON with Comments", "TypeScript JSX", "Markdown", "PostCSS", "comment", "blank", "total"
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\.env", "Properties", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 48, 0, 0, 9, 57
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\eslint.config.js", "JavaScript", 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 2, 29
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\index.html", "HTML", 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\package-lock.json", "JSON", 0, 0, 5789, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5790
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\package.json", "JSON", 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 1, 58
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\plan.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49, 1, 50
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\CoreComponent.json", "JSON", 0, 0, 180, 0, 0, 0, 0, 0, 0, 0, 0, 0, 180
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\DirectorsData.json", "JSON", 0, 0, 452, 0, 0, 0, 0, 0, 0, 0, 0, 1, 453
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\PlantsData.json", "JSON", 0, 0, 196, 0, 0, 0, 0, 0, 0, 0, 0, 1, 197
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\aboutData.json", "JSON", 0, 0, 85, 0, 0, 0, 0, 0, 0, 0, 0, 4, 89
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\companyReportData.json", "JSON", 0, 0, 208, 0, 0, 0, 0, 0, 0, 0, 0, 48, 256
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\laboratoryData.json", "JSON", 0, 0, 129, 0, 0, 0, 0, 0, 0, 0, 0, 2, 131
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\old.json", "JSON", 0, 0, 103, 0, 0, 0, 0, 0, 0, 0, 0, 4, 107
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\public\vite.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\App.css", "PostCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 1, 43
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\App.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 68, 0, 0, 12, 10, 90
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\AboutCompany.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 358, 0, 0, 7, 39, 404
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\AboutHeroComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 289, 0, 0, 10, 35, 334
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\AboutStoryComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 219, 0, 0, 8, 16, 243
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\BankingPartnerModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 122, 0, 0, 3, 11, 136
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\BankingPartners.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 109, 0, 0, 1, 7, 117
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\DatasetModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 128, 0, 0, 2, 6, 136
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\MVC_ComponentAdmin.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 511, 0, 0, 23, 28, 562
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\MetricModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 86, 0, 0, 2, 6, 94
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\PlantModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 122, 0, 0, 2, 11, 135
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\PrimaryStatModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 82, 0, 0, 1, 6, 89
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\PrimaryStats.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 2, 8, 109
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\ProductionCapacity.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 196, 0, 0, 4, 12, 212
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\SecondaryStatModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 98, 0, 0, 1, 7, 106
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\SecondaryStats.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 1, 8, 109
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\SisterConcernModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 93, 0, 0, 2, 6, 101
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\SisterConcerns.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 1, 7, 123
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\UnitModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 69, 0, 0, 2, 6, 77
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\About\Units.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 199, 0, 0, 1, 9, 209
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\ExploreHeader.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 326, 0, 0, 19, 26, 371
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\HeaderFormModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 318, 0, 0, 10, 22, 350
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\ImageManagerModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 145, 0, 0, 1, 8, 154
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\PlantCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 0, 7, 58
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\PlantDetailsModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 3, 16, 134
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\PlantForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 206, 0, 0, 2, 17, 225
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\PlantFormModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 297, 0, 0, 2, 24, 323
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\PlantImageSlider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 88, 0, 0, 164, 19, 271
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\PlantsTable.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 333, 0, 0, 20, 32, 385
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\UnitComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 116, 0, 0, 37, 19, 172
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\UnitFormModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 237, 0, 0, 2, 16, 255
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\ExplorePlantComponent\Admin\UnitsTable.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 354, 0, 0, 30, 28, 412
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\LabComponents\CertificationsSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 336, 0, 0, 5, 28, 369
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\LabComponents\FacilitiesSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 297, 0, 0, 11, 32, 340
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\LabComponents\HeaderSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 127, 0, 0, 0, 22, 149
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\LabComponents\ImageUploader.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 210, 0, 0, 29, 27, 266
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\LabComponents\IntroSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 389, 0, 0, 32, 32, 453
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\LabComponents\ServicesSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 307, 0, 0, 9, 24, 340
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\types\AboutCompanyType.ts", "TypeScript", 0, 0, 0, 0, 0, 105, 0, 0, 0, 0, 4, 11, 120
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\types\explorePlants.ts", "TypeScript", 0, 0, 0, 0, 0, 56, 0, 0, 0, 0, 1, 7, 64
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\types\global.d.ts", "TypeScript", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 2, 6
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\types\index.d.ts", "TypeScript", 0, 0, 0, 0, 0, 37, 0, 0, 0, 0, 0, 7, 44
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\types\labTypes.ts", "TypeScript", 0, 0, 0, 0, 0, 46, 0, 0, 0, 0, 1, 7, 54
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Admin\types\vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\AwardCertification.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 112, 0, 0, 4, 17, 133
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\BannerHome.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 178, 0, 0, 12, 20, 210
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\BannerHome2.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 171, 0, 0, 8, 16, 195
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\CanvasCursor.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 5, 12
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\ContactUs.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 288, 0, 0, 15, 24, 327
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\CorePointComponent\CoreComponentModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 267, 0, 0, 8, 27, 302
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\CorePointComponent\CorePointComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 164, 0, 0, 5, 9, 178
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\CorePointComponent\Safety.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\EventsMediaComponent\EventsMediaHeader.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 1, 15
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\EventsMediaComponent\EventsMediaSlider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 152, 0, 0, 5, 9, 166
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\EventsMediaComponent\ImageGallerySlider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 85, 0, 0, 1, 3, 89
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\EventsMediaComponent\NewsSlider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 60, 0, 0, 1, 3, 64
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\ExplorePlantComponent\ExploreHeader.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 31, 0, 0, 3, 6, 40
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\ExplorePlantComponent\PlantCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 114, 0, 0, 59, 17, 190
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\ExplorePlantComponent\PlantImageSlider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 165, 0, 0, 169, 26, 360
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\ExplorePlantComponent\UnitComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 46, 0, 0, 0, 8, 54
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\HeroBanner.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 159, 0, 0, 16, 18, 193
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\HeroBanner2.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 169, 0, 0, 24, 19, 212
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\LaboratoryComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 2, 8
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 1, 2, 19
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\LogoMoving.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 59, 0, 0, 47, 14, 120
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Outlet\Footer.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 85, 0, 0, 7, 11, 103
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Outlet\Navbar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 135, 0, 0, 7, 14, 156
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Outlet\Navbar2.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 5, 6, 74
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\PageHeaderComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 93, 0, 0, 6, 6, 105
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\Sidebar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 202, 0, 0, 3, 8, 213
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\SidebarMenu.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 62, 0, 0, 2, 5, 69
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\SmoothFollower.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 72, 0, 0, 5, 21, 98
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\AboutHero.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 47, 0, 0, 0, 3, 50
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\CompanyReport.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 444, 0, 0, 28, 30, 502
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\DIRECTORS.html", "HTML", 0, 92, 0, 0, 0, 0, 0, 0, 0, 0, 5, 11, 108
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\DirectorCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 192, 0, 0, 123, 35, 350
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\DirectorSlider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 251, 34, 385
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\ImageSlider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 78, 0, 0, 1, 6, 85
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\MVC_Component.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 192, 0, 0, 13, 16, 221
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\MeetTheTeam.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 0, 4, 55
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\MetricsCounter.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 65, 0, 0, 1, 8, 74
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\MissionValues.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 47, 0, 0, 0, 6, 53
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\OurCommitment.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 1, 6, 37
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\OurStory.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 126, 0, 0, 22, 17, 165
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\about\QualityComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 122, 0, 0, 6, 6, 134
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Components\useCanvasCursor.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 215, 0, 0, 3, 23, 241
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Context\AuthContext.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 112, 0, 0, 2, 18, 132
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\ACertificationsPage.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 172, 0, 0, 2, 16, 190
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\About\AboutPage.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 73, 0, 0, 10, 22, 105
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\About\CompanyProfile.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 5, 16
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\About\Laboratory.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 356, 0, 0, 432, 63, 851
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\About\MVC.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 5, 18
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\About\Quality.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 2, 9
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\AdminAbout\AdminAbout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 3, 17
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\AdminExplorePlants\ExplorePlants.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 175, 0, 0, 2, 21, 198
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\AdminJobs\AdminJobs.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 364, 0, 0, 2, 39, 405
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\Dashboard\Dashboard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 1, 8
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\DirectorsInfo\Directorsinfo.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 379, 0, 0, 29, 25, 433
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\Laboratory\Laboratory.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 81, 0, 0, 3, 19, 103
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\Laboratory\api.ts", "TypeScript", 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 1, 1, 12
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\Laboratory\labService.ts", "TypeScript", 0, 0, 0, 0, 0, 44, 0, 0, 0, 0, 5, 10, 59
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\Laboratory\useLabApi.ts", "TypeScript", 0, 0, 0, 0, 0, 134, 0, 0, 0, 0, 11, 26, 171
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Admin\Login\Login.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 152, 0, 0, 2, 10, 164
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Contact_Us.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 3, 12
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\EventsMedia\EventsMedia.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 9, 4, 24
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\ExplorePlants\ExplorePlants.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 1, 5, 27
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\ExplorePlants\PlantDetails.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 202, 16, 218
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\ExplorePlants\PlantDetailsModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 295, 0, 0, 24, 23, 342
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\Home.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 37, 0, 0, 9, 14, 60
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Pages\JoinWithUse.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 236, 0, 0, 3, 22, 261
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Routes\AdminLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 2, 2, 16
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\Routes\AdminPrivateRoute.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 25, 0, 0, 1, 5, 31
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\assets\fonts\icomoon.svg", "XML", 0, 0, 0, 0, 106, 0, 0, 0, 0, 0, 0, 0, 106
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\assets\react.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\custom.d.ts", "TypeScript", 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 1, 16
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\hooks\useAbouthero.ts", "TypeScript", 0, 0, 0, 0, 0, 49, 0, 0, 0, 0, 1, 8, 58
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\hooks\useApiData.ts", "TypeScript", 0, 0, 0, 0, 0, 49, 0, 0, 0, 0, 60, 24, 133
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\hooks\useExplorePlantsHooks.ts", "TypeScript", 0, 0, 0, 0, 0, 65, 0, 0, 0, 0, 16, 10, 91
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\hooks\useLabApi.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 82, 0, 0, 3, 7, 92
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\index.css", "PostCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 49, 8, 13, 70
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\main.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 2, 11
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\types\about.ts", "TypeScript", 0, 0, 0, 0, 0, 53, 0, 0, 0, 0, 0, 4, 57
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\types\global.d.ts", "TypeScript", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 1, 1, 10
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\types\types.ts", "TypeScript", 0, 0, 0, 0, 0, 42, 0, 0, 0, 0, 7, 4, 53
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\src\vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\tsconfig.app.json", "JSON", 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 31, 5, 68
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\tsconfig.json", "JSON with Comments", 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 1, 8
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\tsconfig.node.json", "JSON", 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 2, 3, 26
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\use-mouse.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 49, 0, 0, 0, 10, 59
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\utils.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 1, 6
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\vercel.json", "JSON", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\vite.config.ts", "TypeScript", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 1, 2, 9
+"d:\TusukaReact\TusukaWebsiteCLientOfficial\vite.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"Total", "-", 2, 104, 7257, 27, 108, 720, 7, 14706, 48, 49, 2313, 1751, 27092

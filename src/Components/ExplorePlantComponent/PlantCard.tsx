@@ -23,61 +23,6 @@ interface DetailedPlantResponse {
   plant_images: Array<{ image_path: string }>;
 }
 
-// const PlantCard: React.FC<Props> = ({ plant }) => {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-//   const [thumbnail, setThumbnail] = useState<string | null>(null);
-
-//   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
-//   const VITE_API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
-
-//   useEffect(() => {
-//     // Helper function moved inside useEffect
-//     // This function will be recreated on each render, but since it's only used within
-//     // this specific useEffect and its dependencies (VITE_API_IMAGE_URL) are in the
-//     // effect's dependency array, it's considered stable by ESLint for this context.
-//     const getFullImageUrl = (imagePath: string): string => {
-//       // If the imagePath already starts with 'http', it's likely an absolute URL
-//       if (imagePath.startsWith('http')) {
-//         return imagePath;
-//       }
-//       // Prepend the VITE_API_IMAGE_URL and ensure no double slashes
-//       return `${VITE_API_IMAGE_URL}/${imagePath.replace(/^\/+/, '')}`;
-//     };
-
-//     // Ensure both base URLs are available
-//     if (!API_BASE_URL) {
-//       console.error('VITE_API_BASE_URL is not defined in the environment variables.');
-//       setThumbnail(null);
-//       return;
-//     }
-//     if (!VITE_API_IMAGE_URL) {
-//       console.error('VITE_API_IMAGE_URL is not defined in the environment variables.');
-//       setThumbnail(null);
-//       return;
-//     }
-
-//     // fetch the detailed plant endpoint to get its images
-//     fetch(`${API_BASE_URL}/api/explore-plants/plants/${plant.id}`)
-//       .then(res => {
-//         if (!res.ok) throw new Error('Could not load plant images');
-//         return res.json() as Promise<DetailedPlantResponse>;
-//       })
-//       .then(json => {
-//         // Build full URLs for all images using the `getFullImageUrl` helper
-//         const urls = json.plant_images.map(pi => getFullImageUrl(pi.image_path));
-
-//         // Take the last one (or first, if you prefer) for the thumbnail
-//         if (urls.length > 0) {
-//           setThumbnail(urls[urls.length - 1]);
-//         } else {
-//           setThumbnail(null); // No images found
-//         }
-//       })
-//       .catch(err => {
-//         console.error('Error loading thumbnail:', err);
-//         setThumbnail(null);
-//       });
-//   }, [plant.id, API_BASE_URL, VITE_API_IMAGE_URL]); // Dependencies remain the same as the function `getFullImageUrl` is now internal to the effect
 const PlantCard: React.FC<Props> = ({ plant }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [thumbnail, setThumbnail] = useState<string | null>(null);
@@ -86,6 +31,10 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
   const VITE_API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
 
   useEffect(() => {
+    // Helper function moved inside useEffect
+    // This function will be recreated on each render, but since it's only used within
+    // this specific useEffect and its dependencies (VITE_API_IMAGE_URL) are in the
+    // effect's dependency array, it's considered stable by ESLint for this context.
     const getFullImageUrl = (imagePath: string): string => {
       // If the imagePath already starts with 'http', it's likely an absolute URL
       if (imagePath.startsWith('http')) {
@@ -117,9 +66,9 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
         // Build full URLs for all images using the `getFullImageUrl` helper
         const urls = json.plant_images.map(pi => getFullImageUrl(pi.image_path));
 
-        // Take the FIRST one for the thumbnail
+        // Take the last one (or first, if you prefer) for the thumbnail
         if (urls.length > 0) {
-          setThumbnail(urls[0]); // Changed from urls[urls.length - 1] to urls[0]
+          setThumbnail(urls[urls.length - 1]);
         } else {
           setThumbnail(null); // No images found
         }
@@ -128,7 +77,58 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
         console.error('Error loading thumbnail:', err);
         setThumbnail(null);
       });
-  }, [plant.id, API_BASE_URL, VITE_API_IMAGE_URL]);
+  }, [plant.id, API_BASE_URL, VITE_API_IMAGE_URL]); // Dependencies remain the same as the function `getFullImageUrl` is now internal to the effect
+// const PlantCard: React.FC<Props> = ({ plant }) => {
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+//   const [thumbnail, setThumbnail] = useState<string | null>(null);
+
+//   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+//   const VITE_API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
+
+//   useEffect(() => {
+//     const getFullImageUrl = (imagePath: string): string => {
+//       // If the imagePath already starts with 'http', it's likely an absolute URL
+//       if (imagePath.startsWith('http')) {
+//         return imagePath;
+//       }
+//       // Prepend the VITE_API_IMAGE_URL and ensure no double slashes
+//       return `${VITE_API_IMAGE_URL}/${imagePath.replace(/^\/+/, '')}`;
+//     };
+
+//     // Ensure both base URLs are available
+//     if (!API_BASE_URL) {
+//       console.error('VITE_API_BASE_URL is not defined in the environment variables.');
+//       setThumbnail(null);
+//       return;
+//     }
+//     if (!VITE_API_IMAGE_URL) {
+//       console.error('VITE_API_IMAGE_URL is not defined in the environment variables.');
+//       setThumbnail(null);
+//       return;
+//     }
+
+//     // fetch the detailed plant endpoint to get its images
+//     fetch(`${API_BASE_URL}/api/explore-plants/plants/${plant.id}`)
+//       .then(res => {
+//         if (!res.ok) throw new Error('Could not load plant images');
+//         return res.json() as Promise<DetailedPlantResponse>;
+//       })
+//       .then(json => {
+//         // Build full URLs for all images using the `getFullImageUrl` helper
+//         const urls = json.plant_images.map(pi => getFullImageUrl(pi.image_path));
+
+//         // Take the FIRST one for the thumbnail
+//         if (urls.length > 0) {
+//           setThumbnail(urls[0]); // Changed from urls[urls.length - 1] to urls[0]
+//         } else {
+//           setThumbnail(null); // No images found
+//         }
+//       })
+//       .catch(err => {
+//         console.error('Error loading thumbnail:', err);
+//         setThumbnail(null);
+//       });
+//   }, [plant.id, API_BASE_URL, VITE_API_IMAGE_URL]);
   return (
     <>
       {isModalOpen && (

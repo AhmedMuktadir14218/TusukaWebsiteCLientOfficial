@@ -33,8 +33,8 @@ import { AuthProvider } from "./Context/AuthContext";
 function App() {
   return (
     <>
-      <BrowserRouter basename="/TusukaWebsite">
-      {/* <BrowserRouter> */}
+      {/* <BrowserRouter basename="/TusukaWebsite"> */}
+      <BrowserRouter>
       <AuthProvider>
         <Routes>
           {/* Public Pages */}
