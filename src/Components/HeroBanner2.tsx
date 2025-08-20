@@ -40,7 +40,7 @@ const HeroBanner2: React.FC = () => {
 
   return (
     <div>
-    <section className="relative  w-full lg:h-[85vh]  md:h-[45vh] sm:h-[38vh] overflow-hidden">
+    <section className="relative  w-full lg:h-[70vh] md:h-[40vh] sm:h-[25vh] overflow-hidden">
       {/* Background Video */}
       <video
         ref={backgroundVideoRef}

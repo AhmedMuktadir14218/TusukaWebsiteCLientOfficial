@@ -21,17 +21,18 @@ const Navbar: React.FC<NavbarProps> = () => {
     { label: <Link to="/">Home</Link> },
     {
       label: (
-        <>
-          About Us <IoMdArrowDropdown className="inline" />
-        </>
+        <Link to="/about">
+          About Us 
+          {/* <IoMdArrowDropdown className="inline" /> */}
+        </Link>
       ),
-      subItems: [
-        { label: <Link to="/companyprofile">Company Profile</Link> },
-        { label: <Link to="/quality">Quality</Link> },
-        { label: <Link to="/mvc?tab=mission">Mission</Link> },
-        { label: <Link to="/mvc?tab=vision">Vision</Link> },
-        { label: <Link to="/mvc?tab=commitment">Commitment</Link> },
-      ],
+      // subItems: [
+      //   { label: <Link to="/companyprofile">Company Profile</Link> },
+      //   { label: <Link to="/quality">Quality</Link> },
+      //   { label: <Link to="/mvc?tab=mission">Mission</Link> },
+      //   { label: <Link to="/mvc?tab=vision">Vision</Link> },
+      //   { label: <Link to="/mvc?tab=commitment">Commitment</Link> },
+      // ],
     },
     { label: <Link to="/plants">Explore Plants</Link> },
     { label: <Link to="/laboratory">Laboratory</Link> },
@@ -83,7 +84,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 {item.label}
               </button>
 
-              {item.subItems && activeSubmenu === index && (
+              {/* {item.subItems && activeSubmenu === index && (
                 <div className="absolute top-full left-0 mt-1 w-48 bg-white shadow-md rounded-md z-40">
                   {item.subItems.map((subItem, subIndex) => (
                     <div key={subIndex} className="px-4 py-2 hover:bg-gray-100">
@@ -91,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     </div>
                   ))}
                 </div>
-              )}
+              )} */}
             </div>
           ))}
         </div>
@@ -131,7 +132,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               >
                 {item.label}
               </button>
-              {item.subItems && (
+              {/* {item.subItems && (
                 <div className="ml-4 text-sm space-y-1">
                   {item.subItems.map((subItem, subIndex) => (
                     <button
@@ -143,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     </button>
                   ))}
                 </div>
-              )}
+              )} */}
             </div>
           ))}
         </div>

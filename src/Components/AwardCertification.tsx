@@ -71,7 +71,7 @@ const AwardCertification: React.FC = () => {
   const duplicatedCertificates = [...certificates, ...certificates];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 relative inline-block pb-2">
@@ -98,7 +98,7 @@ const AwardCertification: React.FC = () => {
             {duplicatedCertificates.map((cert, index) => (
               <motion.div
                 key={`${cert.title}-${index}`}
-                className="flex-shrink-0 mx-4 p-4 cursor-pointer"
+                className="flex-shrink-0 mx-4   cursor-pointer"
                 onClick={() => window.open(cert.image, '_blank', 'noopener,noreferrer')}
                 whileHover={{
                   scale: 1.1,
@@ -107,11 +107,11 @@ const AwardCertification: React.FC = () => {
                 }}
                 style={{ transition: 'transform 0.3s ease' }}
               >
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-56 md:w-72 lg:w-80">
+                <div className=" rounded-lg  overflow-hidden w-56 md:w-72 lg:w-80">
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="h-36 md:h-48 lg:h-56 w-full object-contain p-2 bg-gray-100"
+                    className="h-36 md:h-48 lg:h-56 w-full object-contain "
                   />
                   {/* <p className="text-center text-sm md:text-base p-2 text-gray-700 truncate" title={cert.title}>
                     {cert.title}

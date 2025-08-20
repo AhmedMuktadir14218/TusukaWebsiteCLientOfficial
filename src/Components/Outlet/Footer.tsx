@@ -1,100 +1,69 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Added LinkedIn for common social icons
-import binoxLogo from '../../assets/Tusuka_Logo_tr.png'; // Assuming your footer logo is named binox-logo.png in assets
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import binoxLogo from '../../assets/Tusuka_Logo_tr.png';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-50 to-indigo-50 py-16 text-gray-700">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+    <footer className="bg-gradient-to-r from-blue-50 to-indigo-50 text-gray-700">
+      <div className="container mx-auto px-4 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-        {/* Column 1: Logo and Follow Us */}
-        <div className="col-span-1 lg:col-span-1 flex flex-col items-start">
-          <img src={binoxLogo} alt="Binox Logo" className="h-10 mb-6" />
+        {/* Logo & Socials */}
+        <div className="flex flex-col items-start">
+          <img src={binoxLogo} alt="Tusuka Logo" className="h-12 mb-4" />
           <p className="text-sm font-semibold mb-4">Follow Us</p>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
-              <FaFacebookF size={18} />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
-              <FaTwitter size={18} />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
-              <FaInstagram size={18} />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
-              <FaLinkedinIn size={18} /> {/* Added LinkedIn as it's common */}
-            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors"><FaFacebookF size={18} /></a>
+            <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors"><FaTwitter size={18} /></a>
+            <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors"><FaInstagram size={18} /></a>
+            <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors"><FaLinkedinIn size={18} /></a>
           </div>
         </div>
 
-        {/* Column 2: Florida Office */}
-        <div className="col-span-1 lg:col-span-1">
-          <h4 className="text-base font-semibold text-gray-800 mb-4">Florida</h4>
-          <p className="text-sm mb-2">Tusuka Group</p>
-          <p className="text-sm">House- 50 (5th floor), Road no –11</p>
-          <p className="text-sm">Block-F, Banani,</p>
-          <p className="text-sm">Dhaka-1213, Bangladesh.</p>
-          <p className="text-sm">IP Phone : +8809666722222</p>
+        {/* Office Info */}
+        <div>
+          <h4 className="text-lg font-semibold text-gray-800 mb-4">Our Office</h4>
+          <p className="text-sm mb-1">Tusuka Group</p>
+          <p className="text-sm mb-1">House-50 (5th Floor), Road no-11</p>
+          <p className="text-sm mb-1">Block-F, Banani, Dhaka-1213, Bangladesh</p>
+          <p className="text-sm mt-2">Phone: +8809666722222</p>
         </div>
 
-
-
-        {/* Column 3: Company Links */}
-        <div className="col-span-1 lg:col-span-1">
-          <h4 className="text-base font-semibold text-gray-800 mb-4">Company</h4>
+        {/* Company Links */}
+        <div>
+          <h4 className="text-lg font-semibold text-gray-800 mb-4">Company</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="text-sm hover:text-blue-800 transition-colors">Contact Us</a></li>
-            <li><a href="#" className="text-sm hover:text-blue-800 transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="text-sm hover:text-blue-800 transition-colors">Awards & Recognitions</a></li>
-            <li><a href="#" className="text-sm hover:text-blue-800 transition-colors">Careers</a></li>
-            <li><Link to="/admin" className="text-sm hover:text-blue-800 transition-colors">Login</Link></li>
+            <li><Link to="/contact-us" className="text-sm hover:text-blue-700 transition-colors">Contact Us</Link></li>
+            <li><Link to="#" className="text-sm hover:text-blue-700 transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/acp" className="text-sm hover:text-blue-700 transition-colors">Awards & Recognitions</Link></li>
+            <li><Link to="/joinwithus" className="text-sm hover:text-blue-700 transition-colors">Careers</Link></li>
+            <li><Link to="/admin" className="text-sm hover:text-blue-700 transition-colors">Login</Link></li>
           </ul>
         </div>
 
-        {/* Column 4: Newsletter / Call to Action */}
-        <div className="col-span-1 md:col-span-2 lg:col-span-2">
-          <h4 className="text-xl md:text-2xl font-bold text-gray-800 leading-tight mb-4">
-            We build really better idea
-          </h4>
-          <p className="text-sm mb-4 text-gray-600">
-            Subscribe for newsletter & get day news, service updates
-          </p>
-          <div className="flex items-center bg-gray-200 rounded-full px-4 py-2">
+        {/* Newsletter / CTA */}
+        <div>
+          <h4 className="text-lg font-semibold text-gray-800 mb-4">Subscribe</h4>
+          <p className="text-sm mb-4 text-gray-600">Get the latest updates and offers.</p>
+          <div className="flex w-full max-w-md">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-grow bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm"
+              className="flex-grow px-4 py-2 rounded-l-full outline-none border border-gray-300 text-gray-800 placeholder-gray-500 text-sm"
             />
-            <button className="ml-3 p-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
+            <button className="px-4 py-2 bg-blue-700 text-white rounded-r-full hover:bg-blue-800 transition-colors">
+              Subscribe
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Separator / Additional Info Row */}
-        <div className="col-span-full md:col-span-2 lg:col-span-3 mt-8">
-          <h4 className="text-base font-semibold text-gray-800 mb-4">Dhaka,Bangladesh</h4>
-          <p className="text-sm mb-2">Tusuka Group</p>
-          <p className="text-sm">House- 50 (5th floor), Road no –11,</p>
-          <p className="text-sm">Block-F, Banani, Dhaka-1213, Bangladesh.</p>
-        </div>
- 
-        {/* Work Inquiries */}
-        <div className="col-span-1 md:col-span-1 lg:col-span-1 mt-8">
-          <h4 className="text-base font-semibold text-gray-800 mb-4">Work inquiries</h4>
-          <p className="text-sm mb-2">Interested in working with us?</p>
-          <a href="mailto:inquiry@binox.com" className="text-sm text-blue-800 hover:underline transition-colors">
-            inquiry@binox.com
-          </a>
-        </div>
-
-        {/* Copyright */}
-        <div className="col-span-1 md:col-span-1 lg:col-span-1 mt-8 text-sm text-gray-500 lg:text-right">
-          <p>© 2023 <span className="font-semibold text-gray-800">Crowdyflow</span> Agency</p>
-        </div>
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-200 mt-8 py-4 text-center sm:text-left sm:flex sm:justify-between sm:items-center px-4">
+        <p className="text-sm text-gray-500">&copy; 2025 <span className="font-semibold text-gray-800">Tusuka Group</span>. All rights reserved.</p>
+        <p className="text-sm text-gray-500 mt-2 sm:mt-0">
+          Work inquiries: <a href="mailto:inquiry@tusuka.com" className="text-blue-700 hover:underline">inquiry@tusuka.com</a>
+        </p>
       </div>
     </footer>
   );

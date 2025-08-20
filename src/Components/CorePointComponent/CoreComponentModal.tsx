@@ -11,11 +11,19 @@ interface ModalProps {
 }
 
 export const BaseModal: React.FC<ModalProps> = ({ isOpen, title, onClose, children }) => {
-  React.useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-  }, [isOpen]);
+React.useEffect(() => {
+  if (isOpen) {
+    // prevent background scrolling but allow sidebar scrollbars
+    document.documentElement.style.overflow = "hidden";
+  } else {
+    document.documentElement.style.overflow = "";
+  }
 
-  if (!isOpen) return null;
+  return () => {
+    document.documentElement.style.overflow = "";
+  };
+}, [isOpen]);
+
 
   return (
     <AnimatePresence>

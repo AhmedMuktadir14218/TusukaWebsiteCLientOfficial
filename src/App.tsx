@@ -28,14 +28,16 @@ import AdminAbout from "./Pages/Admin/AdminAbout/AdminAbout";
 import Laboratory from "./Pages/Admin/Laboratory/Laboratory";
 import DirectorsInfo from "./Pages/Admin/DirectorsInfo/Directorsinfo";
 import { AuthProvider } from "./Context/AuthContext";
+import ScrollToTop from "./Components/ScrollToTop";
 
- 
+
 function App() {
   return (
     <>
       {/* <BrowserRouter basename="/TusukaWebsite"> */}
       <BrowserRouter>
       <AuthProvider>
+        <ScrollToTop />
         <Routes>
           {/* Public Pages */}
           <Route path="/" element={<Layout />}>

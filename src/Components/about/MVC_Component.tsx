@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import image from '../../assets/homeban11.webp'; 
 
 interface TabContent {
   id: number;
@@ -130,26 +129,7 @@ const MVC_Component: React.FC<{ initialTab?: string }> = ({ initialTab = 'missio
 
   return (
     <div className="font-sans antialiased bg-gray-50">
-      {/* Hero Section */}
-      <div className="relative h-[300px] md:h-[400px]">
-        <img
-          src={image}
-          alt="Company Values"
-          className="w-full h-full object-cover brightness-50"
-        />
-        <div className="absolute inset-0 bg-opacity-50 flex items-center justify-center">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-4">
-                Our Focus
-              </h1>
-              <p className="text-base md:text-lg text-white max-w-2xl mx-auto">
-                Driving excellence through clear mission, focused vision, and strong commitment
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Content Section - Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

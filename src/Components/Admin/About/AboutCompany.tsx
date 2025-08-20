@@ -21,12 +21,6 @@ import type {
   SisterConcern,
 } from '../../Admin/types/AboutCompanyType'; // Adjust path if needed
 
-// Define BankingPartnerFormData type
-interface BankingPartnerFormData extends FormData {
-  name: string;
-  image?: File;
-}
-
 const AboutCompany: React.FC = () => {
   const [data, setData] = useState<AboutCompanyData | null>(null);
   const [activeTab, setActiveTab] = useState(0);
@@ -50,8 +44,6 @@ const AboutCompany: React.FC = () => {
       // Handle error, e.g., set data to a default empty state
       setData({
           id: 1, // Default ID
-          main_title: 'Tusuka Group',
-          highlighted_title: 'Group',
           primary_stats: [],
           secondary_stats: [],
           production_capacity: { id: 1, about_company_id: 1, title: '', datasets: [], metrics: [], created_at: '', updated_at: '' },

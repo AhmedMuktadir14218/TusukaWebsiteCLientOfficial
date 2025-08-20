@@ -68,53 +68,66 @@ const CorePointComponent: React.FC = () => {
     <section className="relative py-20 bg-[#EEF5FE] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
-          <motion.div
-            className="lg:col-span-1 flex flex-col"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={{ 
-              hidden: { opacity: 0 }, 
-              visible: { opacity: 1, transition: { staggerChildren: 0.1 } } 
-            }}
-          >
-            {/* Title and Image */}
-            <motion.div
-              className="mb-8 w-full max-w-md mx-auto lg:mx-0 group"
-              variants={{ 
-                hidden: { opacity: 0, y: 50 }, 
-                visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } } 
-              }}
-            >
-              <div className="relative overflow-hidden rounded-xl shadow-2xl">
-                <img src={Brandlogo3} alt="Brand Logo" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#040270] opacity-20 group-hover:opacity-10 transition-opacity duration-500"></div>
-              </div>
-            </motion.div>
+<motion.div
+  className="lg:col-span-1 flex flex-col items-center lg:items-start px-4"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={{ 
+    hidden: { opacity: 0 }, 
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } } 
+  }}
+>
+  {/* Title and Image */}
+  <motion.div
+    className="mb-8 w-full max-w-sm lg:max-w-md group"
+    variants={{ 
+      hidden: { opacity: 0, y: 50 }, 
+      visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } } 
+    }}
+  >
+    <div className="relative overflow-hidden rounded-xl shadow-2xl">
+      <img 
+        src={Brandlogo3} 
+        alt="Brand Logo" 
+        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" 
+      />
+      <div className="absolute inset-0 bg-[#040270] opacity-20 group-hover:opacity-10 transition-opacity duration-500"></div>
+    </div>
+  </motion.div>
 
-            {/* Section Content */}
-            <motion.p className="text-gray-700 font-medium mb-4 uppercase tracking-wider"
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
-            >
-              Our Core Points
-            </motion.p>
-            <motion.h2 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-6"
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
-            >
-              How we are <br /> working with local <br /> and global partners
-            </motion.h2>
-            <motion.p className="text-gray-600 text-lg mb-8"
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
-            >
-              Dedicated to excellence, innovation, and sustainable growth in every partnership.
-            </motion.p>
-            <motion.a href="#" className="inline-flex items-center text-gray-700 font-semibold group"
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
-            >
-              Explore All Points
-              <span className="ml-2 transform transition-transform group-hover:translate-x-2">→</span>
-            </motion.a>
-          </motion.div>
+  {/* Section Content */}
+  <motion.p
+    className="text-gray-700 font-medium mb-4 uppercase tracking-wider text-center lg:text-left"
+    variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
+  >
+    Our Core Points
+  </motion.p>
+
+  <motion.h2
+    className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight mb-6 text-center lg:text-left"
+    variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
+  >
+    How we are <br /> working with local <br /> and global partners
+  </motion.h2>
+
+  <motion.p
+    className="text-gray-600 text-base sm:text-lg mb-8 text-center lg:text-left"
+    variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
+  >
+    Dedicated to excellence, innovation, and sustainable growth in every partnership.
+  </motion.p>
+
+  <motion.a
+    href="#"
+    className="inline-flex items-center text-gray-700 font-semibold text-center lg:text-left"
+    variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 10 } } }}
+  >
+    Explore All Points
+    <span className="ml-2 transform transition-transform group-hover:translate-x-2">→</span>
+  </motion.a>
+</motion.div>
+
 
           {/* Point Cards */}
           <motion.div

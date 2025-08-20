@@ -14,6 +14,8 @@ import DirectorSlider from '../../Components/about/DirectorSlider';
 import Laboratory from './Laboratory';
 import { useAboutHero } from '../../hooks/useAbouthero';
 import type { SliderImage } from '../../types/about';
+import LogoMoving from '../../Components/LogoMoving';
+import MVC from './MVC';
 
 const AboutPage: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -80,15 +82,16 @@ const imagesWithFullUrl: SliderImage[] = heroData.sliderImages.map(img => {
         />
 
         <OurStory />
-
+<LogoMoving />
         <DirectorSlider />
 
         <CompanyReport />
 
         <QualityComponent />
 
-        <MVC_Component />
-
+        {/* <MVC_Component />
+         */}
+<MVC></MVC>
         <OurCommitment
           title={heroData.title /* or data.commitment from another endpoint */}
           areas={[]}            /* pass actual data when available */
