@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-
+import bgImage from '../assets/bg2.png';
 // Import certificate images
 import CF1 from '../assets/Award&Certificate/CF1.jpg';
 import CF2 from '../assets/Award&Certificate/CF2.png';
@@ -71,7 +71,13 @@ const AwardCertification: React.FC = () => {
   const duplicatedCertificates = [...certificates, ...certificates];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50 overflow-hidden">
+    <section className="py-16 bg-gradient-to-r  overflow-hidden"
+    style={{
+      backgroundImage: `url(${bgImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 relative inline-block pb-2">
@@ -103,15 +109,15 @@ const AwardCertification: React.FC = () => {
                 whileHover={{
                   scale: 1.1,
                   zIndex: 10,
-                  boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.2)",
+                  // boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.2)",
                 }}
                 style={{ transition: 'transform 0.3s ease' }}
               >
-                <div className=" rounded-lg  overflow-hidden w-56 md:w-72 lg:w-80">
+                <div className=" rounded-lg  overflow-hidden w-35 md:w-50 lg:w-70">
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="h-36 md:h-48 lg:h-56 w-full object-contain "
+                    className="h-30 md:h-36 lg:h-38 w-full object-contain "
                   />
                   {/* <p className="text-center text-sm md:text-base p-2 text-gray-700 truncate" title={cert.title}>
                     {cert.title}

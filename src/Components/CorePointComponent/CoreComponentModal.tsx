@@ -35,7 +35,7 @@ React.useEffect(() => {
         onClick={onClose}
       >
         <motion.div
-          className="bg-white rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col shadow-xl"
+          className="bg-white rounded-lg overflow-hidden w-full max-w-4xl max-h-[80vh] flex flex-col shadow-xl"
           initial={{ scale: 0.9, y: 50 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.9, y: 50 }}
@@ -212,7 +212,7 @@ export const ResearchDevelopmentModal: React.FC<{ data: any; isOpen: boolean; on
 export const SafetyModal: React.FC<{ data: any; isOpen: boolean; onClose: () => void }> = ({ data, isOpen, onClose }) => {
   return (
     <BaseModal isOpen={isOpen} title="Safety" onClose={onClose}>
-      <div className="space-y-6">
+      <div className="space-y-6 relative">
         <div>
           <h3 className="text-xl font-semibold mb-2 text-blue-800">Workplace Safety</h3>
           <p className="text-gray-700 mb-4">{data.workplaceSafety.introduction}</p>
@@ -285,7 +285,7 @@ export const SafetyModal: React.FC<{ data: any; isOpen: boolean; onClose: () => 
 export const SocialBenefitModal: React.FC<{ data: any; isOpen: boolean; onClose: () => void }> = ({ data, isOpen, onClose }) => {
   return (
     <BaseModal isOpen={isOpen} title="Social Benefit" onClose={onClose}>
-      <div className="space-y-6">
+      <div className=" space-y-6 ">
         <div>
           <h3 className="text-xl font-semibold mb-2 text-blue-800">Introduction</h3>
           <p className="text-gray-700">{data.introduction}</p>

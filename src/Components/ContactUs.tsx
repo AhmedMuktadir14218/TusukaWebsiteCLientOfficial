@@ -310,9 +310,8 @@ const ContactUs: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               type="submit"
               // className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors"
-              className="w-full flex justify-center items-center py-3 px-4 rounded-lg bg-gradient-to-r from-[#955DF2] to-[#1E1E9C] text-white font-medium hover:opacity-90 transition duration-200 shadow-md"
-                
-            >
+              className="  flex justify-center items-center py-3 px-4 rounded-lg bg-gradient-to-r from-[#955DF2] to-[#1E1E9C] text-white font-medium hover:opacity-90 transition duration-200 shadow-md"
+                            >
               Submit Now →
             </motion.button>
           </motion.form>

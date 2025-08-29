@@ -22,7 +22,7 @@ const MetricsCounter: React.FC<MetricsCounterProps> = ({ metrics, bgColor }) => 
   });
 
   useEffect(() => {
-    const duration = 2000;
+    const duration = 4000;
     const start = performance.now();
 
     function tick(now: number) {
@@ -40,27 +40,27 @@ const MetricsCounter: React.FC<MetricsCounterProps> = ({ metrics, bgColor }) => 
 
   return (
     <section className={`${bgColor ?? 'bg-white'} py-16 px-4 md:px-8`}>
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div className="text-5xl font-bold text-indigo-600 mb-2">
+          <div className="text-5xl font-bold text-[#20409A] mb-2">
             {display.experienceYears}+
           </div>
           <div className="text-lg text-gray-700">Years of Experience</div>
         </div>
         <div>
-          <div className="text-5xl font-bold text-indigo-600 mb-2">
+          <div className="text-5xl font-bold text-[#20409A] mb-2">
             {display.totalEmployees}+
           </div>
           <div className="text-lg text-gray-700">Total Employees</div>
         </div>
         <div>
-          <div className="text-5xl font-bold text-indigo-600 mb-2">
+          <div className="text-5xl font-bold text-[#20409A] mb-2">
             {display.sewingCapacity.toLocaleString()}
           </div>
           <div className="text-lg text-gray-700">Sewing Capacity Per Day</div>
         </div>
         <div>
-          <div className="text-5xl font-bold text-indigo-600 mb-2">
+          <div className="text-5xl font-bold text-[#20409A] mb-2">
             {display.yearlyTurnover}M
           </div>
           <div className="text-lg text-gray-700">Yearly Turnover</div>

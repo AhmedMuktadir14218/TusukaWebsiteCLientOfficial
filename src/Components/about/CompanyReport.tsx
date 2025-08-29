@@ -37,17 +37,17 @@ ChartJS.register(
 
 // Icon mapping
 const iconComponents: Record<string, React.ReactNode> = {
-  industry: <FaIndustry className="text-indigo-600" />,
-  users: <FaUsers className="text-indigo-600" />,
-  building: <FaBuilding className="text-indigo-600" />,
-  cogs: <FaCogs className="text-indigo-600" />,
-  tshirt: <FaTshirt className="text-indigo-600" />,
-  sewing: <GiSewingMachine className="text-indigo-600" />,
-  water: <FaWater className="text-indigo-600" />,
-  sun: <FaSun className="text-indigo-600" />,
-  clock: <FaClock className="text-indigo-600" />,
-  dollar: <FaDollarSign className="text-indigo-600" />,
-  chart: <FaChartPie className="text-indigo-600" />
+  industry: <FaIndustry className="text-[#20409A]" />,
+  users: <FaUsers className="text-[#20409A]" />,
+  building: <FaBuilding className="text-[#20409A]" />,
+  cogs: <FaCogs className="text-[#20409A]" />,
+  tshirt: <FaTshirt className="text-[#20409A]" />,
+  sewing: <GiSewingMachine className="text-[#20409A]" />,
+  water: <FaWater className="text-[#20409A]" />,
+  sun: <FaSun className="text-[#20409A]" />,
+  clock: <FaClock className="text-[#20409A]" />,
+  dollar: <FaDollarSign className="text-[#20409A]" />,
+  chart: <FaChartPie className="text-[#20409A]" />
 };
 
 interface CompanyData {
@@ -203,8 +203,8 @@ const CompanyReport = () => {
   }
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-indigo-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-16 px-4 md:px-8  ">
+      <div className="container mx-auto">
         {/* Animated Title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -213,9 +213,9 @@ const CompanyReport = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {companyData.title.main.split(' ')[0]} <span className="text-indigo-600">{companyData.title.highlighted}</span> {companyData.title.main.split(' ').slice(1).join(' ')}
+            {companyData.title.main.split(' ')[0]} <span className="text-[#20409A]">{companyData.title.highlighted}</span> {companyData.title.main.split(' ').slice(1).join(' ')}
           </h2>
-          <div className="w-24 h-1 bg-indigo-500 mx-auto"></div>
+          <div className="w-24 h-1 bg-indigo-500 container mx-auto"></div>
         </motion.div>
 
         {/* Manufacturing Stats and Pie Chart Row */}
@@ -239,7 +239,7 @@ const CompanyReport = () => {
                   <div className="text-4xl mb-3 flex justify-center">
                     {iconComponents[stat.icon]}
                   </div>
-                  <div className="text-3xl font-bold text-indigo-600 mb-1 text-center">{stat.value}</div>
+                  <div className="text-3xl font-bold text-[#20409A] mb-1 text-center">{stat.value}</div>
                   <div className="text-gray-700 font-medium text-center">{stat.label}</div>
                 </motion.div>
               ))}
@@ -263,7 +263,7 @@ const CompanyReport = () => {
                   <div className="text-3xl mb-2 flex justify-center">
                     {iconComponents[stat.icon]}
                   </div>
-                  <div className="text-2xl font-bold text-indigo-600 mb-1 text-center">{stat.value}</div>
+                  <div className="text-2xl font-bold text-[#20409A] mb-1 text-center">{stat.value}</div>
                   <div className="text-gray-700 text-sm font-medium text-center">{stat.label}</div>
                 </motion.div>
               ))}
@@ -279,7 +279,7 @@ const CompanyReport = () => {
             className="lg:w-1/3 bg-white p-6 md:p-8 rounded-2xl shadow-lg flex flex-col"
           >
             <div className="flex items-center mb-6">
-              <FaChartPie className="text-indigo-600 text-2xl mr-3" />
+              <FaChartPie className="text-[#20409A] text-2xl mr-3" />
               <h3 className="text-2xl font-bold text-gray-800">{companyData.productionCapacity.title}</h3>
             </div>
             <div className="flex-1 min-h-[300px]">
@@ -309,7 +309,7 @@ const CompanyReport = () => {
                 <div key={i} className="bg-indigo-50 p-4 rounded-lg flex items-center">
                   {iconComponents[metric.icon]}
                   <div className="ml-3">
-                    <div className="text-indigo-600 font-bold text-sm">{metric.label}</div>
+                    <div className="text-[#20409A] font-bold text-sm">{metric.label}</div>
                     <div className="text-xl font-semibold">{metric.value}</div>
                   </div>
                 </div>
@@ -361,14 +361,14 @@ const CompanyReport = () => {
             <div className="p-6">
               <div className="flex items-start mb-4">
                 <div className="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
-                  <FaIndustry className="text-indigo-600 text-xl" />
+                  <FaIndustry className="text-[#20409A] text-xl" />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-gray-800">
                     {plant.name}
                   </h4>
                   {unit.title && (
-                    <span className="text-xs text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full">
+                    <span className="text-xs text-[#20409A] bg-indigo-50 px-2 py-1 rounded-full">
                       {unit.title}
                     </span>
                   )}
@@ -414,7 +414,7 @@ const CompanyReport = () => {
               </div>
               
               {/* <div className="mt-4 pt-4 border-t border-gray-100">
-                <button className="text-xs text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                <button className="text-xs text-[#20409A] hover:text-indigo-800 font-medium flex items-center">
                   View Details
                   <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -429,8 +429,7 @@ const CompanyReport = () => {
   </motion.div>
 </div>
         {/* Financial & Sister Concerns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Financial Institutions */}
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -440,7 +439,6 @@ const CompanyReport = () => {
           >
             <h3 className="text-2xl font-bold text-gray-800 mb-6">{companyData.bankingPartners.title}</h3>
 
-            {/* Bank List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {companyData.bankingPartners.banks.map((bank, i) => (
                 <motion.div
@@ -449,14 +447,13 @@ const CompanyReport = () => {
                   className="bg-indigo-50 p-4 rounded-xl flex items-center"
                 >
                   <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
-                    <span className="text-indigo-600 font-bold">{bank.charAt(0)}</span>
+                    <span className="text-[#20409A] font-bold">{bank.charAt(0)}</span>
                   </div>
                   <span className="text-gray-800 font-medium">{bank}</span>
                 </motion.div>
               ))}
             </div>
 
-            {/* Bank Illustration or Logo Image */}
             {companyData.bankingPartners.imagePath && (
               <div className="mt-4">
                 <img
@@ -468,7 +465,6 @@ const CompanyReport = () => {
             )}
           </motion.div>
 
-          {/* Sister Concerns */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -493,7 +489,7 @@ const CompanyReport = () => {
               ))}
             </div>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -10,7 +10,15 @@
   font-style: normal; */
 }
 
+
 @import "tailwindcss";
+
+/* body {
+  font-family: "bebas-neue", sans-serif;
+} */
+body {
+   font-family: "Roboto", sans-serif;
+}
 
 :root {
     --font-BeatriceTRIAL_semibold: BeatriceTRIAL_semibold, "sans-serif";
@@ -67,4 +75,20 @@
 
 .justify-center {
   justify-items: center;
+}
+
+
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 25s linear infinite;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

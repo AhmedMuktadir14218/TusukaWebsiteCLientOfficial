@@ -2,10 +2,21 @@ import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import binoxLogo from '../../assets/Tusuka_Logo_tr.png';
 import { Link } from 'react-router-dom';
+import bgNav from "../../assets/bg.png"
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-50 to-indigo-50 text-gray-700">
+    <footer className="  text-gray-700"     
+    // style={{ backgroundImage: `url(${bgNav})` }}
+              style={{
+  background: "rgb(173 208 244 / 52%)", 
+  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+  backdropFilter: "blur(5px)",
+  WebkitBackdropFilter: "blur(5px)",
+  // border: "1px solid rgba(185, 206, 227, 0.3)"
+}}>
+
+ 
       <div className="container mx-auto px-4 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
         {/* Logo & Socials */}
@@ -49,9 +60,9 @@ const Footer: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-grow px-4 py-2 rounded-l-full outline-none border border-gray-300 text-gray-800 placeholder-gray-500 text-sm"
+              className="flex-grow px-0 xl:px-4  py-2 rounded-l-full outline-none border border-[#20409a] text-gray-800 placeholder-gray-500 text-sm"
             />
-            <button className="px-4 py-2 bg-blue-700 text-white rounded-r-full hover:bg-blue-800 transition-colors">
+            <button className="px-0 xl:px-4  py-2 bg-blue-700 text-white rounded-r-full hover:bg-blue-800 transition-colors text-sm">
               Subscribe
             </button>
           </div>
@@ -65,6 +76,7 @@ const Footer: React.FC = () => {
           Work inquiries: <a href="mailto:inquiry@tusuka.com" className="text-blue-700 hover:underline">inquiry@tusuka.com</a>
         </p>
       </div>
+      
     </footer>
   );
 };

@@ -16,6 +16,7 @@ import { useAboutHero } from '../../hooks/useAbouthero';
 import type { SliderImage } from '../../types/about';
 import LogoMoving from '../../Components/LogoMoving';
 import MVC from './MVC';
+import AboutHeroBanner from '../../Components/about/AboutHeroBanner';
 
 const AboutPage: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -51,25 +52,13 @@ const imagesWithFullUrl: SliderImage[] = heroData.sliderImages.map(img => {
 
 
   return (
-    <div className="min-h-screen bg-white">
-      <SidebarMenu isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-
-      <header className="bg-white shadow-sm sticky top-0 z-40">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <button onClick={toggleSidebar} className="md:hidden text-gray-500 hover:text-gray-700">
-            {/* hamburger icon */}
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          <h1 className="text-xl font-bold text-gray-900">About Us</h1>
-          <div className="w-6" />
-        </div>
-      </header>
+    <div className="min-h-screen bg-white ">
+ 
 
       <main>
+        <AboutHeroBanner />
         <AboutHero
-          bgColor=" py-12"
+          bgColor=" py-12 "
           title={heroData.title}
           tagline={heroData.tagline}
           introduction={heroData.introduction}

@@ -159,53 +159,54 @@ const DirectorsInfo: React.FC = () => {
   };
 
   // Submit create/update
-  const handleSubmit = async () => {
-    const data = new FormData();
-    // basic
-    ;[
-      'name','title','born','nationality','religion',
-      'occupation','known_for','marital_status','spouse'
-    ].forEach(key => {
-      const v = (form as any)[key];
-      if (v) data.append(key, v);
-    });
-    // children
-    form.childrenInput
-      .split(',')
-      .map(s => s.trim())
-      .filter(Boolean)
-      .forEach((c, i) => data.append(`children[${i}]`, c));
-    // address
-    data.append('address[email]', form.addressEmail);
-    data.append('address[house]', form.addressHouse);
-    // social
-    data.append('social_media[linkedin]', form.socialLinkedin);
-    data.append('social_media[twitter]', form.socialTwitter);
-    data.append('social_media[facebook]', form.socialFacebook);
-    // descriptions
-    descriptionEntries.forEach((d, i) => {
-      data.append(`description[${i}][section]`, d.section);
-      data.append(`description[${i}][content]`, d.content);
-    });
-    // image
-    if (form.image) data.append('image', form.image);
+const handleSubmit = async () => {
+  const data = new FormData();
 
-    try {
-      if (editing) {
-        await axios.post(
-          `${BACKEND_URL}/api/directors/${editing.id}`,
-          data,
-          { headers: { 'X-HTTP-Method-Override': 'PUT' } }
-        );
-      } else {
-        await axios.post('${BACKEND_URL}/api/directors', data);
-      }
-      fetchDirectors();
-      handleClose();
-    } catch (err) {
-      console.error(err);
+  [
+    'name','title','born','nationality','religion',
+    'occupation','known_for','marital_status','spouse'
+  ].forEach(key => {
+    const v = (form as any)[key];
+    if (v) data.append(key, v);
+  });
+
+  form.childrenInput
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean)
+    .forEach((c, i) => data.append(`children[${i}]`, c));
+
+  data.append('address[email]', form.addressEmail);
+  data.append('address[house]', form.addressHouse);
+  data.append('social_media[linkedin]', form.socialLinkedin);
+  data.append('social_media[twitter]', form.socialTwitter);
+  data.append('social_media[facebook]', form.socialFacebook);
+
+  descriptionEntries.forEach((d, i) => {
+    data.append(`description[${i}][section]`, d.section);
+    data.append(`description[${i}][content]`, d.content);
+  });
+
+  if (form.image) data.append('image', form.image);
+
+  try {
+    if (editing) {
+      await axios.post(
+        `${BACKEND_URL}/api/directors/${editing.id}`,
+        data,
+        { headers: { 'X-HTTP-Method-Override': 'PUT' } }
+      );
+    } else {
+      // ✅ FIXED (backticks instead of quotes)
+      await axios.post(`${BACKEND_URL}/api/directors`, data);
     }
-  };
+    fetchDirectors();
+    handleClose();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 
   // Delete
   const handleDelete = async (id: number) => {

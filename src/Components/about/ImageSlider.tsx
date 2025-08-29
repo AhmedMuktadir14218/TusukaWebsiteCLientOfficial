@@ -61,12 +61,12 @@ const ImageSlider: React.FC<ImageSliderProps> = React.memo(
           {images.map((img) => (
             <SwiperSlide
               key={img.id}
-              className="relative h-80 flex items-center justify-center"
+              className="relative h-70 flex items-center justify-center"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="h-fit w-full object-contain"
+                className="w-full h-[200px] sm:h-[250px] md:h-[280px] object-cover filter brightness-90"
                 loading="lazy" // Keep native lazy loading attribute for extra browser optimization
                 onError={handleImageError}
               />

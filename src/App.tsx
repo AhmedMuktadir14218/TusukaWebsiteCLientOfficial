@@ -34,8 +34,8 @@ import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   return (
     <>
-      {/* <BrowserRouter basename="/TusukaWebsite"> */}
-      <BrowserRouter>
+      <BrowserRouter basename="/TusukaWebsite">
+      {/* <BrowserRouter> */}
       <AuthProvider>
         <ScrollToTop />
         <Routes>

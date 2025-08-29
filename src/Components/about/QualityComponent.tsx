@@ -2,8 +2,8 @@
  
 import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
-import image1 from '../../assets/homeban11.webp';
-import image2 from '../../assets/homeban22.webp';
+import image1 from '../../assets/corepointBG.webp';
+import image2 from '../../assets/Ban_Tushuka_USAID (64).jpg';
 
 const QualityComponent = () => {
   const qualitySteps = [
@@ -26,28 +26,27 @@ const QualityComponent = () => {
 
   return (
     <div className="bg-white">
-    {/* Header Section */}
-<div className="relative h-[50vh]">
-  <img
-    src={image1}
-    alt="Quality Control"
-    className="w-full h-full object-cover brightness-30 " // adjusted brightness for better text visibility
-  />
-  <div className="absolute inset-0 flex items-center justify-center"> {/* added justify-center */}
-    <div className="container mx-auto px-4">
-      <div className="max-w-3xl mx-auto text-center"> {/* added mx-auto and text-center */}
-        <h1 className="text-4xl font-bold text-white mb-4">
-          Quality Assurance
-        </h1>
-        <p className="text-lg text-white max-w-2xl mx-auto"> {/* added max-w-2xl and mx-auto */}
-          Tusuka maintains stringent quality control standards across all factories, 
-          ensuring products meet precise customer specifications through our dedicated 
-          quality assurance teams.
-        </p>
-      </div>
-    </div>
+    {/* Header Section */} 
+<div
+  className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center"
+  style={{ backgroundImage: `url(${image1})` }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/70"></div>
+
+  {/* Content */}
+  <div className="relative z-10 text-center px-4">
+    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      Quality Assurance
+    </h1>
+    <p className="text-lg text-white max-w-2xl mx-auto">
+      Tusuka maintains stringent quality control standards across all factories,
+      ensuring products meet precise customer specifications through our
+      dedicated quality assurance teams.
+    </p>
   </div>
 </div>
+
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         {/* Overview Section */}
@@ -57,13 +56,10 @@ const QualityComponent = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <div className="max-w-3xl ">
+          <div className=" container mx-auto ">
             <h2 className="text-3xl font-bold mb-6">Quality Control Process</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Our central QA team collaborates with factory quality assurance personnel 
-              to maintain exceptional standards. Each new production input begins with 
-              comprehensive PP meetings where all operations are thoroughly reviewed and 
-              quality requirements are clearly established.
+            <p className="text-gray-600 leading-relaxed w-full">
+              Tusuka has very strong and efficient Quality Controlling team in all the factories who make sure the sewing quality is according to the customer’s requirement. We also have a central QA team who assist the factory QA team in every aspects of quality controlling. In case of every new input, our factory conducts an internal PP meeting with all the QA personals in that line and all the operations are elaborately discussed in that meeting. All the QA stuffs make sure that they fully understand the quality requirement of each and every operation and then only factory goes into bulk production.
             </p>
           </div>
         </motion.div>

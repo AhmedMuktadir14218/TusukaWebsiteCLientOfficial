@@ -15,7 +15,13 @@ import { useAboutHero } from "../hooks/useAbouthero";
 import LabIntroSection from "../Components/about/LabIntroSection";
 import useLabApi from '../hooks/useLabApi';
 import { useEffect, useState } from "react";
-
+import WorkWithUs from "./WorkWithUs/WorkWithUs";
+import LogoMoving from "../Components/LogoMoving";
+import bgImage from "../assets/bg.png";
+import HomeDirectorSlider from "../Components/HomeDirectorSlider";
+import NewsAndMedia from "../Components/NewsAndMedia";
+import CompanyReport from "../Components/about/CompanyReport";
+import NewsTicker from "../Components/NewsTicker";
 
  
 // const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
@@ -152,18 +158,19 @@ const API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL ;
     );
 
   return (
-    <div>
+    <div >
       {/* <Navbar2></Navbar2> */}
       {/* <BannerHome></BannerHome> */}
       <div className="  flex flex-col">
         {/* <HeroBanner /> */}
         <HeroBanner2 />
+        
         {/* <LogoMoving /> */}
       </div>
       {/* <OurStorySection></OurStorySection> */}
 
       <AboutHero
-        bgColor="bg-gradient-to-r from-blue-50 to-indigo-50  py-12"
+        bgColor="  py-12"
         title={heroData.title}
         tagline={heroData.tagline}
         introduction={heroData.introduction}
@@ -176,6 +183,9 @@ const API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL ;
       />
 
       <CorePointComponent></CorePointComponent>
+{/* <WorkWithUs></WorkWithUs> */}
+{/* <AwardCertification></AwardCertification> */}
+ 
 
 <LabIntroSection
 bgColor="bg-white"
@@ -185,10 +195,66 @@ bgColor="bg-white"
 />
 
 
-      <AwardCertification></AwardCertification>
-<MVCComponent></MVCComponent>
+      
+<HomeDirectorSlider></HomeDirectorSlider>
+{/* <CompanyReport></CompanyReport> */}
+ <LogoMoving mt="mt-48  "></LogoMoving>
+
+<NewsAndMedia></NewsAndMedia>
+    
+
+
+ 
+
+
+{/* <MVCComponent></MVCComponent> */}
       {/* <ContactUs></ContactUs> */}
       {/* <CanvasCursor></CanvasCursor> */}
+
+      
+
+      {/* <div className="sketchfab-embed-wrapper w-full h-auto">
+      <iframe
+        title="Jeans Jacket #AgisoftClothesChallenge"
+        frameBorder="0"
+        allowFullScreen
+        mozallowfullscreen="true"
+        webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        xr-spatial-tracking
+        execution-while-out-of-viewport
+        execution-while-not-rendered
+        webShare
+        src="https://sketchfab.com/models/4348be24475c45dd9a5bdf6e62ba7ebc/embed"
+        className="w-full h-[500px] md:h-[700px] lg:h-[800px] xl:h-[900px]" // Tailwind classes for responsive height
+      ></iframe>
+      <p className="font-sans text-sm font-normal m-1 text-gray-700">
+        <a
+          href="https://sketchfab.com/3d-models/jeans-jacket-agisoftclotheschallenge-4348be24475c45dd9a5bdf6e62ba7ebc?utm_medium=embed&utm_campaign=share-popup&utm_content=4348be24475c45dd9a5bdf6e62ba7ebc"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          className="font-bold text-blue-600 hover:text-blue-800"
+        >
+          Jeans Jacket #AgisoftClothesChallenge
+        </a> by{' '}
+        <a
+          href="https://sketchfab.com/Sircher?utm_medium=embed&utm_campaign=share-popup&utm_content=4348be24475c45dd9a5bdf6e62ba7ebc"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          className="font-bold text-blue-600 hover:text-blue-800"
+        >
+          Sircher
+        </a> on{' '}
+        <a
+          href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=4348be24475c45dd9a5bdf6e62ba7ebc"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          className="font-bold text-blue-600 hover:text-blue-800"
+        >
+          Sketchfab
+        </a>
+      </p>
+    </div> */}
     </div>
   );
 }
