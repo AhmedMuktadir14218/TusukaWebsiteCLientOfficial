@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     // Only validate if forced or if more than 5 minutes have passed
     const now = Date.now();
-    if (!force && now - lastValidation < 300000) { // 5 minutes
+    if (!force && now - lastValidation < 90000000) { // 5 minutes
       return !!token;
     }
 

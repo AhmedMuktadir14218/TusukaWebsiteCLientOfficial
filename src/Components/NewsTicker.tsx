@@ -1,40 +1,116 @@
 // src/components/NewsTicker.tsx
-import React from "react";
- 
-const headlines = [
-  "Bangladesh’s Tusuka improves OTDP, efficiency and job satisfaction rate of staff significantly with FastReactPlan from Coats Digital",
-  "Covid vaccination inauguration for RMG sector at Tusuka",
-  "Tusuka Awarded Most Innovative Premium Brands Award 2020 From H&M",
-  "Tusuka open emergency helpline for corona virus to support Tusuka family",
-];
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import { NewsMediaViewModal } from "./Admin/NewsMediaViewModal";
+import type { NewsItem } from "./NewsAndMedia";
 
 const NewsTicker: React.FC = () => {
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [isPaused, setIsPaused] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const tickerRef = useRef<HTMLDivElement>(null);
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+  // Fetch news from API
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const { data } = await axios.get(`${API_BASE_URL}/api/news-media`);
+        if (data.success) {
+          setNewsItems(data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      }
+    };
+
+    fetchNews();
+  }, [API_BASE_URL]);
+
+  // Animation effect
+  useEffect(() => {
+    if (!tickerRef.current || isPaused) return;
+
+    const ticker = tickerRef.current;
+    let animationFrameId: number;
+    let position = 0;
+    const speed = 1; // Adjust speed as needed
+
+    const animate = () => {
+      position -= speed;
+      const firstSetWidth = ticker.scrollWidth / 2;
+      if (Math.abs(position) >= firstSetWidth) position = 0;
+      ticker.style.transform = `translateX(${position}px)`;
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isPaused, newsItems]);
+
+  const handleMouseEnter = (index: number) => {
+    setIsPaused(true);
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+    setHoveredIndex(null);
+  };
+
+  const openModal = (news: NewsItem) => {
+    setSelectedNews(news);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedNews(null);
+    setIsModalOpen(false);
+  };
+
+  if (!newsItems || newsItems.length === 0) return null;
+
   return (
-    <div className="w-full   text-black  py-4 overflow-hidden"
-          style={{
-  // background: "rgba(173, 208, 244, 0.84)", 
-  // background: "rgba(110, 109, 120, 0.7)", 
-  // background: "rgba(4, 3, 18, 0.19)", 
-  // background: "rgba(255, 255, 255, 0.73)", 
-  background: "rgb(173 208 244 / 78%)", 
-  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-  backdropFilter: "blur(5px)",
-  WebkitBackdropFilter: "blur(5px)",
-  // border: "1px solid rgba(185, 206, 227, 0.3)"
-}}
-    >
-      <div className="ticker flex whitespace-nowrap">
-        {/* repeat twice to create seamless loop */}
-        {[...headlines, ...headlines].map((text, i) => (
-          <span
-            key={i}
-            className="mx-8 text-sm md:text-base font-medium inline-block"
-          >
-            {text}
-          </span>
-        ))}
+    <>
+      <div
+        className="w-full bg-[var(--color-navFootBG)] text-[var(--color-navFootText)] py-4 overflow-hidden"
+        style={{
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(5.7px)",
+          WebkitBackdropFilter: "blur(5.7px)",
+        }}
+      >
+        <div ref={tickerRef} className="flex whitespace-nowrap">
+          {/* Duplicate headlines for seamless scrolling */}
+          {[...newsItems, ...newsItems].map((news, i) => (
+            <span
+              key={i}
+              className={`mx-8 font-medium inline-block cursor-pointer transition-all duration-300 ${
+                hoveredIndex === i ? "text-lg md:text-xl" : "text-sm md:text-base"
+              }`}
+              onMouseEnter={() => handleMouseEnter(i)}
+              onMouseLeave={handleMouseLeave}
+              onClick={() => openModal(news)}
+            >
+              {news.title}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+
+      {/* Modal */}
+      {selectedNews && (
+        <NewsMediaViewModal
+          newsMedia={selectedNews}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
+      )}
+    </>
   );
 };
 

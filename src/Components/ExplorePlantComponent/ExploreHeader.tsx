@@ -19,7 +19,7 @@ const ExploreHeader: React.FC<Props> = ({ header }) => {
       <img
         src={fullImageUrl} // Use the constructed full URL here
         alt={header.title}
-        className="absolute inset-0 w-full h-full object-cover brightness-30"
+        className="absolute inset-0 w-full h-full object-cover brightness-40"
         loading="eager"
       />
       <div className="absolute inset-0 bg-opacity-50" /> {/* This div is missing a background color, it currently does nothing. */}

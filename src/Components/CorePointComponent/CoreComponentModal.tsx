@@ -41,7 +41,8 @@ React.useEffect(() => {
           exit={{ scale: 0.9, y: 50 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-6 text-white">
+          {/* <div className="bg-gradient-to-r from-[#363D44] to-[#363D44] p-6 text-white"> */}
+          <div className="bg-gradient-to-r from-[var(--color-navFootBG)] to-[var(--color-navFootBG)] p-6 text-[var(--color-navFootText)]">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold">{title}</h2>
               <button
@@ -70,7 +71,7 @@ export const MarketModal: React.FC<{ data: any; isOpen: boolean; onClose: () => 
     <BaseModal isOpen={isOpen} title="Our Market" onClose={onClose}>
       <div className="space-y-6 hide-scrollbar">
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-blue-800">Customer Table</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#363D44]">Customer Table</h3>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white border border-gray-200">
               <thead className="bg-gray-100">
@@ -92,7 +93,7 @@ export const MarketModal: React.FC<{ data: any; isOpen: boolean; onClose: () => 
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Market Distribution</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Market Distribution</h3>
           <p className="text-gray-700">{data.marketDistributionChartDescription}</p>
         </div>
       </div>
@@ -106,10 +107,10 @@ export const SourcingModal: React.FC<{ data: any; isOpen: boolean; onClose: () =
     <BaseModal isOpen={isOpen} title="Sourcing" onClose={onClose}>
       <div className="space-y-6">
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Main Sources</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Main Sources</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium text-blue-700 mb-2">Overseas</h4>
+              <h4 className="font-medium text-[#363D44] mb-2">Overseas</h4>
               <ul className="list-disc pl-5 space-y-1">
                 {data.mainSources.overseas.map((source: string, index: number) => (
                   <li key={index}>{source}</li>
@@ -117,7 +118,7 @@ export const SourcingModal: React.FC<{ data: any; isOpen: boolean; onClose: () =
               </ul>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium text-blue-700 mb-2">Local</h4>
+              <h4 className="font-medium text-[#363D44] mb-2">Local</h4>
               <ul className="list-disc pl-5 space-y-1">
                 {data.mainSources.local.map((source: string, index: number) => (
                   <li key={index}>{source}</li>
@@ -128,15 +129,15 @@ export const SourcingModal: React.FC<{ data: any; isOpen: boolean; onClose: () =
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Other Production Details</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Other Production Details</h3>
           <p className="text-gray-700">{data.otherProductionDetails}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Chemical Suppliers</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Chemical Suppliers</h3>
           <div className="flex flex-wrap gap-2">
             {data.chemicalSuppliers.map((supplier: string, index: number) => (
-              <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+              <span key={index} className="bg-blue-100 text-[#363D44] px-3 py-1 rounded-full text-sm">
                 {supplier}
               </span>
             ))}
@@ -144,7 +145,7 @@ export const SourcingModal: React.FC<{ data: any; isOpen: boolean; onClose: () =
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Supplier Partnerships</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Supplier Partnerships</h3>
           <p className="text-gray-700">{data.supplierPartnerships}</p>
         </div>
       </div>
@@ -162,7 +163,7 @@ export const CodeOfConductModal: React.FC<{ data: any; isOpen: boolean; onClose:
         <div className="space-y-4">
           {Object.entries(data.principles).map(([key, value]) => (
             <div key={key} className="bg-gray-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-blue-700 mb-2">
+              <h3 className="font-semibold text-[#363D44] mb-2">
                 {key.split(/(?=[A-Z])/).join(' ')}
               </h3>
               <p className="text-gray-700">{value as string}</p>
@@ -180,27 +181,27 @@ export const ResearchDevelopmentModal: React.FC<{ data: any; isOpen: boolean; on
     <BaseModal isOpen={isOpen} title="Research & Development" onClose={onClose}>
       <div className="space-y-6">
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Denim Fabric & Sustainability Focus</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Denim Fabric & Sustainability Focus</h3>
           <p className="text-gray-700">{data.denimFabricAndSustainabilityFocus}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Prime Function</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Prime Function</h3>
           <p className="text-gray-700">{data.primeFunction}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Sustainable Practices & Technologies</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Sustainable Practices & Technologies</h3>
           <p className="text-gray-700">{data.sustainablePracticesAndTechnologies}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">In-House Design & Development</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">In-House Design & Development</h3>
           <p className="text-gray-700">{data.inHouseDesignAndDevelopment}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Sustainable Trims Focus</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Sustainable Trims Focus</h3>
           <p className="text-gray-700">{data.sustainableTrimsFocus}</p>
         </div>
       </div>
@@ -214,47 +215,47 @@ export const SafetyModal: React.FC<{ data: any; isOpen: boolean; onClose: () => 
     <BaseModal isOpen={isOpen} title="Safety" onClose={onClose}>
       <div className="space-y-6 relative">
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Workplace Safety</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Workplace Safety</h3>
           <p className="text-gray-700 mb-4">{data.workplaceSafety.introduction}</p>
           <p className="text-gray-700">{data.workplaceSafety.responseToIncidents}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Fire Safety</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Fire Safety</h3>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium text-blue-700 mb-1">Electro-Mechanical System</h4>
+              <h4 className="font-medium text-[#363D44] mb-1">Electro-Mechanical System</h4>
               <p className="text-gray-700">{data.fireSafety.electroMechanicalSystem}</p>
             </div>
             <div>
-              <h4 className="font-medium text-blue-700 mb-1">Material Selection</h4>
+              <h4 className="font-medium text-[#363D44] mb-1">Material Selection</h4>
               <p className="text-gray-700"><span className="font-medium">Wiring:</span> {data.fireSafety.materialSelection.wiring}</p>
             </div>
             <div>
-              <h4 className="font-medium text-blue-700 mb-1">Panel Boards</h4>
+              <h4 className="font-medium text-[#363D44] mb-1">Panel Boards</h4>
               <p className="text-gray-700">{data.fireSafety.panelBoards}</p>
             </div>
             <div>
-              <h4 className="font-medium text-blue-700 mb-1">Mechanical Component</h4>
+              <h4 className="font-medium text-[#363D44] mb-1">Mechanical Component</h4>
               <p className="text-gray-700">{data.fireSafety.mechanicalComponent}</p>
             </div>
             <div>
-              <h4 className="font-medium text-blue-700 mb-1">Fire Alarm</h4>
+              <h4 className="font-medium text-[#363D44] mb-1">Fire Alarm</h4>
               <p className="text-gray-700">{data.fireSafety.fireAlarm}</p>
             </div>
             <div>
-              <h4 className="font-medium text-blue-700 mb-1">Fire Extinction</h4>
+              <h4 className="font-medium text-[#363D44] mb-1">Fire Extinction</h4>
               <p className="text-gray-700">{data.fireSafety.fireExtinction}</p>
             </div>
             <div>
-              <h4 className="font-medium text-blue-700 mb-1">Fire Escape</h4>
+              <h4 className="font-medium text-[#363D44] mb-1">Fire Escape</h4>
               <p className="text-gray-700">{data.fireSafety.fireEscape}</p>
             </div>
           </div>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Security Surveillance System</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Security Surveillance System</h3>
           <div className="space-y-2">
             <p className="text-gray-700"><span className="font-medium">Coverage:</span> {data.securitySurveillanceSystem.coverage}</p>
             <p className="text-gray-700"><span className="font-medium">Monitoring Team:</span> {data.securitySurveillanceSystem.monitoringTeam}</p>
@@ -262,17 +263,17 @@ export const SafetyModal: React.FC<{ data: any; isOpen: boolean; onClose: () => 
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Building Safety</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Building Safety</h3>
           <p className="text-gray-700">{data.buildingSafety.designStandards}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Materials & Quality Control</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Materials & Quality Control</h3>
           <p className="text-gray-700">{data.materialsAndQualityControl}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Job Safety Environment</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Job Safety Environment</h3>
           <p className="text-gray-700"><span className="font-medium">Focus:</span> {data.jobSafetyEnvironment.focus}</p>
           <p className="text-gray-700"><span className="font-medium">Practices:</span> {data.jobSafetyEnvironment.practices}</p>
         </div>
@@ -287,17 +288,17 @@ export const SocialBenefitModal: React.FC<{ data: any; isOpen: boolean; onClose:
     <BaseModal isOpen={isOpen} title="Social Benefit" onClose={onClose}>
       <div className=" space-y-6 ">
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Introduction</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Introduction</h3>
           <p className="text-gray-700">{data.introduction}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Core Values & Competitive Advantage</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Core Values & Competitive Advantage</h3>
           <p className="text-gray-700">{data.coreValuesAndCompetitiveAdvantage}</p>
         </div>
         
         <div>
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Key Practices</h3>
+          <h3 className="text-xl font-semibold mb-2 text-[#363D44]">Key Practices</h3>
           <ul className="list-disc pl-5 space-y-2">
             {data.keyPractices.map((practice: string, index: number) => (
               <li key={index} className="text-gray-700">{practice}</li>

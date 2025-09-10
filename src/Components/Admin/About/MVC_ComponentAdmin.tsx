@@ -312,7 +312,7 @@ const MVCComponent: React.FC = () => {
                     <IconButton 
                       color="primary" 
                       onClick={() => handleView(item)}
-                      className="text-blue-600"
+                      className="text-[#363D44]"
                     >
                       <Visibility />
                     </IconButton>

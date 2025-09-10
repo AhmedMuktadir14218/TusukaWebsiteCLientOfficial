@@ -28,7 +28,13 @@ import AdminAbout from "./Pages/Admin/AdminAbout/AdminAbout";
 import Laboratory from "./Pages/Admin/Laboratory/Laboratory";
 import DirectorsInfo from "./Pages/Admin/DirectorsInfo/Directorsinfo";
 import { AuthProvider } from "./Context/AuthContext";
-import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToTop from "./Components/ScrollToTop"; 
+import Colorchange from "./Pages/Admin/ColorChange/Colorchange";
+import ContactUsAdmin from "./Pages/Admin/ContactUsAdmin/ContactUsAdmin";
+import FaviconManager from "./Pages/Admin/FavIconControll";
+import NewsMediaPage from "./Pages/Admin/NewsMeadia/NewsMeadia";
+import NewsAndMedia from "./Components/NewsAndMedia";
+import NewsDetails from "./Components/NewsDetails";
 
 
 function App() {
@@ -55,6 +61,10 @@ function App() {
             <Route path="laboratory" element={<LaboratoryClient />} />
             <Route path="eventsmedia" element={<EventsMedia />} />
             <Route path="plants" element={<ExplorePlants />} />
+            <Route path="news" element={<NewsAndMedia />} />
+            <Route path="news/:id" element={<NewsDetails />} />
+
+
           </Route>
 
           {/* Admin Login (public) */}
@@ -79,6 +89,12 @@ function App() {
               <Route path="/admin/directorsInfo" element={<DirectorsInfo />} />
               <Route path="/admin/about" element={<AdminAbout></AdminAbout>} />
               <Route path="/admin/jobs" element={<AdminJobs></AdminJobs>} />
+              <Route path="/admin/color" element={<Colorchange />} />
+              <Route path="/admin/inbox" element={<ContactUsAdmin />} />
+              <Route path="/admin/favicon" element={<FaviconManager />} />
+              <Route path="/admin/news" element={<NewsMediaPage />} />
+
+
             </Route>
           </Route>
         </Routes>

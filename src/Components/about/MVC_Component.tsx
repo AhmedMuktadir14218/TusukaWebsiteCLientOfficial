@@ -128,14 +128,14 @@ const MVC_Component: React.FC<{ initialTab?: string }> = ({ initialTab = 'missio
   }
 
   return (
-    <div className="font-sans antialiased bg-gray-50">
+    <div className="font-sans antialiased ">
 
 
       {/* Main Content Section - Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <div className=" rounded-2xl shadow-xl overflow-hidden border border-gray-200">
           {/* Tab Navigation */}
-          <div className="flex flex-col md:flex-row justify-around items-center p-4 bg-gray-50 border-b border-gray-200 rounded-t-2xl">
+          <div className="flex flex-col md:flex-row justify-around items-center p-4 bg-[#363D44] border-b border-gray-200 rounded-t-2xl">
             {displayContents.map((tab) => (
               <button
                 key={tab.id}
@@ -144,15 +144,15 @@ const MVC_Component: React.FC<{ initialTab?: string }> = ({ initialTab = 'missio
                   relative flex-1 text-center py-3 md:py-4 px-2 md:px-4 text-lg font-semibold tracking-wide transition-all duration-300 ease-in-out
                   ${
                     activeTab === tab.tab_id
-                      ? 'text-blue-700'
-                      : 'text-gray-600 hover:text-blue-700'
+                      ? 'text-white '
+                      : 'text-gray-200 hover:text-[#363D44]'
                   }
                   focus:outline-none group
                 `}
               >
                 {tab.title}
                 <span className={`
-                  absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-blue-700 rounded-full transition-all duration-300 ease-in-out
+                  absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-white rounded-full transition-all duration-300 ease-in-out
                   ${activeTab === tab.tab_id ? 'w-full scale-x-100' : 'w-0 scale-x-0 group-hover:w-1/2'}
                 `}></span>
               </button>
@@ -160,7 +160,7 @@ const MVC_Component: React.FC<{ initialTab?: string }> = ({ initialTab = 'missio
           </div>
 
           {/* Tab Content Area */}
-          <div className="p-6 md:p-10 lg:p-12">
+          <div className="p-6 md:p-10 lg:p-12 bg-white">
             {displayContents.map((tab) => (
               <div
                 key={tab.id}
@@ -168,7 +168,7 @@ const MVC_Component: React.FC<{ initialTab?: string }> = ({ initialTab = 'missio
                   activeTab === tab.tab_id ? 'opacity-100 block' : 'opacity-0 hidden'
                 }`}
               >
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-8 ">
                   {tab.image_url && (
                     <div className="md:w-1/2 lg:w-2/5 flex-shrink-0">
                       <div className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-xl border border-gray-200">
@@ -181,10 +181,10 @@ const MVC_Component: React.FC<{ initialTab?: string }> = ({ initialTab = 'missio
                     </div>
                   )}
                   <div className="md:w-1/2 lg:w-3/5 text-center md:text-left">
-                    <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                    <h3 className="text-3xl md:text-4xl font-extrabold text-[#363D44]  mb-4 tracking-tight">
                       {tab.title}
                     </h3>
-                    <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                    <p className="text-base md:text-lg text-[#363D44]  leading-relaxed">
                       {tab.content}
                     </p>
                   </div>

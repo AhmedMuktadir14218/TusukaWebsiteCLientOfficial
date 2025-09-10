@@ -37,17 +37,17 @@ ChartJS.register(
 
 // Icon mapping
 const iconComponents: Record<string, React.ReactNode> = {
-  industry: <FaIndustry className="text-[#20409A]" />,
-  users: <FaUsers className="text-[#20409A]" />,
-  building: <FaBuilding className="text-[#20409A]" />,
-  cogs: <FaCogs className="text-[#20409A]" />,
-  tshirt: <FaTshirt className="text-[#20409A]" />,
-  sewing: <GiSewingMachine className="text-[#20409A]" />,
-  water: <FaWater className="text-[#20409A]" />,
-  sun: <FaSun className="text-[#20409A]" />,
-  clock: <FaClock className="text-[#20409A]" />,
-  dollar: <FaDollarSign className="text-[#20409A]" />,
-  chart: <FaChartPie className="text-[#20409A]" />
+  industry: <FaIndustry className="text-[#4d4d4d] " />,
+  users: <FaUsers className="text-[#4d4d4d] " />,
+  building: <FaBuilding className="text-[#4d4d4d] " />,
+  cogs: <FaCogs className="text-[#4d4d4d] " />,
+  tshirt: <FaTshirt className="text-[#4d4d4d] " />,
+  sewing: <GiSewingMachine className="text-[#4d4d4d] " />,
+  water: <FaWater className="text-[#4d4d4d] " />,
+  sun: <FaSun className="text-[#4d4d4d] " />,
+  clock: <FaClock className="text-[#4d4d4d] " />,
+  dollar: <FaDollarSign className="text-[#4d4d4d] " />,
+  chart: <FaChartPie className="text-[#4d4d4d] " />
 };
 
 interface CompanyData {
@@ -213,110 +213,133 @@ const CompanyReport = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {companyData.title.main.split(' ')[0]} <span className="text-[#20409A]">{companyData.title.highlighted}</span> {companyData.title.main.split(' ').slice(1).join(' ')}
+            {companyData.title.main.split(' ')[0]} <span className="text-[#4d4d4d] ">{companyData.title.highlighted}</span> {companyData.title.main.split(' ').slice(1).join(' ')}
           </h2>
-          <div className="w-24 h-1 bg-indigo-500 container mx-auto"></div>
+          <div className="w-24 h-1 bg-[#363D44] container mx-auto"></div>
         </motion.div>
 
         {/* Manufacturing Stats and Pie Chart Row */}
-        <div className="flex flex-col lg:flex-row gap-8 mb-20">
-          {/* Left Column - Primary Stats */}
-          <div className="lg:w-2/3">
-            <motion.div
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
-            >
-              {companyData.stats.primary.map((stat) => (
-                <motion.div
-                  key={stat.id}
-                  variants={item}
-                  whileHover={{ y: -5 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all"
-                >
-                  <div className="text-4xl mb-3 flex justify-center">
-                    {iconComponents[stat.icon]}
-                  </div>
-                  <div className="text-3xl font-bold text-[#20409A] mb-1 text-center">{stat.value}</div>
-                  <div className="text-gray-700 font-medium text-center">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Secondary Stats */}
-            <motion.div
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6"
-            >
-              {companyData.stats.secondary.map((stat) => (
-                <motion.div
-                  key={stat.id}
-                  variants={item}
-                  whileHover={{ y: -5 }}
-                  className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all"
-                >
-                  <div className="text-3xl mb-2 flex justify-center">
-                    {iconComponents[stat.icon]}
-                  </div>
-                  <div className="text-2xl font-bold text-[#20409A] mb-1 text-center">{stat.value}</div>
-                  <div className="text-gray-700 text-sm font-medium text-center">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+{/* Manufacturing Stats and Pie Chart Row */}
+<div className="flex flex-col lg:flex-row gap-8 mb-20 items-stretch">
+  {/* Left Column - Primary + Secondary Stats */}
+  <div className="lg:w-2/3 flex flex-col h-full">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
+    >
+      {companyData.stats.primary.map((stat) => (
+        <motion.div
+          key={stat.id}
+          variants={item}
+          whileHover={{ y: -5 }}
+          className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all"
+        >
+          <div className="text-4xl mb-3 flex justify-center">
+            {iconComponents[stat.icon]}
           </div>
+          <div className="text-3xl font-bold text-[#4d4d4d] mb-1 text-center">
+            {stat.value}
+          </div>
+          <div className="text-gray-700 font-medium text-center">{stat.label}</div>
+        </motion.div>
+      ))}
+    </motion.div>
 
-          {/* Right Column - Pie Chart */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:w-1/3 bg-white p-6 md:p-8 rounded-2xl shadow-lg flex flex-col"
-          >
-            <div className="flex items-center mb-6">
-              <FaChartPie className="text-[#20409A] text-2xl mr-3" />
-              <h3 className="text-2xl font-bold text-gray-800">{companyData.productionCapacity.title}</h3>
+    {/* Secondary Stats */}
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="grid grid-cols-2 lg:grid-cols-4 gap-6 flex-1"
+    >
+      {companyData.stats.secondary.map((stat) => (
+        <motion.div
+          key={stat.id}
+          variants={item}
+          whileHover={{ y: -5 }}
+          className="bg-white p-[30px] rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all"
+        >
+          <div className="text-3xl mb-2 flex justify-center">
+            {iconComponents[stat.icon]}
+          </div>
+          <div className="text-2xl font-bold text-[#4d4d4d] mb-1 text-center">
+            {stat.value}
+          </div>
+          <div className="text-gray-700 text-sm font-medium text-center">
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+
+  {/* Right Column - Pie Chart */}
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+   className="lg:w-1/3 bg-white p-6 md:p-8 rounded-2xl shadow-lg flex flex-col max-h-[550px]"
+
+  >
+    <div className="flex items-center mb-6">
+      <FaChartPie className="text-[#4d4d4d] text-2xl mr-3" />
+      <h3 className="text-2xl font-bold text-gray-800">
+        {companyData.productionCapacity.title}
+      </h3>
+    </div>
+    <div className="flex-1 min-h-[300px]">
+<Pie
+  data={{
+    ...companyData.productionCapacity.data,
+    datasets: companyData.productionCapacity.data.datasets.map((ds) => ({
+      ...ds,
+      backgroundColor: ["#ccddafc2", "#363D44", "#4d4d4d"], // your colors
+      borderColor: "#ffffff", // keeps white border between slices
+      borderWidth: 2,
+    })),
+  }}
+  options={{
+    responsive: true,
+    plugins: {
+      legend: { position: "right" },
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            return `${context.label}: ${(context.raw as number).toLocaleString()} PCs`;
+          },
+        },
+      },
+    },
+    maintainAspectRatio: false,
+  }}
+/>
+
+    </div>
+    {/* Additional metrics below pie chart */}
+    <div className="mt-6 grid grid-cols-2 gap-4">
+      {companyData.productionCapacity.metrics.map((metric, i) => (
+        <div
+          key={i}
+          className="bg-[#ccddaf5e] p-4 rounded-lg flex items-center"
+        >
+          {iconComponents[metric.icon]}
+          <div className="ml-3">
+            <div className="text-[#4d4d4d] font-bold text-sm">
+              {metric.label}
             </div>
-            <div className="flex-1 min-h-[300px]">
-              <Pie
-                data={companyData.productionCapacity.data}
-                options={{
-                  responsive: true,
-                  plugins: {
-                    legend: {
-                      position: 'right',
-                    },
-                    tooltip: {
-                      callbacks: {
-                        label: function(context) {
-                          return `${context.label}: ${(context.raw as number).toLocaleString()} PCs`;
-                        }
-                      }
-                    }
-                  },
-                  maintainAspectRatio: false
-                }}
-              />
-            </div>
-            {/* Additional metrics below pie chart */}
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              {companyData.productionCapacity.metrics.map((metric, i) => (
-                <div key={i} className="bg-indigo-50 p-4 rounded-lg flex items-center">
-                  {iconComponents[metric.icon]}
-                  <div className="ml-3">
-                    <div className="text-[#20409A] font-bold text-sm">{metric.label}</div>
-                    <div className="text-xl font-semibold">{metric.value}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            <div className="text-xl font-semibold">{metric.value}</div>
+          </div>
         </div>
+      ))}
+    </div>
+  </motion.div>
+</div>
+
 
     {/* Manufacturing Units Section */}
 {/* Manufacturing Plants Section */}
@@ -331,7 +354,7 @@ const CompanyReport = () => {
     <h3 className="text-3xl font-bold text-gray-800 mb-4">
       Manufacturing Plants
     </h3>
-    <div className="w-24 h-1 bg-indigo-500 mx-auto"></div>
+    <div className="w-24 h-1 bg-[#363D44] mx-auto"></div>
   </motion.div>
 
   <motion.div
@@ -361,14 +384,14 @@ const CompanyReport = () => {
             <div className="p-6">
               <div className="flex items-start mb-4">
                 <div className="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
-                  <FaIndustry className="text-[#20409A] text-xl" />
+                  <FaIndustry className="text-[#4d4d4d]  text-xl" />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-gray-800">
                     {plant.name}
                   </h4>
                   {unit.title && (
-                    <span className="text-xs text-[#20409A] bg-indigo-50 px-2 py-1 rounded-full">
+                    <span className="text-xs text-[#4d4d4d]  bg-indigo-50 px-2 py-1 rounded-full">
                       {unit.title}
                     </span>
                   )}
@@ -379,7 +402,7 @@ const CompanyReport = () => {
                 {capacityDetail && (
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-indigo-50 rounded-full flex items-center justify-center mr-3">
-                      <GiSewingMachine className="text-indigo-500 text-sm" />
+                      <GiSewingMachine className="text-[#363D44] text-sm" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500">Capacity</p>
@@ -391,7 +414,7 @@ const CompanyReport = () => {
                 {employeesDetail && (
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-indigo-50 rounded-full flex items-center justify-center mr-3">
-                      <FaUsers className="text-indigo-500 text-sm" />
+                      <FaUsers className="text-[#363D44] text-sm" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500">Employees</p>
@@ -403,7 +426,7 @@ const CompanyReport = () => {
                 {spaceDetail && (
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-indigo-50 rounded-full flex items-center justify-center mr-3">
-                      <FaBuilding className="text-indigo-500 text-sm" />
+                      <FaBuilding className="text-[#363D44] text-sm" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500">Space</p>
@@ -414,7 +437,7 @@ const CompanyReport = () => {
               </div>
               
               {/* <div className="mt-4 pt-4 border-t border-gray-100">
-                <button className="text-xs text-[#20409A] hover:text-indigo-800 font-medium flex items-center">
+                <button className="text-xs text-[#4d4d4d]  hover:text-indigo-800 font-medium flex items-center">
                   View Details
                   <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -447,7 +470,7 @@ const CompanyReport = () => {
                   className="bg-indigo-50 p-4 rounded-xl flex items-center"
                 >
                   <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
-                    <span className="text-[#20409A] font-bold">{bank.charAt(0)}</span>
+                    <span className="text-[#4d4d4d]  font-bold">{bank.charAt(0)}</span>
                   </div>
                   <span className="text-gray-800 font-medium">{bank}</span>
                 </motion.div>

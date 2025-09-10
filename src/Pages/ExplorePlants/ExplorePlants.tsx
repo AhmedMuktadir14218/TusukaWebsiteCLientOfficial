@@ -15,7 +15,7 @@ const ExplorePlants: React.FC = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className='bg-[var(--color-webBg)]   min-h-screen '>
       <ExploreHeader header={data.exploreHeader} />
       {data.units.map(unit => (
         <UnitComponent initialTab={activeTab} key={unit.title} unit={unit} />

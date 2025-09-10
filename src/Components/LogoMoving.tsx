@@ -45,16 +45,11 @@ const LogoMoving: React.FC<LogoMovingProps> = ({ mt }) => {
     <section className="w-full "
     >
 
-      <div className={`container mx-auto py-12  rounded-xl  flex relative ${mt} `}
+      <div className={`      relative ${mt}  `}
       // style={{ backgroundImage: `url(${parallaxImage})` }}
-          style={{
-  // background: "rgb(173 208 244 / 52%)",
-  // boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-  // backdropFilter: "blur(5px)",
-  // WebkitBackdropFilter: "blur(5px)",
-  // border: "1px solid rgba(185, 206, 227, 0.3)"
-}}>
-        <h1 className="font-bold pb-8 pl-8 md:text-3xl sm:text-2xl text-[#0B36AF] uppercase">Our Core Customers</h1>
+
+>
+        <h1 className="  font-bold py-16 md:text-5xl sm:text-3xl text-[var(--color-titleText)] text-center uppercase">Our Core Customers</h1>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={0} // no padding between slides
@@ -71,14 +66,14 @@ const LogoMoving: React.FC<LogoMovingProps> = ({ mt }) => {
             disableOnInteraction: false,
           }}
           speed={2000} // smooth speed
-          className="flex items-center"
+          className="flex items-center bg-[var(--color-navFootBG)]  "
         >
           {logos.map((logo, index) => (
-            <SwiperSlide key={index} className="flex justify-center">
+            <SwiperSlide key={index} className="flex justify-center py-12">
               <img
                 src={logo}
                 alt={`Logo ${index}`}
-                className="h-12 md:h-16 object-contain  "
+                className="h-24 md:h-18 object-contain  "
               />
             </SwiperSlide>
           ))}

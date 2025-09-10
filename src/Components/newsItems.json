@@ -1,0 +1,57 @@
+ 
+[
+  {
+    "id": 1,
+    "image": "../assets/NewsAndMedia/1.jpg",
+    "title": "Tusuka Sports Tournament",
+    "summary": "Tusuka organized its annual sports tournament, bringing together employees for a day of healthy competition, teamwork, and fun.",
+    "date": "Jan 15, 2025",
+    "status": "upcoming",
+    "images":[]
+  },
+  {
+    "id": 2,
+    "image": "../assets/NewsAndMedia/Tusuka Washing Ltd 06.jpg",
+    "title": "Tusuka GROUP Waste Management",
+    "description": "Tusuka is committed to sustainable waste management practices, ensuring minimal environmental impact.",
+    "date": "Apr 01, 2025",
+    "status": "upcoming",
+    "images":[]
+  },
+  {
+    "id": 3,
+    "image": "../assets/NewsAndMedia/3.jpg",
+    "title": "Tusuka GROUP ACQUIRES XYZ TEXTILE.",
+    "description": "Tusuka Group expands its footprint in the textile industry with the acquisition of XYZ Textile & Apparels, strengthening global operations.",
+    "date": "Mar 05, 2025",
+    "status": "upcoming",
+    "images":[]
+  },
+  {
+    "id": 4,
+    "image": "../assets/NewsAndMedia/2.jpg",
+    "title": "Tusuka GROUP PROUDLY ACHIEVES",
+    "description": "Tusuka Group is proud to announce a 'B-' in the CDP Water Report 2024, exceeding the global average and reaffirming our commitment to sustainability.",
+    "date": "Feb 10, 2025",
+    "status": "upcoming",
+    "images":[]
+  },
+  {
+    "id": 5,
+    "image": "../assets/NewsAndMedia/Tusuka Washing Ltd 05.jpg",
+    "title": "Most Powerful Wash Machine Now at Tusuka",
+    "description": "Tusuka is proud to introduce the most powerful wash machine setting new standards for efficiency and performance.",
+    "date": "Apr 01, 2025",
+    "status": "upcoming",
+    "images":[]
+  },
+  {
+    "id": 6,
+    "image": "../assets/NewsAndMedia/IMG_1126.jpg",
+    "title": "Tusuka Believes in Nature",
+    "description": "Tusuka is committed to sustainable practices, including our innovative rooftop garden initiative.",
+    "date": "Aug 01, 2025",
+    "status": "upcoming",
+    "images":[]
+  }
+]

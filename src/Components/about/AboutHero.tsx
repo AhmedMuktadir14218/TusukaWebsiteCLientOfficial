@@ -135,6 +135,153 @@
 
 
 
+// import React, { useState, useRef } from "react";
+// import type { SliderImage } from "../../types/about";
+// import { Link } from "react-router-dom";
+// import { motion, useInView } from "framer-motion";
+// import Brandlogo3 from "../../assets/homeban55.jpg";
+// import Brandlogo4 from "../../assets/homeban3.jpg";
+
+// interface AboutHeroProps {
+//   title: string;
+//   tagline: string;
+//   introduction: string;
+//   sliderImages: SliderImage[];
+//   bgColor?: string;
+//   ctaText?: string;
+//   onCtaClick?: () => void;
+// }
+
+// const AboutHero: React.FC<AboutHeroProps> = ({
+//   title,
+//   tagline,
+//   introduction,
+//   sliderImages,
+//   bgColor = "bg-white",
+//   ctaText = "Read More",
+//   onCtaClick,
+// }) => {
+//   const [showFull, setShowFull] = useState(false);
+//   const charLimit = 350;
+//   console.log(sliderImages);
+//   const isLongText = introduction.length > charLimit;
+//   const displayedText = showFull
+//     ? introduction
+//     : introduction.slice(0, charLimit) + (isLongText ? "..." : "");
+
+//   // 👇 Ref + InView hook
+//   const ref = useRef(null);
+//   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+//   // Animations
+//   const fadeInUp = {
+//     hidden: { opacity: 0, y: 50 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 3, ease: "easeOut" } },
+//   };
+
+//   const fadeInRight = {
+//     hidden: { opacity: 0, x: 50 },
+//     visible: { opacity: 1, x: 0, transition: { duration: 3, ease: "easeOut" } },
+//   };
+//     const [swapped, setSwapped] = useState(false);
+
+//   const handleClick = () => {
+//     setSwapped((prev) => !prev);
+//   };
+//   return (
+//     <section
+//       ref={ref}
+//       className={`  py-16 lg:py-20 md:py-16 sm:py-14`}
+//     >
+//       <div className="container mx-auto px-4 sm:px-6">
+//         <div className="grid md:grid-cols-2 gap-12 items-center">
+//           {/* Left Text Side */}
+//           <motion.div
+//             variants={fadeInUp}
+//             initial="hidden"
+//             animate={isInView ? "visible" : "hidden"}
+//             className="space-y-6"
+//           >
+//             <div className="relative w-fit">
+//               {/* Background Large Text */}
+//               <h2 className="text-[1rem] md:text-[2rem] lg:text-[4rem] font-extrabold text-[var(--color-titleText)] opacity-90 uppercase">
+//                 {title}
+//               </h2>
+//               {/* Foreground Small Text */}
+//               <h2 className="absolute top-1/2 left-30 md-left-20 -translate-x-1/2 -translate-y-1/2
+//                    text-xl md:text-2xl lg:text-3xl font-extrabold text-gray-900 text-left
+//                    whitespace-nowrap uppercase">
+//                 {/* {title} */}
+//               </h2>
+//             </div>
+
+//             <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-titleText)] opacity-40">
+//               {tagline}
+//             </h2>
+
+//             <p className="text-base md:text-lg text-[var(--color-titleText)] ">
+//               {displayedText}
+//               {isLongText && (
+//                 <button
+//                   onClick={() => setShowFull(!showFull)}
+//                   className="ml-2 text-[var(--color-buttonBg)] hover:underline text-sm font-medium"
+//                 >
+//                   {showFull ? "See Less" : "See More"}
+//                 </button>
+//               )}
+//             </p>
+
+//             <Link to="/about">
+//               <button
+//                 onClick={onCtaClick}
+//                 className="px-6 py-3 bg-[var(--color-buttonBg)]  text-[var(--color-buttonText)]  rounded-lg hover:bg-[#363D44] transition-colors duration-300"
+//               >
+//                 {ctaText}
+//               </button>
+//             </Link>
+//           </motion.div>
+
+//           {/* Right Image Side */}
+// <motion.div
+//       ref={ref}
+//       variants={fadeInRight}
+//       initial="hidden"
+//       animate={isInView ? "visible" : "hidden"}
+//       className="w-full mt-6 md:mt-0 relative cursor-pointer"
+//       onClick={handleClick}
+//     >
+//       {/* Main Image */}
+//       <img
+//         src={swapped ? Brandlogo4 : Brandlogo3}
+//         alt="Main"
+//         className="w-full h-96 object-cover shadow-xl rounded-lg brightness-100 transition-all duration-500"
+//       />
+
+//       {/* Overlay Image */}
+//       <img
+//         src={swapped ? Brandlogo3 : Brandlogo4}
+//         alt="Overlay"
+//         className={`
+//           absolute 
+//           ${swapped ? "-bottom-8 -right-4" : "-bottom-16 -right-8"}
+//           w-40 h-28 sm:w-48 sm:h-40
+//           md:w-56 md:h-48
+//           lg:w-52 lg:h-35
+//           xl:w-64 xl:h-35
+//           object-cover shadow-lg rounded-lg border-2 border-[#ccddaf] brightness-100
+//           transition-all duration-500
+//         `}
+//       />
+//     </motion.div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default React.memo(AboutHero);
+
+
 import React, { useState, useRef } from "react";
 import type { SliderImage } from "../../types/about";
 import { Link } from "react-router-dom";
@@ -162,8 +309,9 @@ const AboutHero: React.FC<AboutHeroProps> = ({
   onCtaClick,
 }) => {
   const [showFull, setShowFull] = useState(false);
-  const charLimit = 350;
+  const [swapped, setSwapped] = useState(false);
 
+  const charLimit = 350;
   const isLongText = introduction.length > charLimit;
   const displayedText = showFull
     ? introduction
@@ -184,11 +332,16 @@ const AboutHero: React.FC<AboutHeroProps> = ({
     visible: { opacity: 1, x: 0, transition: { duration: 3, ease: "easeOut" } },
   };
 
+  // ✅ Use slider images if provided, otherwise fallback
+  const mainImage = sliderImages?.[0]?.src || Brandlogo3;
+  const overlayImage = sliderImages?.[1]?.src || Brandlogo4;
+
+  const handleClick = () => {
+    setSwapped((prev) => !prev);
+  };
+
   return (
-    <section
-      ref={ref}
-      className={`${bgColor} py-12 lg:py-16 md:py-14 sm:py-12`}
-    >
+    <section ref={ref} className={`py-16 lg:py-20 md:py-16 sm:py-14`}>
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Text Side */}
@@ -199,28 +352,21 @@ const AboutHero: React.FC<AboutHeroProps> = ({
             className="space-y-6"
           >
             <div className="relative w-fit">
-              {/* Background Large Text */}
-              <h2 className="text-[1rem] md:text-[2rem] lg:text-[4rem] font-extrabold text-gray-200 opacity-90 uppercase">
+              <h2 className="text-[1rem] md:text-[2rem] lg:text-[4rem] font-extrabold text-[var(--color-titleText)] opacity-90 uppercase">
                 {title}
-              </h2>
-              {/* Foreground Small Text */}
-              <h2 className="absolute top-1/2 left-30 md-left-20 -translate-x-1/2 -translate-y-1/2
-                   text-xl md:text-2xl lg:text-3xl font-extrabold text-gray-900 text-left
-                   whitespace-nowrap uppercase">
-                {/* {title} */}
               </h2>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-semibold text-[#20409A]">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-titleText)] opacity-40">
               {tagline}
             </h2>
 
-            <p className="text-base md:text-lg text-gray-600">
+            <p className="text-base md:text-lg text-[var(--color-titleText)] ">
               {displayedText}
               {isLongText && (
                 <button
                   onClick={() => setShowFull(!showFull)}
-                  className="ml-2 text-[#20409A] hover:underline text-sm font-medium"
+                  className="ml-2 text-[var(--color-buttonBg)] hover:underline text-sm font-medium"
                 >
                   {showFull ? "See Less" : "See More"}
                 </button>
@@ -230,7 +376,7 @@ const AboutHero: React.FC<AboutHeroProps> = ({
             <Link to="/about">
               <button
                 onClick={onCtaClick}
-                className="px-6 py-3 bg-[#20409A] text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300"
+                className="px-6 py-3 bg-[var(--color-buttonBg)] text-[var(--color-buttonText)] rounded-lg hover:bg-[#363D44] transition-colors duration-300"
               >
                 {ctaText}
               </button>
@@ -242,28 +388,32 @@ const AboutHero: React.FC<AboutHeroProps> = ({
             variants={fadeInRight}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="w-full mt-6 md:mt-0 relative"
+            className="w-full mt-6 md:mt-0 relative cursor-pointer"
+            onClick={handleClick}
           >
-            {/* Main Background Image */}
+            {/* Main Image */}
             <img
-              src={Brandlogo3}
+              src={swapped ? overlayImage : mainImage}
               alt="Main"
-              className="w-full h-96 object-cover shadow-xl rounded-lg brightness-100"
+              onError={(e) => (e.currentTarget.src = Brandlogo3)} // fallback if load fails
+              className="w-full h-96 object-cover shadow-xl rounded-lg brightness-100 transition-all duration-500"
             />
 
-            {/* Small Overlay Image */}
+            {/* Overlay Image */}
             <img
-              src={Brandlogo4}
+              src={swapped ? mainImage : overlayImage}
               alt="Overlay"
-              className="
+              onError={(e) => (e.currentTarget.src = Brandlogo4)} // fallback if load fails
+              className={`
                 absolute 
-                -bottom-8 -right-4 w-40 h-28
-                sm:-bottom-10 sm:-right-6 sm:w-48 sm:h-40
-                md:-bottom-12 md:-right-8 md:w-56 md:h-48
-                lg:-bottom-10 lg:-right-4 lg:w-52 lg:h-35
-                xl:-bottom-16 xl:-right-8 xl:w-64 xl:h-35
-                object-cover shadow-lg rounded-lg border-2 border-[#20409A] brightness-100
-              "
+                ${swapped ? "-bottom-8 -right-4" : "-bottom-16 -right-8"}
+                w-40 h-28 sm:w-48 sm:h-40
+                md:w-56 md:h-48
+                lg:w-52 lg:h-35
+                xl:w-64 xl:h-35
+                object-cover shadow-lg rounded-lg border-2 border-[#ccddaf] brightness-100
+                transition-all duration-500
+              `}
             />
           </motion.div>
         </div>

@@ -50,8 +50,8 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
   return (
     <>
       <div className="w-full mx-auto">
-        <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent z-0" />
+        <div className="relative bg-[var(--color-accentSoft)] rounded-2xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
+          {/* <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent z-0" /> */}
 
           <div className="grid grid-cols-1 md:grid-cols-10 relative z-10">
             {/* Left: Image */}
@@ -88,7 +88,7 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
                 {isLong && (
                   <button
                     onClick={handleOpen}
-                    className="mt-2 text-sm text-blue-600 hover:underline"
+                    className="mt-2 text-sm   text-[var(--color-titleText)]   "
                   >
                     See more
                   </button>
@@ -127,7 +127,7 @@ const DirectorCard: React.FC<Props> = ({ director }) => {
                   </div>
                   <button
                     onClick={handleOpen}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-[var(--color-navFootBG)] text-[var(--color-navFootText)]  rounded-full hover:bg-[#363D44]  transition-colors"
                   >
                     View Profile
                   </button>
@@ -216,7 +216,7 @@ const SocialLink: React.FC<{ href: string; icon: React.ComponentType<React.SVGPr
     rel="noopener noreferrer"
     className="p-2 bg-gray-50 rounded-full hover:bg-blue-50 transition-colors"
   >
-    <Icon width={20} height={20} className="text-gray-600 hover:text-blue-600" />
+    <Icon width={20} height={20} className="text-gray-600 hover:text-gray-800" />
   </a>
 );
 

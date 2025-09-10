@@ -124,7 +124,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto">
+      <div className="fixed inset-0 z-50 overflow-y-auto border-2">
         {/* backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -135,13 +135,13 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
         />
 
         {/* modal container */}
-        <div className="flex items-center justify-center min-h-screen p-4">
+        <div className="flex items-center justify-center min-h-screen p-4 ">
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-            className="relative bg-white rounded-xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+            className="relative   bg-[var(--color-navFootBG)]  rounded-xl max-w-6xl w-full max-h-[90vh] overflow-hidden  shadow-2xl border-4 border-[var(--color-webBg)]"
             onClick={e => e.stopPropagation()}
           >
             {/* close button */}
@@ -167,7 +167,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
                     spaceBetween={0}
                     slidesPerView={1}
                     navigation
-                    pagination={{ clickable: true }}
+                    // pagination={{ clickable: true }}
                     autoplay={{ delay: 5000 }}
                     loop
                     className={`${isMobile ? 'h-64' : 'h-[400px]'} w-full rounded-lg overflow-hidden shadow-lg`}
@@ -190,7 +190,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-2xl md:text-3xl font-bold mb-6 text-[#05038f] bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text"
+                    className="text-2xl text-center md:text-3xl font-bold mb-6 text-white bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text"
                   >
                     {plant.name}
                   </motion.h2>
@@ -199,7 +199,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
                     {infoItems.map((item, idx) => (
                       <motion.div
                         key={idx}
-                        className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all"
+                        className=" bg-[var(--color-webBg)] p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all"
                         whileHover={{ y: -3 }}
                         transition={{ type: 'spring', stiffness: 300 }}
                       >
@@ -220,13 +220,13 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
 
               {/* description */}
               <motion.div
-                className="mt-8 bg-white p-6 rounded-xl border border-gray-200 shadow-sm"
+                className="mt-8    bg-[var(--color-webBg)] p-6 rounded-xl border border-gray-200 shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-full bg-blue-100 text-blue-600 mr-3">
+                  <div className="p-2 rounded-full bg-blue-100 text-[#363D44] mr-3">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                             d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0
@@ -241,7 +241,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
               </motion.div>
 
               {/* location & contacts */}
-              <div className="mt-8 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <div className="mt-8    bg-[var(--color-webBg)] p-6 rounded-xl border border-gray-200 shadow-sm">
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* contact info */}
                   <div className="md:w-1/2">
@@ -249,11 +249,11 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
                       <div className="w-12 h-12 bg-gray-200 flex items-center justify-center mr-4">
                         <img src={CompanyLogo} alt="Logo" />
                       </div>
-                      <h3 className="text-xl font-bold text-[#05038f]">{plant.name}</h3>
+                      <h3 className="text-xl font-bold text-[#363D44]">{plant.name}</h3>
                     </div>
                     <div className="space-y-3 text-gray-600">
                       <div className="flex items-start">
-                        <svg className="w-5 h-5 mt-1 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 mt-1 mr-3 text-[#363D44]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                 d="M3 5a2 2 0 012-2h3.28a1
                                 1 0 01.948.684l1.498 4.493a1
@@ -270,7 +270,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
                         <span>{details.phone || '+8809666722222'}</span>
                       </div>
                       <div className="flex items-start">
-                        <svg className="w-5 h-5 mt-1 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 mt-1 mr-3 text-[#363D44]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                 d="M3 8l7.89 5.26a2 2 0
                                 002.22 0L21 8M5 19h14a2 2
@@ -281,7 +281,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
                         <span>{details.email || 'hello@tusuka.com'}</span>
                       </div>
                       <div className="flex items-start">
-                        <svg className="w-5 h-5 mt-1 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 mt-1 mr-3 text-[#363D44]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                 d="M17.657 16.657L13.414 20.9a1.998
                                 1.998 0 01-2.827
@@ -323,7 +323,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, onClose })
 
               {/* any extra location info */}
               {(details.distanceFromAirport || details.otherLocationInfo) && (
-                <div className="mt-6 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="mt-6    bg-[var(--color-webBg)] p-6 rounded-xl border border-gray-200 shadow-sm">
                   <h3 className="font-bold text-gray-900 mb-4">Additional Location Information</h3>
                   <div className="text-gray-600 space-y-2">
                     {details.distanceFromAirport && <p>Distance from airport: {details.distanceFromAirport}</p>}

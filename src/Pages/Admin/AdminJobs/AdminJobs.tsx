@@ -212,7 +212,7 @@ const Jobs = () => {
                                     <div className="mt-6 flex space-x-3">
                                         <button
                                             onClick={() => handleEditClick(job)}
-                                            className="text-blue-600 hover:text-blue-800 px-3 py-1 border border-blue-600 rounded hover:bg-blue-50"
+                                            className="text-[#363D44] hover:text-blue-800 px-3 py-1 border border-blue-600 rounded hover:bg-blue-50"
                                         >
                                             Edit
                                         </button>

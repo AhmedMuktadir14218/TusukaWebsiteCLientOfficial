@@ -56,7 +56,7 @@ const LabService = {
   if (loading) return (
     
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#363D44]"></div>
       </div>
     
   );
@@ -65,7 +65,7 @@ const LabService = {
     
       <div className="text-red-500 text-center py-8">
         {error}
-        <button onClick={fetchLabData} className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        <button onClick={fetchLabData} className="ml-4 px-4 py-2 bg[#F0F1DF] text-white rounded hover:bg[#F0F1DF]">
           Retry
         </button>
       </div>
@@ -82,7 +82,7 @@ const LabService = {
     <>
       <div className="container mx-auto px-4 py-8">
         {saveLoading && (
-          <div className="fixed top-0 left-0 right-0 bg-blue-500 text-white p-2 text-center z-50">
+          <div className="fixed top-0 left-0 right-0 bg[#F0F1DF] text-white p-2 text-center z-50">
             Saving changes...
           </div>
         )}

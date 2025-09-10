@@ -1,86 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Button,
-  Modal,
-  Box,
-  TextField,
-  Typography,
-  IconButton,
-  CircularProgress,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  List,
-  ListItem,
-  ListItemText,
-  Divider
-} from '@mui/material';
-import {
-  Edit as EditIcon,
-  Save as SaveIcon,
-  Close as CloseIcon,
-  Image as ImageIcon,
-  Add as AddIcon,
-  Delete as DeleteIcon
-} from '@mui/icons-material';
-import axios from 'axios';
-
-interface IntroData {
-  title: string;
-  paragraphs: string[];
-  image?: {
-    path: string;
-    filename: string;
-  };
-}
+import React, { useState, useEffect } from "react";
+import {  Table,  TableBody,  TableCell,  TableContainer,  TableHead,  TableRow,  Paper,  Button,  Modal,  Box,  TextField,  Typography,  IconButton,  CircularProgress,  Dialog,
+  DialogActions,  DialogContent,  DialogTitle,  List,  ListItem,  ListItemText,  Divider,} from "@mui/material";
+import {  Edit as EditIcon,  Save as SaveIcon,  Close as CloseIcon,  Image as ImageIcon,  Add as AddIcon,  Delete as DeleteIcon,} from "@mui/icons-material";
+import axios from "axios";
+interface IntroData {  title: string;  paragraphs: string[];  image?: {    path: string;    filename: string;  };}
 
 const IntroSection: React.FC = () => {
   const [introData, setIntroData] = useState<IntroData>({
-    title: '',
-    paragraphs: [''],
+    title: "",
+    paragraphs: [""],
   });
   const [loading, setLoading] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [editField, setEditField] = useState<'title' | 'paragraphs' | null>(null);
-  const [editValue, setEditValue] = useState<string>('');
+  const [editField, setEditField] = useState<"title" | "paragraphs" | null>(
+    null,
+  );
+  const [editValue, setEditValue] = useState<string>("");
   const [editIndex, setEditIndex] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imageDialogOpen, setImageDialogOpen] = useState(false);
   const [paragraphDialogOpen, setParagraphDialogOpen] = useState(false);
-  const [newParagraph, setNewParagraph] = useState('');
+  const [newParagraph, setNewParagraph] = useState("");
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
 
   // Modified getIntro to align with the expected IntroData structure
   const getIntro = async (): Promise<IntroData> => {
-    const response = await axios.get(`${API_BASE_URL}/api/tusuka-lab/sections/intro`);
+    const response = await axios.get(
+      `${API_BASE_URL}/api/tusuka-lab/sections/intro`,
+    );
     return response.data;
   };
 
   // Modified updateIntro to accept FormData for a combined update (recommended if your backend handles it)
   // OR, if your backend expects JSON for text and separate endpoint for image,
   // then you'd have two separate update functions.
-  const updateIntro = async (data: FormData | { title: string; paragraphs: string[] }): Promise<{ message: string }> => {
+  const updateIntro = async (
+    data: FormData | { title: string; paragraphs: string[] },
+  ): Promise<{ message: string }> => {
     if (data instanceof FormData) {
       // Assuming your backend can parse FormData for all fields
-      const response = await axios.post(`${API_BASE_URL}/api/tusuka-lab/sections/intro`, data, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
+      const response = await axios.post(
+        `${API_BASE_URL}/api/tusuka-lab/sections/intro`,
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         },
-      });
+      );
       return response.data;
     } else {
       // This is for JSON update of text fields, if image is handled separately
-      const response = await axios.post(`${API_BASE_URL}/api/tusuka-lab/sections/intro`, data);
+      const response = await axios.post(
+        `${API_BASE_URL}/api/tusuka-lab/sections/intro`,
+        data,
+      );
       return response.data;
     }
   };
@@ -94,12 +69,12 @@ const IntroSection: React.FC = () => {
       setLoading(true);
       const response = await getIntro();
       setIntroData({
-        title: response.title || '',
-        paragraphs: response.paragraphs || [''],
-        image: response.image || undefined // Ensure image is properly handled
+        title: response.title || "",
+        paragraphs: response.paragraphs || [""],
+        image: response.image || undefined, // Ensure image is properly handled
       });
     } catch (error) {
-      console.error('Error fetching intro data:', error);
+      console.error("Error fetching intro data:", error);
       // Optionally set an error state here
     } finally {
       setLoading(false);
@@ -108,15 +83,15 @@ const IntroSection: React.FC = () => {
 
   // Paragraph Management Functions
   const handleAddParagraph = () => {
-    setNewParagraph('');
+    setNewParagraph("");
     setParagraphDialogOpen(true);
   };
 
   const handleSaveNewParagraph = () => {
     if (newParagraph.trim()) {
-      setIntroData(prev => ({
+      setIntroData((prev) => ({
         ...prev,
-        paragraphs: [...prev.paragraphs, newParagraph]
+        paragraphs: [...prev.paragraphs, newParagraph],
       }));
       setParagraphDialogOpen(false);
     }
@@ -124,15 +99,18 @@ const IntroSection: React.FC = () => {
 
   const handleRemoveParagraph = (index: number) => {
     if (introData.paragraphs.length <= 1) return;
-    setIntroData(prev => ({
+    setIntroData((prev) => ({
       ...prev,
-      paragraphs: prev.paragraphs.filter((_, i) => i !== index)
+      paragraphs: prev.paragraphs.filter((_, i) => i !== index),
     }));
   };
 
-  const handleEdit = (field: 'title' | 'paragraphs', index: number | null = null) => {
+  const handleEdit = (
+    field: "title" | "paragraphs",
+    index: number | null = null,
+  ) => {
     setEditField(field);
-    if (field === 'title') {
+    if (field === "title") {
       setEditValue(introData.title);
       setEditIndex(null);
     } else {
@@ -146,14 +124,14 @@ const IntroSection: React.FC = () => {
   const handleSave = async () => {
     try {
       setSaving(true);
-      
+
       // Create a copy of introData to modify
       const updatedIntroData = { ...introData };
 
       // Update the relevant field based on editField and editValue
-      if (editField === 'title') {
+      if (editField === "title") {
         updatedIntroData.title = editValue;
-      } else if (editField === 'paragraphs' && editIndex !== null) {
+      } else if (editField === "paragraphs" && editIndex !== null) {
         const newParagraphs = [...updatedIntroData.paragraphs];
         newParagraphs[editIndex] = editValue;
         updatedIntroData.paragraphs = newParagraphs;
@@ -162,11 +140,11 @@ const IntroSection: React.FC = () => {
       // If an image file is selected, prepare FormData
       if (imageFile) {
         const formData = new FormData();
-        formData.append('title', updatedIntroData.title);
+        formData.append("title", updatedIntroData.title);
         updatedIntroData.paragraphs.forEach((para, idx) => {
           formData.append(`paragraphs[${idx}]`, para);
         });
-        formData.append('image', imageFile);
+        formData.append("image", imageFile);
 
         await updateIntro(formData); // Send FormData with image
       } else {
@@ -181,7 +159,7 @@ const IntroSection: React.FC = () => {
         // so `description` in your `updateIntro` might be a placeholder for `paragraphs`.
         // Let's adjust `updateIntro` to expect `paragraphs` array.
         // For now, I'll send the whole updatedIntroData as JSON.
-         await updateIntro(updatedIntroData); // Send text data as JSON
+        await updateIntro(updatedIntroData); // Send text data as JSON
       }
 
       // Update the local state after successful API call
@@ -191,13 +169,12 @@ const IntroSection: React.FC = () => {
       setEditing(false); // Close the edit modal
       setImageFile(null); // Clear selected image file
     } catch (error) {
-      console.error('Update failed:', error);
-      alert(`Update failed: ${error.message || 'Unknown error'}`); // Provide more specific error message
+      console.error("Update failed:", error);
+      alert(`Update failed: ${error.message || "Unknown error"}`); // Provide more specific error message
     } finally {
       setSaving(false);
     }
   };
-
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -236,7 +213,7 @@ const IntroSection: React.FC = () => {
               </TableCell>
               <TableCell>{introData.title}</TableCell>
               <TableCell align="right">
-                <IconButton onClick={() => handleEdit('title')}>
+                <IconButton onClick={() => handleEdit("title")}>
                   <EditIcon />
                 </IconButton>
               </TableCell>
@@ -257,14 +234,23 @@ const IntroSection: React.FC = () => {
                           secondary={`Paragraph ${index + 1}`}
                         />
                         <div>
-                          <IconButton onClick={() => handleEdit('paragraphs', index)}>
+                          <IconButton
+                            onClick={() => handleEdit("paragraphs", index)}
+                          >
                             <EditIcon fontSize="small" />
                           </IconButton>
                           <IconButton
                             onClick={() => handleRemoveParagraph(index)}
                             disabled={introData.paragraphs.length <= 1}
                           >
-                            <DeleteIcon fontSize="small" color={introData.paragraphs.length <= 1 ? "disabled" : "error"} />
+                            <DeleteIcon
+                              fontSize="small"
+                              color={
+                                introData.paragraphs.length <= 1
+                                  ? "disabled"
+                                  : "error"
+                              }
+                            />
                           </IconButton>
                         </div>
                       </ListItem>
@@ -285,7 +271,7 @@ const IntroSection: React.FC = () => {
             </TableRow>
 
             {/* Image Row */}
-            <TableRow>
+            {/* <TableRow>
               <TableCell component="th" scope="row">
                 Featured Image
               </TableCell>
@@ -308,10 +294,10 @@ const IntroSection: React.FC = () => {
                   startIcon={<ImageIcon />}
                   onClick={() => setImageDialogOpen(true)}
                 >
-                  {introData.image ? 'Change' : 'Upload'}
+                  {introData.image ? "Change" : "Upload"}
                 </Button>
               </TableCell>
-            </TableRow>
+            </TableRow> */}
           </TableBody>
         </Table>
       </TableContainer>
@@ -322,20 +308,25 @@ const IntroSection: React.FC = () => {
         onClose={() => setEditing(false)}
         aria-labelledby="edit-modal-title"
       >
-        <Box sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 600,
-          bgcolor: 'background.paper',
-          boxShadow: 24,
-          p: 4,
-          borderRadius: 2,
-        }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 600,
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 4,
+            borderRadius: 2,
+          }}
+        >
           <div className="flex justify-between items-center mb-4">
             <Typography id="edit-modal-title" variant="h6" component="h2">
-              Edit {editField === 'title' ? 'Title' : `Paragraph ${editIndex !== null ? editIndex + 1 : ''}`}
+              Edit{" "}
+              {editField === "title"
+                ? "Title"
+                : `Paragraph ${editIndex !== null ? editIndex + 1 : ""}`}
             </Typography>
             <IconButton onClick={() => setEditing(false)}>
               <CloseIcon />
@@ -345,7 +336,7 @@ const IntroSection: React.FC = () => {
           <TextField
             fullWidth
             multiline
-            rows={editField === 'title' ? 2 : 4}
+            rows={editField === "title" ? 2 : 4}
             variant="outlined"
             value={editValue}
             onChange={(e) => setEditValue(e.target.value)}
@@ -353,10 +344,7 @@ const IntroSection: React.FC = () => {
           />
 
           <div className="flex justify-end space-x-2">
-            <Button
-              variant="outlined"
-              onClick={() => setEditing(false)}
-            >
+            <Button variant="outlined" onClick={() => setEditing(false)}>
               Cancel
             </Button>
             <Button
@@ -407,7 +395,10 @@ const IntroSection: React.FC = () => {
       </Dialog>
 
       {/* Add Paragraph Dialog */}
-      <Dialog open={paragraphDialogOpen} onClose={() => setParagraphDialogOpen(false)}>
+      <Dialog
+        open={paragraphDialogOpen}
+        onClose={() => setParagraphDialogOpen(false)}
+      >
         <DialogTitle>Add New Paragraph</DialogTitle>
         <DialogContent>
           <TextField

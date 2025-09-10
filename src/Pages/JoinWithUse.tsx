@@ -74,16 +74,16 @@ function JoinWithUse() {
 
     if (loading) {
         return (
-            <div className="flex flex-col justify-center items-center h-screen bg-gray-100">
-                <motion.img
+            <div className="flex flex-col justify-center items-center h-screen bg-[#f0f1dfc9]">
+                {/* <motion.img
                     src={logo}
                     alt="Company Logo"
                     className="h-32 w-32 mb-6" // Adjust size as needed
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                />
-                <div className="animate-spin rounded-full h-20 w-20 border-b-2 border-blue-500"></div>
+                /> */}
+                <div className="animate-spin rounded-full h-20 w-20 border-b-2 border-[#363D44]"></div>
                 <p className="ml-4 text-xl text-gray-700 mt-4">Loading career opportunities...</p>
             </div>
         );
@@ -100,11 +100,12 @@ function JoinWithUse() {
     }
 
     return (
-        <div className="container mx-auto min-h-screen p-8">
-            <div className=' px-4 py-15  '>
-                <motion.h1
-                    className="text-5xl font-extrabold text-center text-gray-900 mb-12 drop-shadow-lg"
-                    initial={{ y: -50, opacity: 0 }}
+        <section className='bg-[var(--color-webBg)]'>
+            <div className="container mx-auto min-h-screen p-8 ">
+                <div className=' px-4 py-15  '>
+                    <motion.h1
+                        className="text-5xl font-extrabold text-center text-[#363D44] mb-12 drop-shadow-lg"
+                        initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
@@ -135,20 +136,20 @@ function JoinWithUse() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 whileHover={{ translateY: -5 }} // Subtle lift on hover
                             >
-                                <h2 className="text-3xl font-bold text-indigo-700 mb-4">{job.position}</h2>
-                                <p className="text-gray-600 mb-2">
+                                <h2 className="text-3xl font-bold text-[#363D44] mb-4">{job.position}</h2>
+                                <p className="text-[#363D44] mb-2">
                                     <span className="font-semibold">Vacancy:</span> {job.vacancy}
                                 </p>
-                                <p className="text-gray-600 mb-2">
+                                <p className="text-[#363D44] mb-2">
                                     <span className="font-semibold">Location:</span> {job.job_location}
                                 </p>
-                                <p className="text-gray-600 mb-4">
+                                <p className="text-[#363D44] mb-4">
                                     <span className="font-semibold">Salary:</span> {job.salary}
                                 </p>
 
-                                <div className="space-y-4 text-gray-700 text-sm mb-6">
+                                <div className="space-y-4 text-[#363D44] text-sm mb-6">
                                     <p>
-                                        <span className="font-semibold text-gray-800">Context:</span> {job.job_context.substring(0, 150)}...
+                                        <span className="font-semibold text-[#363D44]">Context:</span> {job.job_context.substring(0, 150)}...
                                     </p>
                                 </div>
 
@@ -156,7 +157,7 @@ function JoinWithUse() {
                                     <span>Deadline: {new Date(job.application_deadline).toLocaleDateString()}</span>
                                     <button
                                         onClick={() => handleSeeMoreClick(job)}
-                                        className="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-lg"
+                                        className="bg-[#363D44] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#363D44] transition duration-300 transform hover:scale-105 shadow-lg"
                                     >
                                         See More
                                     </button>
@@ -196,43 +197,43 @@ function JoinWithUse() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                                         </svg>
                                     </button>
-                                    <h2 className="text-4xl font-extrabold text-gray-900 text-center flex-grow -mt-1">{selectedJob.position}</h2>
+                                    <h2 className="text-4xl font-extrabold text-[#363D44] text-center flex-grow -mt-1">{selectedJob.position}</h2>
                                     <div className="w-7 h-7"></div> {/* Spacer for alignment */}
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 text-lg text-gray-700 mb-8 border-b pb-6 border-gray-200">
-                                    <p><span className="font-semibold text-gray-800">Vacancy:</span> {selectedJob.vacancy}</p>
-                                    <p><span className="font-semibold text-gray-800">Location:</span> {selectedJob.job_location}</p>
-                                    <p><span className="font-semibold text-gray-800">Salary:</span> {selectedJob.salary}</p>
-                                    <p><span className="font-semibold text-gray-800">Deadline:</span> {new Date(selectedJob.application_deadline).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                    <p><span className="font-semibold text-[#363D44]">Vacancy:</span> {selectedJob.vacancy}</p>
+                                    <p><span className="font-semibold text-[#363D44]">Location:</span> {selectedJob.job_location}</p>
+                                    <p><span className="font-semibold text-[#363D44]">Salary:</span> {selectedJob.salary}</p>
+                                    <p><span className="font-semibold text-[#363D44]">Deadline:</span> {new Date(selectedJob.application_deadline).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                 </div>
 
-                                <div className="space-y-6 text-gray-800 mb-10">
+                                <div className="space-y-6 text-[#363D44] mb-10">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-indigo-700 mb-3">Job Context</h3>
+                                        <h3 className="text-2xl font-bold text-[#363D44] mb-3">Job Context</h3>
                                         <p className="leading-relaxed text-base">{selectedJob.job_context}</p>
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-indigo-700 mb-3">Job Responsibilities</h3>
+                                        <h3 className="text-2xl font-bold text-[#363D44] mb-3">Job Responsibilities</h3>
                                         <p className="leading-relaxed text-base">{selectedJob.job_responsibilities}</p>
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-indigo-700 mb-3">Educational Requirements</h3>
+                                        <h3 className="text-2xl font-bold text-[#363D44] mb-3">Educational Requirements</h3>
                                         <p className="leading-relaxed text-base">{selectedJob.educational_requirements}</p>
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-indigo-700 mb-3">Experience</h3>
+                                        <h3 className="text-2xl font-bold text-[#363D44] mb-3">Experience</h3>
                                         <p className="leading-relaxed text-base">{selectedJob.experience}</p>
                                     </div>
                                     {selectedJob.additional_requirements && (
                                         <div>
-                                            <h3 className="text-2xl font-bold text-indigo-700 mb-3">Additional Requirements</h3>
+                                            <h3 className="text-2xl font-bold text-[#363D44] mb-3">Additional Requirements</h3>
                                             <p className="leading-relaxed text-base">{selectedJob.additional_requirements}</p>
                                         </div>
                                     )}
                                     {selectedJob.other_benefits && (
                                         <div>
-                                            <h3 className="text-2xl font-bold text-indigo-700 mb-3">Other Benefits</h3>
+                                            <h3 className="text-2xl font-bold text-[#363D44] mb-3">Other Benefits</h3>
                                             <p className="leading-relaxed text-base">{selectedJob.other_benefits}</p>
                                         </div>
                                     )}
@@ -242,7 +243,7 @@ function JoinWithUse() {
                                    
                                     <button
                                         onClick={handleApplyNowClick}
-                                        className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:from-green-600 hover:to-emerald-700 transition duration-300 transform hover:scale-105"
+                                        className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700 transition duration-300 transform hover:scale-105"
                                     >
                                         <Link to='contact-us'> Apply Now</Link>
                                        
@@ -255,6 +256,7 @@ function JoinWithUse() {
                 )}
             </AnimatePresence>
         </div>
+        </section>
     );
 }
 

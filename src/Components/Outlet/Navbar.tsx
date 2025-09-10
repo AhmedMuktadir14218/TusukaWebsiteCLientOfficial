@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import bgNav from "../../assets/bg.png";
-import logo from "../../assets/Logo of Tusuka.png";
+import logo from "../../assets/LogoWhite.png";
+import { useTheme } from "../../Context/ThemeContext";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,8 @@ const Navbar: React.FC = () => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   const location = useLocation(); // React Router hook
-
+// const { theme } = useTheme();
+// console.log("Theme colors:", theme?.navFoot); // ✅ should log colors from DB
   const navItems = [
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about" },
@@ -22,6 +24,18 @@ const Navbar: React.FC = () => {
     { label: "Join With Us", path: "/joinwithus" },
     { label: "Contact Us", path: "/contact-us" },
   ];
+  // helper function
+const hexToRgba = (hex: string, alpha = 1) => {
+  let clean = hex.replace("#", "");
+  if (clean.length === 3) {
+    clean = clean.split("").map((c) => c + c).join("");
+  }
+  const r = parseInt(clean.substring(0, 2), 16);
+  const g = parseInt(clean.substring(2, 4), 16);
+  const b = parseInt(clean.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 
   // Update active menu based on URL
   useEffect(() => {
@@ -62,23 +76,17 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-transform duration-300      
-      
-      `}
+      className="fixed w-full z-50 transition-transform duration-300  "
       // style={{ backgroundImage: `url(${bgNav})` }}
-      style={{
-  // background: "rgba(173, 208, 244, 0.84)", 
-  // background: "rgba(110, 109, 120, 0.7)", 
-  // background: "rgba(4, 3, 18, 0.19)", 
-  // background: "rgba(255, 255, 255, 0.73)", 
-  background: "rgb(173 208 244 / 78%)", 
-  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-  backdropFilter: "blur(5px)",
-  WebkitBackdropFilter: "blur(5px)",
-  // border: "1px solid rgba(185, 206, 227, 0.3)"
-}}
+              style={{
+    backgroundColor: hexToRgba(getComputedStyle(document.documentElement).getPropertyValue('--color-navFootBG'), 0.90),
+    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+    backdropFilter: "blur(5px)",
+    WebkitBackdropFilter: "blur(5px)",
+    // border: "1px solid rgba(185, 206, 227, 0.3)",
+  }}
     >
-      <div className="container mx-auto  px-3 flex items-center justify-between">
+      <div className="container mx-auto  px-3 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
           <img src={logo} alt="Company Logo" className="h-10 w-auto" />
@@ -92,8 +100,8 @@ const Navbar: React.FC = () => {
               to={item.path}
               className={`px-2 py-3 font-medium transition-colors ${
                 activeMenu === index
-                  ? "border-b-4 border-[#20409A] rounded-none text-[#20409A] xl:text-lg lg:text-md font-extrabold"
-                  : "text-black xl:text-lg lg:text-md hover:text-[#20409A]"
+                  ? "border-b-4 border-[var(--color-activeBorder)] rounded-none text-[var(--color-navFootText)] xl:text-lg lg:text-md font-extrabold"
+                  : "text-[var(--color-navFootText)] xl:text-lg lg:text-md hover:text-[var(--color-webBg)]"
               }`}
             >
               {item.label}
@@ -105,15 +113,17 @@ const Navbar: React.FC = () => {
         <div className="hidden xl:flex items-center space-x-4">
           <Link
             to="/contact-us"
-            className="bg-[#20409A] text-white py-2 px-6 rounded-full font-bold xl:text-lg lg:text-md"
+            className="bg-[var(--color-navFootText)] text-[var(--color-navFootBG)] py-2 px-6 rounded-full font-bold xl:text-lg lg:text-md"
+
+
           >
-            Let's Talk
+            Collections
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="xl:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-black">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
             {isMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
           </button>
         </div>
@@ -134,8 +144,8 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
               className={`block py-2 px-3 rounded-md font-medium transition-colors ${
                 activeMenu === index
-                  ? "bg-[#20409A] text-white"
-                  : "text-black hover:text-[#20409A]"
+                  ? "bg-[var(--color-navFootText)] text-[var(--color-navFootBG)]"
+                  : "text-white hover:text-[#ccddaf]"
               }`}
             >
               {item.label}
@@ -230,8 +240,8 @@ const Navbar: React.FC = () => {
 //               onClick={() => setActiveMenu(index)}
 //               className={`px-4 py-4 font-medium transition-colors ${
 //                 activeMenu === index
-//                   ? " border-b-4 border-[#20409A] rounded-none text-[#20409A] xl:text-xl lg:text-lg font-bold"
-//                   : "text-black xl:text-xl lg:text-lg hover:text-[#20409A]"
+//                   ? " border-b-4 border-[#ccddaf] rounded-none text-[#ccddaf] xl:text-xl lg:text-lg font-bold"
+//                   : "text-black xl:text-xl lg:text-lg hover:text-[#ccddaf]"
 //               }`}
 //             >
 //               {item.label}
@@ -244,7 +254,7 @@ const Navbar: React.FC = () => {
 //           {/* <FaSearch size={18} className="cursor-pointer" /> */}
 //           <Link
 //             to="/contact-us"
-//             className="bg-[#20409A] text-white py-4 px-9 rounded-full font-bold xl:text-xl lg:text-lg"
+//             className="bg-[#ccddaf] text-white py-4 px-9 rounded-full font-bold xl:text-xl lg:text-lg"
 //           >
 //             Let's Talk
 //           </Link>
@@ -276,8 +286,8 @@ const Navbar: React.FC = () => {
 //               }}
 //               className={`block py-2 px-3 rounded-md font-medium transition-colors ${
 //                 activeMenu === index
-//                   ? "bg-[#20409A] text-white"
-//                   : "text-black hover:text-[#20409A]"
+//                   ? "bg-[#ccddaf] text-white"
+//                   : "text-black hover:text-[#ccddaf]"
 //               }`}
 //             >
 //               {item.label}
@@ -438,7 +448,7 @@ const Navbar: React.FC = () => {
 //                     <button
 //                       key={subIndex}
 //                       onClick={() => setIsMenuOpen(false)}
-//                       className="block text-gray-600 hover:text-[#20409A] text-left w-full"
+//                       className="block text-gray-600 hover:text-[#ccddaf] text-left w-full"
 //                     >
 //                       ↳ {subItem.label}
 //                     </button>

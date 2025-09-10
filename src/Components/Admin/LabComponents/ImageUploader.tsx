@@ -9,7 +9,6 @@ interface Image {
   path: string;
   filename: string;
   type: 'header' | 'intro';
-  // Assuming 'order' is also part of the image structure as seen in your response
   order?: number; 
 }
 
@@ -24,14 +23,9 @@ const ImageUploader: React.FC = () => {
 
   // --- API Functions ---
 
-  /**
-   * Fetches the list of all uploaded images.
-   * @returns {Promise<Image[]>} A promise that resolves to an array of Image objects.
-   */
   const getUploadedImages = async (): Promise<Image[]> => {
     try {
       const response = await axios.get(`${API_BASE_URL}/api/tusuka-lab/uploaded-images`);
-      // **FIXED**: Access the 'images' property from the response data
       return response.data.images; 
     } catch (error) {
       console.error('Error in getUploadedImages:', error);
@@ -39,19 +33,13 @@ const ImageUploader: React.FC = () => {
     }
   };
 
-  /**
-   * Uploads one or more images of a specific type.
-   * @param {File[]} files - An array of File objects to upload.
-   * @param {'header' | 'intro'} type - The type of image ('header' or 'intro').
-   * @returns {Promise<{ message: string; uploadedImages: Image[] }>} A promise that resolves to an object with a message and uploaded images.
-   */
   const uploadImages = async (files: File[], type: 'header' | 'intro'): Promise<{ message: string; uploadedImages: Image[] }> => {
     try {
       const formData = new FormData();
       files.forEach(file => {
-        formData.append('images[]', file); // 'images[]' for multiple files
+        formData.append('images[]', file);
       });
-      formData.append('type', type); // Append the image type
+      formData.append('type', type);
 
       const response = await axios.post(`${API_BASE_URL}/api/tusuka-lab/upload-image`, formData, {
         headers: {
@@ -62,8 +50,7 @@ const ImageUploader: React.FC = () => {
           setUploadProgress(percentCompleted);
         },
       });
-      // Assuming the API response for upload also has an 'images' property for uploaded files
-      return { message: response.data.message, uploadedImages: response.data.images }; 
+      return { message: response.data.message, uploadedImages: response.data.images };
     } catch (error) {
       console.error('Error in uploadImages:', error);
       setUploadProgress(0); // Reset progress on error
@@ -71,11 +58,6 @@ const ImageUploader: React.FC = () => {
     }
   };
 
-  /**
-   * Deletes an image by its ID.
-   * @param {number} id - The ID of the image to delete.
-   * @returns {Promise<{ message: string }>} A promise that resolves to an object with a success message.
-   */
   const deleteImage = async (id: number): Promise<{ message: string }> => {
     try {
       const response = await axios.delete(`${API_BASE_URL}/api/tusuka-lab/images/${id}`);
@@ -90,17 +72,16 @@ const ImageUploader: React.FC = () => {
 
   useEffect(() => {
     fetchImages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchImages = async () => {
     try {
       setLoading(true);
       const uploadedImages = await getUploadedImages();
-      // Added a defensive check to ensure 'uploadedImages' is an array
       setImages(Array.isArray(uploadedImages) ? uploadedImages : []);
     } catch (error) {
       console.error('Error fetching images:', error);
-      // Optionally, show a user-friendly error message
     } finally {
       setLoading(false);
     }
@@ -109,32 +90,40 @@ const ImageUploader: React.FC = () => {
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       try {
+        // For intro, check that adding new images doesn't exceed 4
+        if (selectedType === 'intro') {
+          const currentIntroCount = images.filter(img => img.type === 'intro').length;
+          const remainingSlots = 4 - currentIntroCount;
+          const newFilesCount = e.target.files.length;
+
+          if (remainingSlots <= 0) {
+            alert('You already have 4 intro images. Please delete one to add new.');
+            if (fileInputRef.current) fileInputRef.current.value = '';
+            return;
+          }
+          if (newFilesCount > remainingSlots) {
+            alert(`You can only add ${remainingSlots} more intro image${remainingSlots === 1 ? '' : 's'}.`);
+            if (fileInputRef.current) fileInputRef.current.value = '';
+            return;
+          }
+        }
+
         setLoading(true);
         setUploadProgress(0);
 
         const files = Array.from(e.target.files);
         const response = await uploadImages(files, selectedType);
-        
-        // Added a defensive check to ensure 'response.uploadedImages' is an array
+
         const newImages = Array.isArray(response.uploadedImages) ? response.uploadedImages : [];
 
-        setImages(prevImages => {
-          if (selectedType === 'intro') {
-            // For intro, replace existing intro image(s) if any
-            return [...prevImages.filter(img => img.type !== 'intro'), ...newImages];
-          }
-          // For header, just add new images
-          return [...prevImages, ...newImages];
-        });
-
+        setImages(prevImages => [...prevImages, ...newImages]);
       } catch (error) {
         console.error('Error uploading images:', error);
-        // Optionally, show a user-friendly error message
       } finally {
         setLoading(false);
         setUploadProgress(0);
         if (fileInputRef.current) {
-          fileInputRef.current.value = ''; // Clear the file input
+          fileInputRef.current.value = '';
         }
       }
     }
@@ -147,7 +136,6 @@ const ImageUploader: React.FC = () => {
       setImages(prevImages => prevImages.filter(img => img.id !== id));
     } catch (error) {
       console.error('Error deleting image:', error);
-      // Optionally, show a user-friendly error message
     } finally {
       setLoading(false);
     }
@@ -157,11 +145,14 @@ const ImageUploader: React.FC = () => {
     fileInputRef.current?.click();
   };
 
+  // For intro: calculate how many more images can be uploaded
+  const introImagesCount = images.filter(img => img.type === 'intro').length;
+  const introImagesRemaining = 4 - introImagesCount;
+
   return (
     <div className="container mx-auto p-4">
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-4">Image Uploader</h2>
-
         <div className="flex items-center space-x-4 mb-4">
           <div>
             <label className="mr-2">Image Type:</label>
@@ -179,7 +170,7 @@ const ImageUploader: React.FC = () => {
             type="file"
             ref={fileInputRef}
             onChange={handleFileChange}
-            multiple={selectedType === 'header'}
+            multiple={selectedType === 'header' || selectedType === 'intro'}
             accept="image/jpeg,image/png,image/jpg,image/gif,image/webp"
             className="hidden"
           />
@@ -189,7 +180,7 @@ const ImageUploader: React.FC = () => {
             color="primary"
             startIcon={<UploadIcon />}
             onClick={triggerFileInput}
-            disabled={loading}
+            disabled={loading || (selectedType === 'intro' && introImagesRemaining === 0)}
           >
             Upload {selectedType === 'header' ? 'Images' : 'Image'}
           </Button>
@@ -197,7 +188,11 @@ const ImageUploader: React.FC = () => {
 
         {selectedType === 'intro' && (
           <p className="text-sm text-gray-500 mb-4">
-            Note: Only one intro image is allowed. Uploading a new one will replace the existing.
+            You can upload up to <b>4</b> intro images.
+            {introImagesRemaining === 0 ?
+              <span className="text-red-500 ml-2">Maximum reached.</span> :
+              <span> You can add <b>{introImagesRemaining}</b> more.</span>
+            }
           </p>
         )}
       </div>
@@ -216,7 +211,6 @@ const ImageUploader: React.FC = () => {
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {/* Added Array.isArray check for robustness */}
         {Array.isArray(images) && images.map((image) => (
           <div key={image.id} className="relative group rounded-lg overflow-hidden border border-gray-200">
             <img

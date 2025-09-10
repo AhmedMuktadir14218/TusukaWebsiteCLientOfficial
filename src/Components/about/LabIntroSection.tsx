@@ -183,17 +183,204 @@
 
 
 
+// // Components/Laboratory/LabIntroSection.tsx
+// import React, { useRef } from "react";
+// import { motion, useInView } from "framer-motion";
+// import sideImage1 from "../../assets/laboratory/Ban_Tushuka_USAID (48).jpg";
+// import sideImage2 from "../../assets/laboratory/Ban_Tushuka_USAID (42).jpg";
+// import sideImage3 from "../../assets/laboratory/Ban_Tushuka_USAID (25).jpg";
+// import sideImage4 from "../../assets/laboratory/Ban_Tushuka_USAID (55).jpg";
+
+// const LabIntroSection: React.FC = () => {
+//   const ref = useRef(null);
+//   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+//   // Variants for animation
+//   const fadeInUp = {
+//     hidden: { opacity: 0, y: 50 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 3, ease: "easeOut" } },
+//   };
+
+//   const fadeInLeft = {
+//     hidden: { opacity: 0, x: -50 },
+//     visible: { opacity: 1, x: 0, transition: { duration: 3, ease: "easeOut" } },
+//   };
+
+//   return (
+//     <div className="relative w-full overflow-visible" ref={ref}>
+//       {/* Top Polygon */}
+//       <div
+//         className="absolute bottom-[1px] left-0 w-full h-96 bg-[var(--color-accent)]"
+//         style={{
+//           clipPath: "polygon(100% 100%, 0 0, 0 100%)",
+//         }}
+//       />
+
+//       {/* Content */}
+//       <div className="relative container mx-auto px-4 py-12 z-30">
+//         <section className="container mx-auto px-6 py-12 text-[var(--color-webText)]">
+//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+//             {/* Image Gallery */}
+//             <motion.div
+//               variants={fadeInLeft}
+//               initial="hidden"
+//               animate={isInView ? "visible" : "hidden"}
+//               className="grid grid-cols-2 gap-6"
+//             >
+//               {/* First Column */}
+//               <div className="flex flex-col gap-6">
+//                 <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+//                   <img
+//                     src={sideImage1}
+//                     alt="Tusuka Group Quality Image 1"
+//                     className="w-full h-full object-cover"
+//                   />
+//                 </motion.div>
+//                 <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+//                   <img
+//                     src={sideImage2}
+//                     alt="Tusuka Group Quality Image 2"
+//                     className="w-full h-full object-cover"
+//                   />
+//                 </motion.div>
+//               </div>
+
+//               {/* Second Column */}
+//               <div className="flex flex-col gap-6 mt-12 lg:mt-24">
+//                 <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+//                   <img
+//                     src={sideImage3}
+//                     alt="Tusuka Group Quality Image 3"
+//                     className="w-full h-full object-cover"
+//                   />
+//                 </motion.div>
+//                 <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+//                   <img
+//                     src={sideImage4}
+//                     alt="Tusuka Group Quality Image 4"
+//                     className="w-full h-full object-cover"
+//                   />
+//                 </motion.div>
+//               </div>
+//             </motion.div>
+
+//             {/* Text Content */}
+//             <motion.div
+//               variants={fadeInUp}
+//               initial="hidden"
+//               animate={isInView ? "visible" : "hidden"}
+//               className=""
+//             >
+//               <h2 className="text-4xl font-bold mb-6 text-[var(--color-titleText)]">
+//                 Ensuring Excellence in Every Thread
+//               </h2>
+//               <p className="mb-4 text-lg text-[var(--color-webText)]">
+//                 At Tusuka Group, we believe that uncompromising quality is the foundation of
+//                 global trust. Our state-of-the-art laboratories are equipped with world-class testing
+//                 facilities to ensure that every fabric, trim, and garment meets international
+//                 standards.
+//               </p>
+//               <p className="text-lg text-text-[var(--color-webText)]">
+//                 Tusuka has established its own in-house fabric and garment testing laboratory,
+//                 built with the latest technology and approved by multiple international
+//                 accreditation bodies. Our lab is fully equipped to test all types of fabrics,
+//                 ensuring strict compliance with buyer and global requirements.
+//               </p>
+
+//               <div className="mt-8 flex flex-wrap gap-4">
+//                 <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+//                   ISO 9001 Certified
+//                 </div>
+//                 <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
+//                   Eco-Friendly Testing
+//                 </div>
+//                 <div className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">
+//                   Global Standards
+//                 </div>
+//               </div>
+//             </motion.div>
+//           </div>
+//         </section>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LabIntroSection;
+
 // Components/Laboratory/LabIntroSection.tsx
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import sideImage1 from "../../assets/laboratory/Ban_Tushuka_USAID (48).jpg";
 import sideImage2 from "../../assets/laboratory/Ban_Tushuka_USAID (42).jpg";
 import sideImage3 from "../../assets/laboratory/Ban_Tushuka_USAID (25).jpg";
 import sideImage4 from "../../assets/laboratory/Ban_Tushuka_USAID (55).jpg";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL || API_BASE_URL;
+
+type ApiImage = {
+  id: number;
+  path: string;
+  filename: string;
+};
+
+type ApiData = {
+  title: string;
+  paragraphs: string[];
+  images: ApiImage[];
+};
+
+const defaultData: ApiData = {
+  title: "Ensuring Excellence in Every Thread",
+  paragraphs: [
+    "At Tusuka Group, we believe that uncompromising quality is the foundation of global trust. Our state-of-the-art laboratories are equipped with world-class testing facilities to ensure that every fabric, trim, and garment meets international standards.",
+    "Tusuka has established its own in-house fabric and garment testing laboratory, built with the latest technology and approved by multiple international accreditation bodies. Our lab is fully equipped to test all types of fabrics, ensuring strict compliance with buyer and global requirements."
+  ],
+  images: [
+    {id: 1, path: sideImage1, filename: "default1.jpg"},
+    {id: 2, path: sideImage2, filename: "default2.jpg"},
+    {id: 3, path: sideImage3, filename: "default3.jpg"},
+    {id: 4, path: sideImage4, filename: "default4.jpg"}
+  ]
+};
+
 const LabIntroSection: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const [data, setData] = useState<ApiData>(defaultData);
+  const [loading, setLoading] = useState(true);
+  const [apiError, setApiError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setApiError(false);
+    fetch(`${API_BASE_URL}/api/tusuka-lab/sections/intro`)
+      .then(async (res) => {
+        if (!res.ok) throw new Error("API error");
+        const result = await res.json();
+        // Validate that result.images exists and is an array with at least one item,
+        // else fallback
+        setData({
+          title: result.title || defaultData.title,
+          paragraphs: Array.isArray(result.paragraphs) && result.paragraphs.length > 0 ? result.paragraphs : defaultData.paragraphs,
+          images: Array.isArray(result.images) && result.images.length > 0
+            ? result.images.map((img: ApiImage, i: number) => ({
+                ...img,
+                // If path comes from API, prepend base if needed
+                path: img.path && !img.path.startsWith("http") ? `${API_IMAGE_URL}/${img.path}` : img.path
+              }))
+            : defaultData.images
+        });
+        setLoading(false);
+      })
+      .catch((err) => {
+        setApiError(true);
+        setData(defaultData);
+        setLoading(false);
+      });
+  }, []);
 
   // Variants for animation
   const fadeInUp = {
@@ -206,100 +393,107 @@ const LabIntroSection: React.FC = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 3, ease: "easeOut" } },
   };
 
+  // Split images into two columns, fallback if missing
+  const imgs = data.images;
+  const imgsCol1 = [imgs[0] ?? defaultData.images[0], imgs[1] ?? defaultData.images[1]];
+  const imgsCol2 = [imgs[2] ?? defaultData.images[2], imgs[3] ?? defaultData.images[3]];
+
   return (
     <div className="relative w-full overflow-visible" ref={ref}>
       {/* Top Polygon */}
       <div
-        className="absolute bottom-[1px] left-0 w-full h-96 bg-[#EEF2FF]"
+        className="absolute bottom-[0.8px] left-0 w-full h-96 bg-[var(--color-accent)]"
         style={{
           clipPath: "polygon(100% 100%, 0 0, 0 100%)",
         }}
       />
 
-      {/* Content */}
       <div className="relative container mx-auto px-4 py-12 z-30">
-        <section className="container mx-auto px-6 py-12 text-gray-800">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Image Gallery */}
-            <motion.div
-              variants={fadeInLeft}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className="grid grid-cols-2 gap-6"
-            >
-              {/* First Column */}
-              <div className="flex flex-col gap-6">
-                <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src={sideImage1}
-                    alt="Tusuka Group Quality Image 1"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src={sideImage2}
-                    alt="Tusuka Group Quality Image 2"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-              </div>
-
-              {/* Second Column */}
-              <div className="flex flex-col gap-6 mt-12 lg:mt-24">
-                <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src={sideImage3}
-                    alt="Tusuka Group Quality Image 3"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src={sideImage4}
-                    alt="Tusuka Group Quality Image 4"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Text Content */}
-            <motion.div
-              variants={fadeInUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className=""
-            >
-              <h2 className="text-4xl font-bold mb-6 text-blue-900">
-                Ensuring Excellence in Every Thread
-              </h2>
-              <p className="mb-4 text-lg text-gray-600">
-                At Tusuka Group, we believe that uncompromising quality is the foundation of
-                global trust. Our state-of-the-art laboratories are equipped with world-class testing
-                facilities to ensure that every fabric, trim, and garment meets international
-                standards.
-              </p>
-              <p className="text-lg text-gray-600">
-                Tusuka has established its own in-house fabric and garment testing laboratory,
-                built with the latest technology and approved by multiple international
-                accreditation bodies. Our lab is fully equipped to test all types of fabrics,
-                ensuring strict compliance with buyer and global requirements.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-                  ISO 9001 Certified
+        <section className="container mx-auto px-6 py-12 text-[var(--color-webText)]">
+          {loading ? (
+            <div className="flex justify-center items-center min-h-[200px] text-xl font-bold">
+              Loading...
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Image Gallery */}
+              <motion.div
+                variants={fadeInLeft}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                className="grid grid-cols-2 gap-6"
+              >
+                {/* First Column */}
+                <div className="flex flex-col gap-6">
+                  <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+                    <img
+                      src={imgsCol1[0]?.path}
+                      alt={imgsCol1[0]?.filename || "Lab Quality Image 1"}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+                    <img
+                      src={imgsCol1[1]?.path}
+                      alt={imgsCol1[1]?.filename || "Lab Quality Image 2"}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
                 </div>
-                <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
-                  Eco-Friendly Testing
+
+                {/* Second Column */}
+                <div className="flex flex-col gap-6 mt-12 lg:mt-24">
+                  <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+                    <img
+                      src={imgsCol2[0]?.path}
+                      alt={imgsCol2[0]?.filename || "Lab Quality Image 3"}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <motion.div variants={fadeInUp} className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+                    <img
+                      src={imgsCol2[1]?.path}
+                      alt={imgsCol2[1]?.filename || "Lab Quality Image 4"}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
                 </div>
-                <div className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">
-                  Global Standards
+              </motion.div>
+
+              {/* Text Content */}
+              <motion.div
+                variants={fadeInUp}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                className=""
+              >
+                <h2 className="text-4xl font-bold mb-6 text-[var(--color-titleText)]">
+                  {data.title}
+                </h2>
+                {data.paragraphs.map((p, i) => (
+                  <p key={i} className="mb-4 text-lg text-[var(--color-webText)]">{p}</p>
+                ))}
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                    ISO 9001 Certified
+                  </div>
+                  <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
+                    Eco-Friendly Testing
+                  </div>
+                  <div className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">
+                    Global Standards
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          </div>
+
+                {apiError && (
+                  <div className="mt-6 text-yellow-600 font-semibold">
+                    .
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          )}
         </section>
       </div>
     </div>

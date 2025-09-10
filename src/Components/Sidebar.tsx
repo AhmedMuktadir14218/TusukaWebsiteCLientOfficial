@@ -21,7 +21,8 @@ import InfoIcon from '@mui/icons-material/Info'; // For directorsInfo and about
 import WorkIcon from '@mui/icons-material/Work'; // For jobs
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+ 
 // Tailwind CSS classes for responsive adjustments and general styling
 const sidebarWidth = 240;
 const collapsedWidth = 60; // Width when sidebar is closed
@@ -43,11 +44,17 @@ export default function Sidebar() {
 
   const navItems = [
     { text: 'Dashboard', icon: <DashboardIcon />, path: '/admin/' }, // Assuming admin dashboard is at /admin
+    { text: 'Inbox', icon: <ScienceIcon />, path: '/admin/inbox' },
     { text: 'Explore Plants', icon: <WorkIcon />, path: '/admin/explore-plants' },
     { text: 'Laboratory', icon: <ScienceIcon />, path: '/admin/laboratory' }, // Changed to admin path if applicable
+    { text: 'News & Media', icon: <NewspaperIcon />, path: '/admin/news' }, // Changed to admin path if applicable
+
     { text: 'Directors Info', icon: <InfoIcon />, path: '/admin/directorsInfo' }, // Changed to admin path if applicable
     { text: 'About', icon: <InfoIcon />, path: '/admin/about' },
     { text: 'Jobs', icon: <WorkIcon />, path: '/admin/jobs' },
+    { text: 'Favicon', icon: <WorkIcon />, path: '/admin/favicon' },
+    { text: 'Change Color', icon: <ScienceIcon />, path: '/admin/color' }, // Changed to admin path if applicable
+    // Changed to admin path if applicable
   ];
 
   return (
@@ -89,7 +96,9 @@ export default function Sidebar() {
             backgroundColor: '#FFFFFF',
           }}
         >
+          <Link to="/">
           {open ? (
+            
             <img
               className="h-16 w-auto"
               src="https://i.ibb.co.com/sd4bz8Dr/logotusuka.jpg"
@@ -100,6 +109,7 @@ export default function Sidebar() {
               <MenuIcon sx={{ color: '#2c3e50' }} />
             </Box>
           )}
+          </Link>
           <IconButton onClick={handleDrawerToggle} sx={{ color: '#2c3e50', position: 'absolute', right: 5 }}>
             {open ? <ChevronLeftIcon /> : <MenuIcon />}
           </IconButton>
@@ -167,6 +177,7 @@ export default function Sidebar() {
                   },
                 }}
               >
+                
                 <ListItemIcon
                   sx={{
                     minWidth: 0,

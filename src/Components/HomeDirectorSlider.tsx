@@ -84,10 +84,10 @@ function HomeDirectorSlider() {
   }
 
   return (
- <div className="relative w-full bg-[#EEF2FF] overflow-visible">
+ <div className="relative w-full bg-[var(--color-accent)] overflow-visible">
     {/* Top Polygon */}
 <div
-  className="absolute bottom-[-240px] left-0 w-full h-60 bg-[#EEF2FF]"
+  className="absolute bottom-[-239px] left-0 w-full h-60 bg-[var(--color-accent)]"
   style={{
     clipPath: "polygon(100% 0, 0 0, 100% 100%)",
   }}
@@ -96,17 +96,17 @@ function HomeDirectorSlider() {
 
     {/* Bottom Polygon */}
  
-<div
-  className="absolute top-[-230px] left-0 w-full h-60 "
+{/* <div
+  className="absolute top-[-384px] left-0 w-full h-96 bg-[#ccddafc2]"
   style={{
     clipPath: "polygon(100% 100%, 0 0, 0 100%)",
   }}
-/>
+/> */}
  
 
     {/* Content */}
-    <div className="relative container mx-auto px-4 py-12 z-30">
-      <h1 className="text-center font-bold py-8 text-3xl md:text-5xl text-blue-900 uppercase">
+    <div className="  container mx-auto px-4 py-12 z-30">
+      <h1 className="text-center font-bold py-8 text-3xl md:text-5xl text-[var(--color-titleText)] uppercase">
         Board of Directors
       </h1>
  
@@ -175,8 +175,8 @@ function HomeDirectorSlider() {
                     </div>
 
                     {/* Right: Content */}
-                    <div className="md:w-3/5 lg:w-3/5 xl:w-3/5 flex flex-col p-4 md:p-6">
-                      <FaQuoteLeft className="text-2xl md:text-3xl text-[#20409A]/40 mb-2" />
+                    <div className="md:w-4/5 lg:w-4/5 xl:w-4/5 flex flex-col p-4 md:p-6 bg-[var(--color-accentSoft)]" >
+                      <FaQuoteLeft className="text-2xl md:text-3xl text-[var(--color-accent)]/40 mb-2" />
                       <p className="text-gray-600 text-xs md:text-sm lg:text-base flex-grow">
                         {preview}
                       </p>
@@ -184,7 +184,7 @@ function HomeDirectorSlider() {
                       {/* Contact */}
                       <div className="mt-4 space-y-3">
                         {/* <div className="flex items-center space-x-2 text-xs md:text-sm text-gray-600 bg-gray-50 rounded-lg p-2">
-                          <FaEnvelope className="text-[#20409A] flex-shrink-0" />
+                          <FaEnvelope className="text-[#ccddaf] flex-shrink-0" />
                           <a
                             href={`mailto:${person.address.email}`}
                             className="hover:text-[#0b36af] truncate"
@@ -223,7 +223,7 @@ function HomeDirectorSlider() {
                           </div> */}
                           <button
                             onClick={() => handleOpen(person)}
-                            className="px-3 py-1.5 md:px-4 md:py-2 bg-[#20409A] text-white rounded-full hover:bg-[#0b36af] transition text-sm md:text-base"
+                            className="px-3 py-1.5 md:px-4 md:py-2 bg-[var(--color-buttonBg)]  text-[var(--color-buttonText)] rounded-full hover:bg-[var(--color-navFootBG)]  transition text-sm md:text-base"
                           >
                             View Profile
                           </button>
@@ -476,7 +476,7 @@ export default HomeDirectorSlider;
 
 //                   {/* Right: Content */}
 //                   <div className="md:w-1/2 flex flex-col p-6">
-//                     <FaQuoteLeft className="text-3xl text-[#20409A]/40 mb-2" />
+//                     <FaQuoteLeft className="text-3xl text-[#ccddaf]/40 mb-2" />
 //                     <p className="text-gray-600 text-sm md:text-base flex-grow">
 //                       {person.about}
 //                     </p>
@@ -484,7 +484,7 @@ export default HomeDirectorSlider;
 //                     {/* Contact */}
 //                     <div className="mt-4 space-y-3">
 //                       <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 rounded-lg p-2">
-//                         <FaEnvelope className="text-[#20409A]" />
+//                         <FaEnvelope className="text-[#ccddaf]" />
 //                         <a
 //                           href={`mailto:${person.email}`}
 //                           className="hover:text-[#0b36af]"
@@ -506,7 +506,7 @@ export default HomeDirectorSlider;
 //                             <SocialLink href={person.socials.li} icon={FaLinkedinIn} />
 //                           )}
 //                         </div>
-//                         <button className="px-4 py-2 bg-[#20409A] text-white rounded-full hover:bg-[#0b36af] transition">
+//                         <button className="px-4 py-2 bg-[#ccddaf] text-white rounded-full hover:bg-[#0b36af] transition">
 //                           View Profile
 //                         </button>
 //                       </div>

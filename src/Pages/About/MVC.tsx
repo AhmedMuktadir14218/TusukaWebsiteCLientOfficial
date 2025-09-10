@@ -11,7 +11,7 @@ function MVC() {
   return (
     <div>
             {/* Hero Section */}
-      <div className="relative h-[300px] md:h-[400px] font-sans antialiased bg-gray-50">
+      <div className="relative h-[300px] md:h-[400px] font-sans antialiased  ">
 {/* Hero Section with Parallax */}
 <div
   className="relative h-[300px] md:h-[400px] bg-fixed bg-center bg-cover flex items-center justify-center font-sans antialiased"

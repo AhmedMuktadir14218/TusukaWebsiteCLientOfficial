@@ -1,108 +1,345 @@
 // src/components/NewsAndMedia.tsx
-import React from "react";
-import image1 from "../assets/NewsAndMedia/1.jpg";
-import image2 from "../assets/NewsAndMedia/2.jpg";
-import image3 from "../assets/NewsAndMedia/3.jpg";
-import image4 from "../assets/NewsAndMedia/Tusuka Washing Ltd 06.jpg";
-import image5 from "../assets/NewsAndMedia/Tusuka Washing Ltd 05.jpg";
-import image6 from "../assets/NewsAndMedia/IMG_1126.jpg";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import NewsCard from "./NewsCard";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import LogoMoving from "./LogoMoving";
+
+import { NewsMediaViewModal } from "./Admin/NewsMediaViewModal";
+
+// Define types
+interface NewsImage {
+  id: number;
+  news_media_id: number;
+  image_path: string;
+}
+
+export interface NewsItem {
+  id: number;
+  title: string;
+  short_description: string;
+  description: string;
+  date_of_posting: string;
+  created_at: string;
+  updated_at: string;
+  images: NewsImage[];
+}
 
 const NewsAndMedia: React.FC = () => {
-  const newsItems = [
-    {
-      id: 1,
-      image: image1,
-      title: "Tusuka Sports Tournament",
-      description:
-        "Tusuka organized its annual sports tournament, bringing together employees for a day of healthy competition, teamwork, and fun.",
-      date: "Jan 15, 2025",
-    },
-    {
-      id: 2,
-      image: image4,
-      title: "Tusuka GROUP Waste Management",
-      description:
-        "Tusuka is committed to sustainable waste management practices, ensuring minimal environmental impact.",
-      date: "Apr 01, 2025",
-    },
-    {
-      id: 3,
-      image: image3,
-      title: "Tusuka GROUP ACQUIRES XYZ TEXTILE.",
-      description:
-        "Tusuka Group expands its footprint in the textile industry with the acquisition of XYZ Textile & Apparels, strengthening global operations.",
-      date: "Mar 05, 2025",
-    },
-    {
-      id: 4,
-      image: image2,
-      title: "Tusuka GROUP PROUDLY ACHIEVES ",
-      description:
-        "Tusuka Group is proud to announce a 'B-' in the CDP Water Report 2024, exceeding the global average and reaffirming our commitment to sustainability.",
-      date: "Feb 10, 2025",
-    },
-    {
-      id: 5,
-      image: image5,
-      title: "Most Powerful Wash Machine Now at Tusuka",
-      description:
-        "Tusuka is proud to introduce the most powerful wash machine setting new standards for efficiency and performance.",
-      date: "Apr 01, 2025",
-    },
-    {
-      id: 6,
-      image: image6,
-      title: "Tusuka Believes in Nature",
-      description:
-        "Tusuka is committed to sustainable practices, including our innovative rooftop garden initiative.",
-      date: "Aug 01, 2025",
-    },
-  ];
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const API_IMAGE_URL = import.meta.env.VITE_API_IMAGE_URL;
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const { data } = await axios.get(`${API_BASE_URL}/api/news-media`);
+        if (data.success) {
+          setNewsItems(data.data);
+        } else {
+          console.error("Failed to fetch news:", data.message);
+        }
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, [API_BASE_URL]);
+
+  const openModal = (news: NewsItem) => {
+    setSelectedNews(news);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedNews(null);
+    setIsModalOpen(false);
+  };
+
+  if (loading) {
+    return (
+      <div className="text-center py-20 text-gray-500">
+        Loading news...
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* <LogoMoving></LogoMoving> */}
-      <h1 className="text-center font-bold py-16 md:text-5xl sm:text-3xl text-[#0B36AF] uppercase">
+      <h1 className="text-center font-bold py-16 md:text-5xl sm:text-3xl text-[var(--color-titleText)] uppercase">
         News & Media
       </h1>
 
-      <Swiper
-        modules={[Autoplay, Navigation, Pagination]}
-        spaceBetween={30}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        breakpoints={{
-          640: { slidesPerView: 1 }, // Mobile
-          768: { slidesPerView: 2 }, // Tablet
-          1024: { slidesPerView: 3 }, // Desktop
-        }}
-      >
-        {newsItems.map((item) => (
-          <SwiperSlide key={item.id}>
-            <NewsCard
-              image={item.image}
-              title={item.title}
-              description={item.description}
-              date={item.date}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {newsItems.length === 0 ? (
+        <p className="text-center text-gray-500">No news available.</p>
+      ) : (
+        <Swiper
+          modules={[Autoplay, Navigation, Pagination]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {newsItems.map((item) => (
+            <SwiperSlide key={item.id}>
+              <div onClick={() => openModal(item)} className="cursor-pointer">
+                <NewsCard
+                  images={item.images?.map(
+                    (img) => `${API_IMAGE_URL}/${img.image_path}`
+                  ) || []}
+                  title={item.title}
+                  description={item.short_description || item.description}
+                  date={new Date(item.date_of_posting).toLocaleDateString()}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
+
+      {/* Modal */}
+      {selectedNews && (
+        <NewsMediaViewModal
+          newsMedia={selectedNews}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
+      )}
     </div>
   );
 };
 
 export default NewsAndMedia;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import NewsCard from "./NewsCard";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Navigation, Pagination } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+
+// // Import images
+// import image1 from "../assets/NewsAndMedia/1.jpg";
+// import image2 from "../assets/NewsAndMedia/2.jpg";
+// import image3 from "../assets/NewsAndMedia/3.jpg";
+// import image4 from "../assets/NewsAndMedia/Tusuka Washing Ltd 06.jpg";
+// import image5 from "../assets/NewsAndMedia/Tusuka Washing Ltd 05.jpg";
+// import image6 from "../assets/NewsAndMedia/IMG_1126.jpg";
+
+// // Import JSON directly
+// import newsData from "./newsItems.json";
+
+// // Define the type for a single news item
+// interface NewsItem {
+//   id: number;
+//   image: string;
+//   title: string;
+//   description?: string;
+//   summary?: string;
+//   date: string;
+//   status: string;
+//   images: string[];
+// }
+
+// // Map filenames in JSON → imported images
+// const imageMap: Record<string, string> = {
+//   "1.jpg": image1,
+//   "2.jpg": image2,
+//   "3.jpg": image3,
+//   "Tusuka Washing Ltd 06.jpg": image4,
+//   "Tusuka Washing Ltd 05.jpg": image5,
+//   "IMG_1126.jpg": image6,
+// };
+
+// const NewsAndMedia: React.FC = () => {
+//   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+
+//   useEffect(() => {
+//     // Replace JSON image paths with imported images
+//     const mappedData = (newsData as NewsItem[]).map((item) => {
+//       const fileName = item.image.split("/").pop() || "";
+//       return {
+//         ...item,
+//         image: imageMap[fileName] || item.image, // use mapped image
+//       };
+//     });
+//     setNewsItems(mappedData);
+//   }, []);
+
+//   return (
+//     <div className="container mx-auto px-4 py-8">
+//       <h1 className="text-center font-bold py-16 md:text-5xl sm:text-3xl text-[var(--color-titleText)] uppercase">
+//         News & Media
+//       </h1>
+
+//       {newsItems.length === 0 ? (
+//         <p className="text-center text-gray-500">No news available.</p>
+//       ) : (
+//         <Swiper
+//           modules={[Autoplay, Navigation, Pagination]}
+//           spaceBetween={30}
+//           slidesPerView={1}
+//           navigation
+//           autoplay={{ delay: 3000, disableOnInteraction: false }}
+//           breakpoints={{
+//             640: { slidesPerView: 1 },
+//             768: { slidesPerView: 2 },
+//             1024: { slidesPerView: 3 },
+//           }}
+//         >
+//           {newsItems.map((item) => (
+//             <SwiperSlide key={item.id}>
+//               <NewsCard
+//                 image={item.image}
+//                 title={item.title}
+//                 description={item.description || item.summary || ""}
+//                 date={item.date}
+//               />
+//             </SwiperSlide>
+//           ))}
+//         </Swiper>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default NewsAndMedia;
+
+
+
+
+// import React from "react";
+// import image1 from "../assets/NewsAndMedia/1.jpg";
+// import image2 from "../assets/NewsAndMedia/2.jpg";
+// import image3 from "../assets/NewsAndMedia/3.jpg";
+// import image4 from "../assets/NewsAndMedia/Tusuka Washing Ltd 06.jpg";
+// import image5 from "../assets/NewsAndMedia/Tusuka Washing Ltd 05.jpg";
+// import image6 from "../assets/NewsAndMedia/IMG_1126.jpg";
+// import NewsCard from "./NewsCard";
+
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Navigation, Pagination } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import LogoMoving from "./LogoMoving";
+
+// const NewsAndMedia: React.FC = () => {
+//   const newsItems = [
+//     {
+//       id: 1,
+//       image: image1,
+//       title: "Tusuka Sports Tournament",
+//       description:
+//         "Tusuka organized its annual sports tournament, bringing together employees for a day of healthy competition, teamwork, and fun.",
+//       date: "Jan 15, 2025",
+//     },
+//     {
+//       id: 2,
+//       image: image4,
+//       title: "Tusuka GROUP Waste Management",
+//       description:
+//         "Tusuka is committed to sustainable waste management practices, ensuring minimal environmental impact.",
+//       date: "Apr 01, 2025",
+//     },
+//     {
+//       id: 3,
+//       image: image3,
+//       title: "Tusuka GROUP ACQUIRES XYZ TEXTILE.",
+//       description:
+//         "Tusuka Group expands its footprint in the textile industry with the acquisition of XYZ Textile & Apparels, strengthening global operations.",
+//       date: "Mar 05, 2025",
+//     },
+//     {
+//       id: 4,
+//       image: image2,
+//       title: "Tusuka GROUP PROUDLY ACHIEVES ",
+//       description:
+//         "Tusuka Group is proud to announce a 'B-' in the CDP Water Report 2024, exceeding the global average and reaffirming our commitment to sustainability.",
+//       date: "Feb 10, 2025",
+//     },
+//     {
+//       id: 5,
+//       image: image5,
+//       title: "Most Powerful Wash Machine Now at Tusuka",
+//       description:
+//         "Tusuka is proud to introduce the most powerful wash machine setting new standards for efficiency and performance.",
+//       date: "Apr 01, 2025",
+//     },
+//     {
+//       id: 6,
+//       image: image6,
+//       title: "Tusuka Believes in Nature",
+//       description:
+//         "Tusuka is committed to sustainable practices, including our innovative rooftop garden initiative.",
+//       date: "Aug 01, 2025",
+//     },
+//   ];
+
+//   return (
+//     <div className="container mx-auto px-4 py-8">
+//       {/* <LogoMoving></LogoMoving> */}
+//       <h1 className="text-center font-bold py-16 md:text-5xl sm:text-3xl text-[var(--color-titleText)] uppercase">
+//         News & Media
+//       </h1>
+
+//       <Swiper
+//         modules={[Autoplay, Navigation, Pagination]}
+//         spaceBetween={30}
+//         slidesPerView={1}
+//         navigation
+//         // pagination={{ clickable: true }}
+//         autoplay={{ delay: 3000, disableOnInteraction: false }}
+//         breakpoints={{
+//           640: { slidesPerView: 1 }, // Mobile
+//           768: { slidesPerView: 2 }, // Tablet
+//           1024: { slidesPerView: 3 }, // Desktop
+//         }}
+//       >
+//         {newsItems.map((item) => (
+//           <SwiperSlide key={item.id}>
+//             <NewsCard
+//               image={item.image}
+//               title={item.title}
+//               description={item.description}
+//               date={item.date}
+//             />
+//           </SwiperSlide>
+//         ))}
+//       </Swiper>
+//     </div>
+//   );
+// };
+
+// export default NewsAndMedia;
 
 
 
@@ -303,7 +540,7 @@ export default NewsAndMedia;
 //               <div className="sm:flex sm:items-end sm:justify-end">
 //                 <button
 //                   href="#"
-//                   className="block bg-[#20409A] px-5 py-3 text-center text-xs font-bold text-white uppercase transition hover:bg-blue-900"
+//                   className="block bg-[#ccddaf] px-5 py-3 text-center text-xs font-bold text-white uppercase transition hover:bg-blue-900"
 //                 >
 //                   Read More
 //                 </button>

@@ -71,9 +71,9 @@ const DirectorSlider: React.FC = () => {
   }
 
   return (
-    <div className="py-12 bg-gradient-to-r from-blue-50 to-indigo-50  min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <div className="py-12  min-h-[60vh] flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-4 max-w-[2000px]">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-12 drop-shadow-lg">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-[var(--color-titleText)] mb-12 drop-shadow-lg">
           Meet Our Leaders
         </h2>
 

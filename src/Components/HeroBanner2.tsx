@@ -134,7 +134,7 @@ const HeroBanner2: React.FC = () => {
                     >
                       <h1 className="font-bold text-white text-6xl uppercase">
                         {slide.title}{" "}
-                        <strong className="text-[#20409A]">
+                        <strong className="text-[var(--color-textBreakColor)]">
                           {slide.highlight}
                         </strong>{" "}
                         {slide.year}
@@ -146,14 +146,14 @@ const HeroBanner2: React.FC = () => {
 
                       <div className="mt-4 flex gap-4 sm:mt-6">
                         {/* <a
-                          className="inline-block rounded border border-[#20409A] bg-[#20409A] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg "
+                          className="inline-block rounded border border-[#ccddaf] bg-[#ccddaf] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg "
                           href="#"
                           onClick={(e) => e.stopPropagation()} // ✅ don’t pause when clicking link
                         >
                           {slide.buttonText}
                         </a> */}
                         {/* <a
-                          className="inline-block rounded border border-[#f2f2f5] hover:border-[#20409A] bg-[#e3e8f5] px-5 py-3 font-medium text-[#20409A] shadow-sm transition-colors hover:bg-[#20409A] xl:text-xl lg:text-lg hover:text-white"
+                          className="inline-block rounded border border-[#f2f2f5] hover:border-[#ccddaf] bg-[#e3e8f5] px-5 py-3 font-medium text-[#ccddaf] shadow-sm transition-colors hover:bg-[#ccddaf] xl:text-xl lg:text-lg hover:text-white"
                           href="#"
                           onClick={(e) => e.stopPropagation()} // ✅ don’t pause when clicking link
                         >
@@ -223,7 +223,7 @@ const HeroBanner2: React.FC = () => {
                     <div className="max-w-prose text-left">
                       <h1 className="font-bold text-white text-6xl uppercase">
                         {slide.title}{" "}
-                        <strong className="text-[#20409A]">
+                        <strong className="text-[#ccddaf]">
                           {slide.highlight}
                         </strong>{" "}
                         {slide.year}
@@ -235,7 +235,7 @@ const HeroBanner2: React.FC = () => {
 
                       <div className="mt-4 flex gap-4 sm:mt-6">
                         <a
-                          className="inline-block rounded border border-[#20409A] bg-[#20409A] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg "
+                          className="inline-block rounded border border-[#ccddaf] bg-[#ccddaf] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg "
                           href="#"
                           onClick={(e) => e.stopPropagation()} // ✅ don’t pause when clicking link
                         >
@@ -406,7 +406,7 @@ export default HeroBanner2;
 //                     <div className="max-w-prose text-left">
 //                       <h1 className="font-bold text-white text-6xl uppercase">
 //                         {slide.title}{" "}
-//                         <strong className="text-[#20409A]">{slide.highlight}</strong>{" "}
+//                         <strong className="text-[#ccddaf]">{slide.highlight}</strong>{" "}
 //                         {slide.year}
 //                       </h1>
 
@@ -416,14 +416,14 @@ export default HeroBanner2;
 
 //                       <div className="mt-4 flex gap-4 sm:mt-6">
 //                         <a
-//                           className="inline-block rounded border border-[#20409A] bg-[#20409A] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg"
+//                           className="inline-block rounded border border-[#ccddaf] bg-[#ccddaf] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg"
 //                           href="#"
 //                           onClick={(e) => e.stopPropagation()}
 //                         >
 //                           {slide.buttonText}
 //                         </a>
 //  <a
-//                           className="inline-block rounded border border-[#f2f2f5] bg-[#e3e8f5] px-5 py-3 font-medium text-[#20409A] shadow-sm transition-colors hover:bg-[#20409A] xl:text-xl lg:text-lg hover:text-white"
+//                           className="inline-block rounded border border-[#f2f2f5] bg-[#e3e8f5] px-5 py-3 font-medium text-[#ccddaf] shadow-sm transition-colors hover:bg-[#ccddaf] xl:text-xl lg:text-lg hover:text-white"
 //                           href="#"
 //                           onClick={(e) => e.stopPropagation()} // ✅ don’t pause when clicking link
 //                         >
@@ -590,7 +590,7 @@ export default HeroBanner2;
 //               <div className="max-w-prose text-left">
 //                 <h1 className="  font-bold text-white  text-6xl uppercase">
 //                   We make your Clothes
-//                   <strong className="text-[#20409A]"> Since </strong>1990.
+//                   <strong className="text-[#ccddaf]"> Since </strong>1990.
 //                 </h1>
 
 //                 <p className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
@@ -601,7 +601,7 @@ export default HeroBanner2;
 
 //                 <div className="mt-4 flex gap-4 sm:mt-6">
 //                   <a
-//                     className="inline-block rounded border border-[#20409A] bg-[#20409A] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg "
+//                     className="inline-block rounded border border-[#ccddaf] bg-[#ccddaf] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#05038f] xl:text-xl lg:text-lg "
 //                     href="#"
 //                   >
 //                     See Details

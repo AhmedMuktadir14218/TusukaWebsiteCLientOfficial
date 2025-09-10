@@ -13,7 +13,7 @@ const OurCommitment: React.FC<OurCommitmentProps> = ({
   conclusion 
 }) => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-gray-50">
+    <section className="py-16 px-4 md:px-8 ">
       <div className="max-w-4xl mx-auto">
         {/* <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">{title}</h2> */}
         

@@ -92,3 +92,19 @@ body {
     transform: translateX(-50%);
   }
 }
+@layer base {
+  :root {
+    --color-webBg: #F0F1DF;
+    --color-navFootBG: #363d44d2;
+    --color-navFootText: #ffffff;
+    --color-buttonBg: #363D44;
+    --color-buttonText: #ffffff;
+    --color-textBreakColor: #ffffff;
+    --color-activeBorder: #4d4d4d;
+    --color-accent: #7bb661;
+    --color-accentSoft: #a8c69f;
+    --color-webText: #000000;
+    --color-titleText: #363d44;
+    --color-cardBG: #363d44a9;
+  }
+}

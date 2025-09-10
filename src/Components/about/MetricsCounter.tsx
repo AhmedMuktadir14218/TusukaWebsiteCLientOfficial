@@ -39,31 +39,31 @@ const MetricsCounter: React.FC<MetricsCounterProps> = ({ metrics, bgColor }) => 
   }, [metrics]);
 
   return (
-    <section className={`${bgColor ?? 'bg-white'} py-16 px-4 md:px-8`}>
+    <section className="bg-[var(--color-navFootBG)] py-16 px-4 md:px-8">
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div className="text-5xl font-bold text-[#20409A] mb-2">
+          <div className="text-5xl font-bold text-[var(--color-navFootText)]  mb-2">
             {display.experienceYears}+
           </div>
-          <div className="text-lg text-gray-700">Years of Experience</div>
+          <div className="text-lg text-[var(--color-navFootText)]">Years of Experience</div>
         </div>
         <div>
-          <div className="text-5xl font-bold text-[#20409A] mb-2">
+          <div className="text-5xl font-bold text-[var(--color-navFootText)]  mb-2">
             {display.totalEmployees}+
           </div>
-          <div className="text-lg text-gray-700">Total Employees</div>
+          <div className="text-lg text-[var(--color-navFootText)]">Total Employees</div>
         </div>
         <div>
-          <div className="text-5xl font-bold text-[#20409A] mb-2">
+          <div className="text-5xl font-bold text-[var(--color-navFootText)]  mb-2">
             {display.sewingCapacity.toLocaleString()}
           </div>
-          <div className="text-lg text-gray-700">Sewing Capacity Per Day</div>
+          <div className="text-lg text-[var(--color-navFootText)]">Sewing Capacity Per Day</div>
         </div>
         <div>
-          <div className="text-5xl font-bold text-[#20409A] mb-2">
+          <div className="text-5xl font-bold text-[var(--color-navFootText)]  mb-2">
             {display.yearlyTurnover}M
           </div>
-          <div className="text-lg text-gray-700">Yearly Turnover</div>
+          <div className="text-lg text-[var(--color-navFootText)]">Yearly Turnover</div>
         </div>
       </div>
     </section>

@@ -91,7 +91,7 @@ const PlantDetailsModal: React.FC<PlantDetailsModalProps> = ({ plant, isOpen, on
                       </div>
 
                       <div className={`${isMobile ? 'w-full' : 'w-1/2'} flex flex-col`}>
-                        <Dialog.Title className="text-2xl md:text-3xl font-bold mb-6 text-[#05038f]">
+                        <Dialog.Title className="text-2xl md:text-3xl font-bold mb-6 text-[#363D44]">
                           {plant.name}
                         </Dialog.Title>
 

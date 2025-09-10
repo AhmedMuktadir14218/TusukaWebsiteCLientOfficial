@@ -17,11 +17,12 @@ import type { SliderImage } from '../../types/about';
 import LogoMoving from '../../Components/LogoMoving';
 import MVC from './MVC';
 import AboutHeroBanner from '../../Components/about/AboutHeroBanner';
+import { useTheme } from '../../Context/ThemeContext';
 
 const AboutPage: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { heroData, metricsData, loading, error } = useAboutHero();
-
+  const { theme } = useTheme();
   const toggleSidebar = () => setIsSidebarOpen(open => !open);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
@@ -52,7 +53,7 @@ const imagesWithFullUrl: SliderImage[] = heroData.sliderImages.map(img => {
 
 
   return (
-    <div className="min-h-screen bg-white ">
+    <div className="min-h-screen bg-[var(--color-webBg)]   ">
  
 
       <main>

@@ -14,8 +14,7 @@ import Brandlogo4 from "../../assets/Ban_Tushuka_USAID (12).jpg";
 import Brandlogo3 from "../../assets/Ban_Tushuka_USAID (22).jpg";
 import Brandlogo6 from "../../assets/Tusuka Apparels Ltd/Tusuka Apparels Ltd 04.jpg";
 // import Brandlogo from "../../assets/Needle Art Embroidery Ltd/Needle Art Embroidery Ltd 05.jpg";
-import plantsData from "../../../public/CoreComponent.json";
-import bgNav from "../../assets/bg.png";
+import plantsData from "../../../public/CoreComponent.json"; 
 import {
   MarketModal,
   SourcingModal,
@@ -76,6 +75,24 @@ const CorePointComponent: React.FC = () => {
   const openModal = (index: number) => setActiveModal(index);
   const closeModal = () => setActiveModal(null);
 
+
+    const [swapped, setSwapped] = useState(false);
+
+  const handleClick = () => {
+    setSwapped((prev) => !prev);
+  };
+  // helper function
+const hexToRgba = (hex: string, alpha = 1) => {
+  let clean = hex.replace("#", "");
+  if (clean.length === 3) {
+    clean = clean.split("").map((c) => c + c).join("");
+  }
+  const r = parseInt(clean.substring(0, 2), 16);
+  const g = parseInt(clean.substring(2, 4), 16);
+  const b = parseInt(clean.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
   return (
     <section 
     // className=
@@ -129,7 +146,7 @@ const CorePointComponent: React.FC = () => {
     },
   }}
             >
-              Tusuka’s     <strong className="text-[#20409A]">
+              Tusuka’s     <strong className="text-[var(--color-textBreakColor)]">
                           Commitment
                         </strong> 
               <br /> to Innovation, Safety, <br />and Sustainability
@@ -155,39 +172,46 @@ const CorePointComponent: React.FC = () => {
 
 
                {/* Title and Image */}
-            <motion.div
-              className="mb-8 w-full max-w-2xl group relative"
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { type: "spring", stiffness: 100, damping: 10 },
-                },
-              }}
-            >
-              {/* Main Background Image */}
-              <img
-                src={Brandlogo3}
-                alt="Main"
-                className="w-full h-106 object-cover  shadow-xl shadow-lg rounded-lg border-2"
-              />
+    <motion.div
+      className="mb-8 w-full max-w-2xl group relative cursor-pointer"
+      onClick={handleClick}
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { type: "spring", stiffness: 100, damping: 10 },
+        },
+      }}
+    >
+      {/* Main Image */}
+      <img
+        src={swapped ? Brandlogo4 : Brandlogo3}
+        alt="Main"
+        className="w-full h-106 object-cover shadow-xl rounded-lg border-2"
+      />
 
-              {/* Small Attached Image */}
-              <img
-                src={Brandlogo4}
-                alt="Overlay"
-                className="
-                            absolute 
-                            -bottom-8 -right-4 w-40 h-28   
-                            sm:-bottom-10 sm:-right-6 sm:w-48 sm:h-40   
-                            md:-bottom-12 md:-right-8 md:w-56 md:h-48   
-                            lg:-bottom-10 lg:-right-6 lg:w-52 lg:h-44   
-                            xl:-bottom-16 xl:-right-8 xl:w-64 xl:h-56   
-                            object-cover  shadow-lg rounded-lg border-2
-                          "
-              />
-            </motion.div>
+      {/* Overlay Image */}
+      <img
+        src={swapped ? Brandlogo3 : Brandlogo4}
+        alt="Overlay"
+        className={`
+          absolute
+          ${swapped ? "-bottom-8 -right-4" : "-bottom-16 -right-8"}
+          w-40 h-28 sm:w-48 sm:h-40
+          md:w-56 md:h-48
+          lg:w-52 lg:h-44
+          xl:w-64 xl:h-56
+          object-cover shadow-lg rounded-lg border-2
+          transition-all duration-500
+        `}
+      />
+    </motion.div>
+
+
+
           </motion.div>
 
           {/* Point Cards */}
@@ -206,16 +230,14 @@ const CorePointComponent: React.FC = () => {
               return (
                 <React.Fragment key={index}>
                   <motion.div
-                    className=" p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start relative  " 
-                    // style={{ backgroundImage: `url(${bgNav})` }}
-
-                          style={{
-  background: "rgb(173 208 244 / 58%)", 
-  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-  backdropFilter: "blur(5px)",
-  WebkitBackdropFilter: "blur(5px)",
-  border: "1px solid rgba(185, 206, 227, 0.3)"
-}}
+  className="p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start relative"
+  style={{
+    backgroundColor: hexToRgba(getComputedStyle(document.documentElement).getPropertyValue('--color-cardBG'), 0.65),
+    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+    backdropFilter: "blur(5px)",
+    WebkitBackdropFilter: "blur(5px)",
+    border: "1px solid rgba(185, 206, 227, 0.3)",
+  }}
                     variants={{
                       hidden: { opacity: 0, y: 50 },
                       visible: {
@@ -230,18 +252,18 @@ const CorePointComponent: React.FC = () => {
                     }}
                     whileHover={{ y: -5 }}
                   >
-                    <div className="text-[#040270] mb-4">
+                    <div className="text-white mb-4">
                       <point.icon className="h-10 w-10" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    <h3 className="text-xl font-semibold text-white mb-3">
                       {point.title}
                     </h3>
-                    <p className="text-gray-700 text-base mb-4">
+                    <p className="text-gray-300 text-base mb-4">
                       {point.description}
                     </p>
                     <button
                       onClick={() => openModal(index)}
-                      className="text-[#040270] font-semibold hover:underline"
+                      className="text-white font-semibold hover:underline"
                     >
                       See Details
                     </button>

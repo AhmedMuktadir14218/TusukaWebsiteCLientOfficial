@@ -1,0 +1,49 @@
+{
+  "theme": {
+    "light": {
+      "webBg": "#121212",
+      "navFoot": "#363D44",
+      "buttonBg": "#363D44",
+      "buttonText": "#ffffff",
+      "activeBorder": "#4d4d4d",
+      "accent": "#ccddaf",
+      "accentSoft": "#ccddafc2",
+      "webText": "#363D44",
+      "report": "#4d4d4d",
+      "lightWhite": "#ffffff",
+      "other": "#cccccc",
+      "other2": "#cccccc",
+      "other3": "#cccccc" 
+    },
+    "dark": {
+      "webBg": "#121212",
+      "navFoot": "#1f1f1f",
+      "buttonBg": "#333333",
+      "buttonText": "#e0e0e0",
+      "activeBorder": "#7a7a7a",
+      "accent": "#89b0ae",
+      "accentSoft": "#89b0aec2",
+      "webText": "#e0e0e0",
+      "report": "#b0b0b0",
+      "lightWhite": "#ffffff",
+            "other": "#cccccc",
+      "other2": "#cccccc",
+      "other3": "#cccccc" 
+    },
+    "highContrast": {
+      "webBg": "#000000",
+      "navFoot": "#ffffff",
+      "buttonBg": "#ffffff",
+      "buttonText": "#000000",
+      "activeBorder": "#ffff00",
+      "accent": "#00ff00",
+      "accentSoft": "#00ff00c2",
+      "webText": "#ffffff",
+      "report": "#ffff00",
+      "lightWhite": "#ffffff",
+            "other": "#cccccc",
+      "other2": "#cccccc",
+      "other3": "#cccccc" 
+    }
+  }
+}

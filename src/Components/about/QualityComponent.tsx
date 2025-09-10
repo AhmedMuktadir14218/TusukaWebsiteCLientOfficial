@@ -25,7 +25,7 @@ const QualityComponent = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className=" ">
     {/* Header Section */} 
 <div
   className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center"
@@ -75,7 +75,7 @@ const QualityComponent = () => {
               className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
             >
               <div className="flex items-start space-x-4">
-                <FaCheckCircle className="text-blue-600 text-xl mt-1" />
+                <FaCheckCircle className="text-[#363D44]text-xl mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
                   <p className="text-gray-600 text-sm">{step.description}</p>
@@ -107,15 +107,15 @@ const QualityComponent = () => {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-blue-600" />
+                  <FaCheckCircle className="text-[#363D44]" />
                   <span>Dedicated QA teams in all facilities</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-blue-600" />
+                  <FaCheckCircle className="text-[#363D44]" />
                   <span>Comprehensive quality control system</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-blue-600" />
+                  <FaCheckCircle className="text-[#363D44]" />
                   <span>Regular quality audits and reviews</span>
                 </li>
               </ul>
